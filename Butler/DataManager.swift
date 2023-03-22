@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
-class DataManager {
-    func writeKey()
-}
+//
+//class DataManager {
+//    func writeKey()
+//}

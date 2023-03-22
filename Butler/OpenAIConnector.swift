@@ -11,7 +11,7 @@ import Combine
 class OpenAIConnector: ObservableObject {
     /// This URL might change in the future, so if you get an error, make sure to check the OpenAI API Reference.
     let openAIURL = URL(string: "https://api.openai.com/v1/chat/completions")
-    #error("Add your OpenAI API Key here. You can delete this error after.")
+//    #error("Add your OpenAI API Key here. You can delete this error after.")
     let openAIKey = "YOUROPENAIKEY"
     
     /// This is what stores your messages. You can see how to use it in a SwiftUI view here:
