@@ -68,7 +68,7 @@ struct MessageView: View {
         if message["role"] == "user" {
             return .gray
         } else if message["role"] == "assistant" {
-            return .blue
+            return .accentColor
         } else {
             return .red
         }

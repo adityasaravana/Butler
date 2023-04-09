@@ -10,7 +10,7 @@ import GoogleMobileAds
 import AppTrackingTransparency
 
 @main
-struct Butler_For_iOSApp: App {
+struct ButlerApp: App {
     init() {
         if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
             //User has not indicated their choice for app tracking
