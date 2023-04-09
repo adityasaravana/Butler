@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40CDDAE529E259B800070A77 /* Butler_For_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAE429E259B800070A77 /* Butler_For_iOSApp.swift */; };
+		40CDDAE729E259B800070A77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAE629E259B800070A77 /* ContentView.swift */; };
+		40CDDAE929E259B900070A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CDDAE829E259B900070A77 /* Assets.xcassets */; };
+		40CDDAEC29E259B900070A77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CDDAEB29E259B900070A77 /* Preview Assets.xcassets */; };
+		40CDDAF029E259D700070A77 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C429CA4E1400694F73 /* DataManager.swift */; };
+		40CDDAF129E259DA00070A77 /* OpenAIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C229CA4D5100694F73 /* OpenAIConnector.swift */; };
+		40CDDAF229E259DC00070A77 /* OpenAIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */; };
+		40CDDAF429E25AB300070A77 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 40CDDAF329E25AB300070A77 /* KeychainSwift */; };
+		40CDDAFA29E25E8A00070A77 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 40CDDAF929E25E8A00070A77 /* GoogleMobileAds */; };
+		40CDDAFC29E2620000070A77 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAFB29E2620000070A77 /* BannerAd.swift */; };
 		59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 59361E6829E242FD007D3BC9 /* KeychainSwift */; };
 		59361E7129E24DDD007D3BC9 /* ButlerBooterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59361E7029E24DDD007D3BC9 /* ButlerBooterApp.swift */; };
 		59361E7829E24DDE007D3BC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59361E7729E24DDE007D3BC9 /* Preview Assets.xcassets */; };
@@ -36,6 +46,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		40CDDAE229E259B800070A77 /* Butler For iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Butler For iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40CDDAE429E259B800070A77 /* Butler_For_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Butler_For_iOSApp.swift; sourceTree = "<group>"; };
+		40CDDAE629E259B800070A77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		40CDDAE829E259B900070A77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40CDDAEB29E259B900070A77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		40CDDAF829E25E8300070A77 /* Butler-For-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Butler-For-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
+		40CDDAFB29E2620000070A77 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		59361E6E29E24DDD007D3BC9 /* ButlerBooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButlerBooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59361E7029E24DDD007D3BC9 /* ButlerBooterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButlerBooterApp.swift; sourceTree = "<group>"; };
 		59361E7729E24DDE007D3BC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -54,6 +71,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		40CDDADF29E259B800070A77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CDDAFA29E25E8A00070A77 /* GoogleMobileAds in Frameworks */,
+				40CDDAF429E25AB300070A77 /* KeychainSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		59361E6B29E24DDD007D3BC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -73,6 +99,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40CDDAE329E259B800070A77 /* Butler For iOS */ = {
+			isa = PBXGroup;
+			children = (
+				40CDDAF829E25E8300070A77 /* Butler-For-iOS-Info.plist */,
+				40CDDAE429E259B800070A77 /* Butler_For_iOSApp.swift */,
+				40CDDAE629E259B800070A77 /* ContentView.swift */,
+				40CDDAFB29E2620000070A77 /* BannerAd.swift */,
+				40CDDAE829E259B900070A77 /* Assets.xcassets */,
+				40CDDAEA29E259B900070A77 /* Preview Content */,
+			);
+			path = "Butler For iOS";
+			sourceTree = "<group>";
+		};
+		40CDDAEA29E259B900070A77 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				40CDDAEB29E259B900070A77 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		59361E6F29E24DDD007D3BC9 /* ButlerBooter */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +153,9 @@
 				6B61C4C429CA4E1400694F73 /* DataManager.swift */,
 				6B61C4C229CA4D5100694F73 /* OpenAIConnector.swift */,
 				6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */,
-				6B61C4B029CA484100694F73 /* Butler */,
 				59361E6F29E24DDD007D3BC9 /* ButlerBooter */,
+				6B61C4B029CA484100694F73 /* Butler */,
+				40CDDAE329E259B800070A77 /* Butler For iOS */,
 				6B61C4AF29CA484100694F73 /* Products */,
 				59361E8129E251B9007D3BC9 /* Frameworks */,
 			);
@@ -118,6 +166,7 @@
 			children = (
 				6B61C4AE29CA484100694F73 /* Butler.app */,
 				59361E6E29E24DDD007D3BC9 /* ButlerBooter.app */,
+				40CDDAE229E259B800070A77 /* Butler For iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +194,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		40CDDAE129E259B800070A77 /* Butler For iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40CDDAEF29E259B900070A77 /* Build configuration list for PBXNativeTarget "Butler For iOS" */;
+			buildPhases = (
+				40CDDADE29E259B800070A77 /* Sources */,
+				40CDDADF29E259B800070A77 /* Frameworks */,
+				40CDDAE029E259B800070A77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Butler For iOS";
+			packageProductDependencies = (
+				40CDDAF329E25AB300070A77 /* KeychainSwift */,
+				40CDDAF929E25E8A00070A77 /* GoogleMobileAds */,
+			);
+			productName = "Butler For iOS";
+			productReference = 40CDDAE229E259B800070A77 /* Butler For iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		59361E6D29E24DDD007D3BC9 /* ButlerBooter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59361E7A29E24DDE007D3BC9 /* Build configuration list for PBXNativeTarget "ButlerBooter" */;
@@ -190,9 +260,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					40CDDAE129E259B800070A77 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					59361E6D29E24DDD007D3BC9 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -212,18 +285,29 @@
 			mainGroup = 6B61C4A529CA484100694F73;
 			packageReferences = (
 				59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				40CDDAF529E25E6C00070A77 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				6B61C4AD29CA484100694F73 /* Butler */,
+				40CDDAE129E259B800070A77 /* Butler For iOS */,
 				59361E6D29E24DDD007D3BC9 /* ButlerBooter */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		40CDDAE029E259B800070A77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CDDAEC29E259B900070A77 /* Preview Assets.xcassets in Resources */,
+				40CDDAE929E259B900070A77 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		59361E6C29E24DDD007D3BC9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,6 +328,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		40CDDADE29E259B800070A77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CDDAE729E259B800070A77 /* ContentView.swift in Sources */,
+				40CDDAF029E259D700070A77 /* DataManager.swift in Sources */,
+				40CDDAE529E259B800070A77 /* Butler_For_iOSApp.swift in Sources */,
+				40CDDAF129E259DA00070A77 /* OpenAIConnector.swift in Sources */,
+				40CDDAFC29E2620000070A77 /* BannerAd.swift in Sources */,
+				40CDDAF229E259DC00070A77 /* OpenAIResponseHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		59361E6A29E24DDD007D3BC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +365,83 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		40CDDAED29E259B900070A77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Butler For iOS/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Butler-For-iOS-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Butler;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devdude.Butler-For-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		40CDDAEE29E259B900070A77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Butler For iOS/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Butler-For-iOS-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Butler;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devdude.Butler-For-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		59361E7B29E24DDE007D3BC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -279,17 +453,19 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ButlerBooter/Preview Content\"";
-				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ButlerBooter;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSBackgroundOnly = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.ButlerBooter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -310,17 +486,19 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ButlerBooter/Preview Content\"";
-				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ButlerBooter;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSBackgroundOnly = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.ButlerBooter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -457,10 +635,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
-				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Butler;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -488,10 +668,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
-				DEVELOPMENT_TEAM = E2RJE8M8Y3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Butler;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -510,6 +692,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		40CDDAEF29E259B900070A77 /* Build configuration list for PBXNativeTarget "Butler For iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40CDDAED29E259B900070A77 /* Debug */,
+				40CDDAEE29E259B900070A77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		59361E7A29E24DDE007D3BC9 /* Build configuration list for PBXNativeTarget "ButlerBooter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -540,6 +731,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		40CDDAF529E25E6C00070A77 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
@@ -551,6 +750,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		40CDDAF329E25AB300070A77 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		40CDDAF929E25E8A00070A77 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40CDDAF529E25E6C00070A77 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 		59361E6829E242FD007D3BC9 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */;
