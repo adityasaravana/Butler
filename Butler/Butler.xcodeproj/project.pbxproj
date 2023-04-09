@@ -17,6 +17,11 @@
 		40CDDAF429E25AB300070A77 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 40CDDAF329E25AB300070A77 /* KeychainSwift */; };
 		40CDDAFA29E25E8A00070A77 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 40CDDAF929E25E8A00070A77 /* GoogleMobileAds */; };
 		40CDDAFC29E2620000070A77 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAFB29E2620000070A77 /* BannerAd.swift */; };
+		40CDDAFE29E26B4300070A77 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAFD29E26B4300070A77 /* ChatBubble.swift */; };
+		40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAFD29E26B4300070A77 /* ChatBubble.swift */; };
+		40CDDB0129E26BAF00070A77 /* CopyStringToClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */; };
+		40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */; };
+		40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAE629E259B800070A77 /* ContentView.swift */; };
 		59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 59361E6829E242FD007D3BC9 /* KeychainSwift */; };
 		59361E7129E24DDD007D3BC9 /* ButlerBooterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59361E7029E24DDD007D3BC9 /* ButlerBooterApp.swift */; };
 		59361E7829E24DDE007D3BC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59361E7729E24DDE007D3BC9 /* Preview Assets.xcassets */; };
@@ -24,7 +29,6 @@
 		59361E8029E25170007D3BC9 /* ButlerBooter.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59361E6E29E24DDD007D3BC9 /* ButlerBooter.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		59361E8729E252F6007D3BC9 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59361E8229E251B9007D3BC9 /* ServiceManagement.framework */; };
 		6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B129CA484100694F73 /* ButlerApp.swift */; };
-		6B61C4B429CA484100694F73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B329CA484100694F73 /* ContentView.swift */; };
 		6B61C4B629CA484300694F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B529CA484300694F73 /* Assets.xcassets */; };
 		6B61C4B929CA484300694F73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B829CA484300694F73 /* Preview Assets.xcassets */; };
 		6B61C4C129CA4D4600694F73 /* OpenAIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */; };
@@ -53,6 +57,8 @@
 		40CDDAEB29E259B900070A77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		40CDDAF829E25E8300070A77 /* Butler-For-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Butler-For-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 		40CDDAFB29E2620000070A77 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
+		40CDDAFD29E26B4300070A77 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyStringToClipboard.swift; sourceTree = "<group>"; };
 		59361E6E29E24DDD007D3BC9 /* ButlerBooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButlerBooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59361E7029E24DDD007D3BC9 /* ButlerBooterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButlerBooterApp.swift; sourceTree = "<group>"; };
 		59361E7729E24DDE007D3BC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -61,7 +67,6 @@
 		59361E8229E251B9007D3BC9 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		6B61C4AE29CA484100694F73 /* Butler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Butler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B61C4B129CA484100694F73 /* ButlerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButlerApp.swift; sourceTree = "<group>"; };
-		6B61C4B329CA484100694F73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6B61C4B529CA484300694F73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B61C4B829CA484300694F73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B61C4BA29CA484300694F73 /* Butler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Butler.entitlements; sourceTree = "<group>"; };
@@ -104,7 +109,6 @@
 			children = (
 				40CDDAF829E25E8300070A77 /* Butler-For-iOS-Info.plist */,
 				40CDDAE429E259B800070A77 /* Butler_For_iOSApp.swift */,
-				40CDDAE629E259B800070A77 /* ContentView.swift */,
 				40CDDAFB29E2620000070A77 /* BannerAd.swift */,
 				40CDDAE829E259B900070A77 /* Assets.xcassets */,
 				40CDDAEA29E259B900070A77 /* Preview Content */,
@@ -118,6 +122,15 @@
 				40CDDAEB29E259B900070A77 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		40CDDB0329E26BE300070A77 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40CDDAFD29E26B4300070A77 /* ChatBubble.swift */,
+				40CDDAE629E259B800070A77 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		59361E6F29E24DDD007D3BC9 /* ButlerBooter */ = {
@@ -150,6 +163,8 @@
 		6B61C4A529CA484100694F73 = {
 			isa = PBXGroup;
 			children = (
+				40CDDB0329E26BE300070A77 /* Views */,
+				40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */,
 				6B61C4C429CA4E1400694F73 /* DataManager.swift */,
 				6B61C4C229CA4D5100694F73 /* OpenAIConnector.swift */,
 				6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */,
@@ -175,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				6B61C4B129CA484100694F73 /* ButlerApp.swift */,
-				6B61C4B329CA484100694F73 /* ContentView.swift */,
 				6B61C4B529CA484300694F73 /* Assets.xcassets */,
 				6B61C4BA29CA484300694F73 /* Butler.entitlements */,
 				6B61C4B729CA484300694F73 /* Preview Content */,
@@ -335,9 +349,11 @@
 				40CDDAE729E259B800070A77 /* ContentView.swift in Sources */,
 				40CDDAF029E259D700070A77 /* DataManager.swift in Sources */,
 				40CDDAE529E259B800070A77 /* Butler_For_iOSApp.swift in Sources */,
+				40CDDB0129E26BAF00070A77 /* CopyStringToClipboard.swift in Sources */,
 				40CDDAF129E259DA00070A77 /* OpenAIConnector.swift in Sources */,
 				40CDDAFC29E2620000070A77 /* BannerAd.swift in Sources */,
 				40CDDAF229E259DC00070A77 /* OpenAIResponseHandler.swift in Sources */,
+				40CDDAFE29E26B4300070A77 /* ChatBubble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,10 +370,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B61C4B429CA484100694F73 /* ContentView.swift in Sources */,
+				40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */,
+				40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */,
 				6B61C4C529CA4E1400694F73 /* DataManager.swift in Sources */,
 				6B61C4C129CA4D4600694F73 /* OpenAIResponseHandler.swift in Sources */,
 				6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */,
+				40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */,
 				6B61C4C329CA4D5100694F73 /* OpenAIConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
