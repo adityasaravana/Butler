@@ -45,8 +45,6 @@ struct ContentView: View {
                     connector.sendToAssistant()
                     print("messageLog")
                 }
-                
-                
             }
             Divider()
             Text("Questions, Comments, Concerns, Suggestions? \nEmail aditya.saravana@icloud.com").font(.caption2)
