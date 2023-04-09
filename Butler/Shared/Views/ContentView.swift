@@ -20,12 +20,23 @@ struct ContentView: View {
             HStack {
                 Text("Butler").bold().padding()
                 Menu("Settings") {
-                    Button("Set As OpenAI API Key") { dataManager.push(key: .Butler_UserOpenAIKey, content: textField.filter { !" \n\t\r".contains($0) }) }
-#if os(macOS)
-                    Button("Quit") { exit(0) }
-#endif
+                    Button("Clear Chat") {
+                        connector.clearMessageLog()
+                    }
+                    
+                    
+                    Button("Set As OpenAI API Key") {
+                        dataManager.push(key: .Butler_UserOpenAIKey, content: textField.filter { !" \n\t\r".contains($0) })
+                        textField = ""
+                    }
+                    
                 }
-            }.padding()
+                
+#if os(macOS)
+                Button("Quit") { exit(0) }.padding()
+#endif
+            }
+            
             Divider()
             
             ScrollView {
@@ -43,7 +54,7 @@ struct ContentView: View {
                 Button("Send") {
                     connector.logMessage(textField, messageUserType: .user)
                     connector.sendToAssistant()
-                    print("messageLog")
+                    textField = ""
                 }
             }
 #if os(iOS)
@@ -94,7 +105,7 @@ struct MessageView: View {
                 Text(message["content"] ?? "error")
                     .padding(.all, 15)
                     .foregroundColor(Color.white)
-                    .background(messageColor.opacity(0.4))
+                    .background(messageColor)
             }
             
             if message["role"] == "assistant" {

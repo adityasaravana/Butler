@@ -21,6 +21,12 @@ class OpenAIConnector: ObservableObject {
         /// Modify this to change the personality of the assistant.
         ["role": "system", "content": "You're a friendly, helpful assistant"]
     ]
+    
+    func clearMessageLog() {
+        messageLog = [
+            ["role": "system", "content": "You're a friendly, helpful assistant"]
+        ]
+    }
 
     func sendToAssistant() {
         /// DON'T TOUCH THIS
