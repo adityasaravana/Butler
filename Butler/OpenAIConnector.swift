@@ -51,7 +51,17 @@ class OpenAIConnector: ObservableObject {
             let jsonStr = String(data: requestData, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
             print(jsonStr)
             let responseHandler = OpenAIResponseHandler()
-            logMessage((responseHandler.decodeJson(jsonString: jsonStr)?.choices[0].message["content"])!, messageUserType: .assistant)
+            logMessage((responseHandler.decodeJson(jsonString: jsonStr)?.choices[0].message["content"]) ??
+                       """
+                       Something's Wrong:
+                       - You didn't enter an OpenAI API Key (Type your key into the message box then press Settings>Set As OpenAI API Key)
+                       
+                       - Invalid OpenAI API Key
+                       
+                       - Something went wrong on OpenAI's end
+                       
+                       """
+            , messageUserType: .assistant)
 
         }
 

@@ -19,6 +19,14 @@ struct ContentView: View {
     let dataManager = DataManager()
     var body: some View {
         VStack {
+            HStack {
+                Text("Butler").bold().padding()
+                Menu("Settings") {
+                    Button("Set As OpenAI API Key") { dataManager.push(key: .Butler_UserOpenAIKey, content: textField.filter { !" \n\t\r".contains($0) }) }
+                    Button("Quit") { exit(0) }
+                }.padding()
+            }
+            Divider()
             ScrollView {
                 ForEach(connector.messageLog) { message in
                     if message["role"] != "system" {
@@ -37,17 +45,11 @@ struct ContentView: View {
                     connector.sendToAssistant()
                     print("messageLog")
                 }
+                
+                
             }
             Divider()
-            HStack {
-                Button("Set As API Key") {
-                    dataManager.push(key: .Butler_UserOpenAIKey, content: textField.filter { !" \n\t\r".contains($0) })
-                }
-                
-                Button("Quit") {
-                    exit(0)
-                }
-            }
+            Text("Questions, Comments, Concerns, Suggestions? \nEmail aditya.saravana@icloud.com").font(.caption2)
         }.padding()
     }
 }
