@@ -8,23 +8,22 @@
 import SwiftUI
 import AppKit
 
+
 @main
 struct ButlerApp: App {
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+        MenuBarExtra(content: {
+            ContentView().environmentObject(OpenAIConnector())
+        }, label: {
+            let image: NSImage = {
+                let ratio = $0.size.height / $0.size.width
+                $0.size.height = 18
+                $0.size.width = 18 / ratio
+                return $0
+            }(NSImage(named: "MenuBarIcon")!)
+            
+            Image(nsImage: image)
+        }).menuBarExtraStyle(.window)
     }
 }
-
-#warning("Xcode 14 required")
-//@main
-//struct UtilityApp: App {
-//    var body: some Scene {
-//        MenuBarExtra("Utility App", systemImage: "hammer") {
-//            ContentView()
-//        }
-//    }
-//}
 

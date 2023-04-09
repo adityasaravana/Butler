@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 59361E6829E242FD007D3BC9 /* KeychainSwift */; };
 		6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B129CA484100694F73 /* ButlerApp.swift */; };
 		6B61C4B429CA484100694F73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B329CA484100694F73 /* ContentView.swift */; };
 		6B61C4B629CA484300694F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B529CA484300694F73 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +96,9 @@
 			dependencies = (
 			);
 			name = Butler;
+			packageProductDependencies = (
+				59361E6829E242FD007D3BC9 /* KeychainSwift */,
+			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Butler.app */;
 			productType = "com.apple.product-type.application";
@@ -106,7 +111,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					6B61C4AD29CA484100694F73 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -122,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 6B61C4A529CA484100694F73;
+			packageReferences = (
+				59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -192,6 +200,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -252,6 +261,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -277,21 +287,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Butler/Butler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -305,21 +318,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Butler/Butler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		59361E6829E242FD007D3BC9 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6B61C4A629CA484100694F73 /* Project object */;
 }

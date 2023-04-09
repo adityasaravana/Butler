@@ -11,8 +11,10 @@ import Combine
 class OpenAIConnector: ObservableObject {
     /// This URL might change in the future, so if you get an error, make sure to check the OpenAI API Reference.
     let openAIURL = URL(string: "https://api.openai.com/v1/chat/completions")
-//    #error("Add your OpenAI API Key here. You can delete this error after.")
-    let openAIKey = "YOUROPENAIKEY"
+    let dataManager = DataManager()
+    var openAIKey: String {
+        return dataManager.pull(key: .Butler_UserOpenAIKey) ?? "invalid"
+    }
     
     /// This is what stores your messages. You can see how to use it in a SwiftUI view here:
     @Published var messageLog: [[String: String]] = [
@@ -37,7 +39,6 @@ class OpenAIConnector: ObservableObject {
         var httpBodyJson: Data? = nil
 
         do {
-//            httpBodyJson = try JSONEncoder().encode(httpBody)
             httpBodyJson = try JSONSerialization.data(withJSONObject: httpBody, options: .prettyPrinted)
         } catch {
             print("Unable to convert to JSON \(error)")
