@@ -14,6 +14,7 @@ import GoogleMobileAds
 struct ContentView: View {
     @State var textField = ""
     @EnvironmentObject var connector: OpenAIConnector
+    @State var isLoading = false
     let dataManager = DataManager()
     var body: some View {
         VStack {
@@ -45,6 +46,10 @@ struct ContentView: View {
                         MessageView(message: message)
                     }
                 }
+                
+                if isLoading {
+                    ProgressView("Loading...").padding()
+                }
             }
             
             Divider()
@@ -53,9 +58,24 @@ struct ContentView: View {
                 TextField("Type here", text: $textField)
                 Button("Send") {
                     connector.logMessage(textField, messageUserType: .user)
-                    connector.sendToAssistant()
+                    isLoading = true
+                    
+//                    DispatchQueue.global(priority: .high).async {
+//                        connector.sendToAssistant()
+//                        DispatchQueue.main.async {
+//                            isLoading = false
+//                        }
+//                    }
+                    
+                    DispatchQueue.global().async {
+                        connector.sendToAssistant()
+                        DispatchQueue.main.async {
+                            isLoading = false
+                        }
+                    }
+                  
                     textField = ""
-                }
+                }.keyboardShortcut(.defaultAction)
             }
 #if os(iOS)
             SwiftUIBannerAd(adPosition: .bottom, adUnitId: "ca-app-pub-5488373209303539/4357719195")
@@ -64,7 +84,6 @@ struct ContentView: View {
         
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

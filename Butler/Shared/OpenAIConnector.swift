@@ -16,7 +16,7 @@ class OpenAIConnector: ObservableObject {
         return dataManager.pull(key: .Butler_UserOpenAIKey) ?? "invalid"
     }
     
-    /// This is what stores your messages. You can see how to use it in a SwiftUI view here:
+    /// This is what stores your messages.
     @Published var messageLog: [[String: String]] = [
         /// Modify this to change the personality of the assistant.
         ["role": "system", "content": "You're a friendly, helpful assistant"]
@@ -59,12 +59,17 @@ class OpenAIConnector: ObservableObject {
             let responseHandler = OpenAIResponseHandler()
             logMessage((responseHandler.decodeJson(jsonString: jsonStr)?.choices[0].message["content"]) ??
                        """
+                       
                        Something's Wrong:
-                       - You didn't enter an OpenAI API Key (Type your key into the message box then press Settings>Set As OpenAI API Key)
                        
-                       - Invalid OpenAI API Key
+                       Common Issues:
+                       - You didn't enter an OpenAI API Key (Type your key into the message box then, at the top click Settings>Set As OpenAI API Key.)
                        
-                       - Something went wrong on OpenAI's end
+                       - Invalid OpenAI API Key (Make sure that you're using a valid one or create a new one here: https://platform.openai.com/account/api-keys)
+                       
+                       - Check your Internet connection.
+                       
+                       If none of those fix the issue, email aditya.saravana@icloud.com.
                        
                        """
             , messageUserType: .assistant)
