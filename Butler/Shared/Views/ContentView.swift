@@ -21,10 +21,7 @@ struct ContentView: View {
             HStack {
                 Text("Butler").bold().padding()
                 Menu("Settings") {
-                    Button("Clear Chat") {
-                        connector.clearMessageLog()
-                    }
-                    
+                    Button("Clear Chat") { connector.clearMessageLog() }
                     
                     Button("Set As OpenAI API Key") {
                         dataManager.push(key: .Butler_UserOpenAIKey, content: textField.filter { !" \n\t\r".contains($0) })

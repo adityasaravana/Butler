@@ -13,7 +13,7 @@ import AppKit
 struct ButlerApp: App {
     var body: some Scene {
         MenuBarExtra(content: {
-            ContentView().environmentObject(OpenAIConnector())
+            ContentView().environmentObject(OpenAIConnector()).frame(height: 600)
         }, label: {
             let image: NSImage = {
                 let ratio = $0.size.height / $0.size.width
