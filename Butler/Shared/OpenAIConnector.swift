@@ -63,9 +63,11 @@ class OpenAIConnector: ObservableObject {
                        Something's Wrong:
                        
                        Common Issues:
-                       - You didn't enter an OpenAI API Key (Type your key into the message box then, at the top click Settings>Set As OpenAI API Key.)
+                       - You didn't enter an OpenAI API Key
+                       (Type your key into the message box, then click Settings>Set As OpenAI API Key. Make sure not to press send.)
                        
-                       - Invalid OpenAI API Key (Make sure that you're using a valid one or create a new one here: https://platform.openai.com/account/api-keys)
+                       - Invalid OpenAI API Key
+                       (Make sure that you're using a valid one or create a new one here: https://platform.openai.com/account/api-keys)
                        
                        - Check your Internet connection.
                        
@@ -110,9 +112,12 @@ extension OpenAIConnector {
         task.resume()
         
         // Handle async with semaphores. Max wait of 10 seconds
-        let timeout = DispatchTime.now() + .seconds(20)
+        let timeout = DispatchTime.now() + .seconds(30)
         print("Waiting for semaphore signal")
         let retVal = semaphore.wait(timeout: timeout)
+        if retVal == .timedOut {
+            logMessage("Your request took too long to process. Try again with a different prompt.", messageUserType: .assistant)
+        }
         print("Done waiting, obtained - \(retVal)")
         return requestData
     }

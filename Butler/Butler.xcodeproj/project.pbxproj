@@ -23,6 +23,8 @@
 		40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAE629E259B800070A77 /* ContentView.swift */; };
 		59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 59361E6829E242FD007D3BC9 /* KeychainSwift */; };
 		59EC8CC529E288FD00F4BC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B529CA484300694F73 /* Assets.xcassets */; };
+		59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA40F29EC7C2D00B75937 /* MarkdownUI */; };
+		59EEA41229EC80E900B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA41129EC80E900B75937 /* MarkdownUI */; };
 		6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B129CA484100694F73 /* ButlerApp.swift */; };
 		6B61C4B629CA484300694F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B529CA484300694F73 /* Assets.xcassets */; };
 		6B61C4B929CA484300694F73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B829CA484300694F73 /* Preview Assets.xcassets */; };
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59EEA41229EC80E900B75937 /* MarkdownUI in Frameworks */,
 				40CDDAFA29E25E8A00070A77 /* GoogleMobileAds in Frameworks */,
 				40CDDAF429E25AB300070A77 /* KeychainSwift in Frameworks */,
 			);
@@ -67,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */,
+				59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +192,7 @@
 			packageProductDependencies = (
 				40CDDAF329E25AB300070A77 /* KeychainSwift */,
 				40CDDAF929E25E8A00070A77 /* GoogleMobileAds */,
+				59EEA41129EC80E900B75937 /* MarkdownUI */,
 			);
 			productName = "Butler For iOS";
 			productReference = 40CDDAE229E259B800070A77 /* Butler For iOS.app */;
@@ -208,6 +213,7 @@
 			name = Butler;
 			packageProductDependencies = (
 				59361E6829E242FD007D3BC9 /* KeychainSwift */,
+				59EEA40F29EC7C2D00B75937 /* MarkdownUI */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Butler.app */;
@@ -243,6 +249,7 @@
 			packageReferences = (
 				59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				40CDDAF529E25E6C00070A77 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -315,7 +322,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.2;
+				CURRENT_PROJECT_VERSION = 1.2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler For iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
 				ENABLE_PREVIEWS = YES;
@@ -333,7 +340,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.1;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devdude.Butler-For-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,7 +361,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.2;
+				CURRENT_PROJECT_VERSION = 1.2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler For iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
 				ENABLE_PREVIEWS = YES;
@@ -372,7 +379,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.1;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devdude.Butler-For-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -511,7 +518,7 @@
 				CODE_SIGN_ENTITLEMENTS = Butler/Butler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.1.2;
+				CURRENT_PROJECT_VERSION = 1.2.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
@@ -527,7 +534,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -544,7 +551,7 @@
 				CODE_SIGN_ENTITLEMENTS = Butler/Butler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.1.2;
+				CURRENT_PROJECT_VERSION = 1.2.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
@@ -560,7 +567,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -617,6 +624,14 @@
 				minimumVersion = 20.0.0;
 			};
 		};
+		59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -634,6 +649,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		59EEA40F29EC7C2D00B75937 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+		59EEA41129EC80E900B75937 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

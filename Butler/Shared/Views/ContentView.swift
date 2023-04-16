@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MarkdownUI
 
 #if os(iOS)
 import GoogleMobileAds
@@ -13,9 +14,12 @@ import GoogleMobileAds
 
 struct ContentView: View {
     @State var textField = ""
-    @EnvironmentObject var connector: OpenAIConnector
     @State var isLoading = false
+    
+    @EnvironmentObject var connector: OpenAIConnector
+    
     let dataManager = DataManager()
+    
     var body: some View {
         VStack {
             HStack {
@@ -118,10 +122,18 @@ struct MessageView: View {
             }
             
             ChatBubble(direction: bubbleDirection) {
-                Text(message["content"] ?? "error")
+                Markdown(message["content"] ?? "error")
                     .padding(.all, 15)
-                    .foregroundColor(Color.white)
+                    .markdownTextStyle(\.text) {
+                      ForegroundColor(.white)
+                    }
                     .background(messageColor)
+                    .textSelection(.enabled)
+                    
+//                Text(message["content"] ?? "error")
+//                    .padding(.all, 15)
+//                    .foregroundColor(Color.white)
+//                    .background(messageColor)
             }
             
             if message["role"] == "assistant" {
