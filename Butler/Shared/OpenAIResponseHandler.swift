@@ -22,6 +22,22 @@ struct OpenAIResponseHandler {
         
         return nil
     }
+    
+    func decodeError(jsonString: String) -> OpenAIErrorResponse? {
+        let json = jsonString.data(using: .utf8)!
+        
+        let decoder = JSONDecoder()
+        do {
+            let product = try decoder.decode(OpenAIErrorResponse.self, from: json)
+            return product
+            
+        } catch {
+            print("Error decoding OpenAI API Error Response -- \(error)")
+        }
+        
+        return nil
+    }
+    
 }
 
 struct OpenAIResponse: Codable {
@@ -38,9 +54,27 @@ struct Choice: Codable {
     var finish_reason: String?
 }
 
-
 struct Usage: Codable {
     var prompt_tokens: Int?
     var completion_tokens: Int?
     var total_tokens: Int?
+}
+
+// {
+// "error": {
+//        "message": "Incorrect API key provided: o. You can find your API key at https://platform.openai.com/account/api-keys.",
+//        "type": "invalid_request_error",
+//        "param": null,
+//        "code": "invalid_api_key"
+//    }
+//}
+struct OpenAIErrorResponse: Codable {
+    var error: OpenAIError
+}
+
+struct OpenAIError: Codable {
+    var message: String
+    var type: String
+    var param: String?
+    var code: String
 }

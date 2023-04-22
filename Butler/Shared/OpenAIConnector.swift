@@ -7,13 +7,33 @@
 
 import Foundation
 import Combine
+import Defaults
+import Network
 
 class OpenAIConnector: ObservableObject {
     /// This URL might change in the future, so if you get an error, make sure to check the OpenAI API Reference.
     let openAIURL = URL(string: "https://api.openai.com/v1/chat/completions")
     let dataManager = DataManager()
+    var connectedToInternet = true
     var openAIKey: String {
         return dataManager.pull(key: .Butler_UserOpenAIKey) ?? "invalid"
+    }
+    
+    init(messageLog: [[String: String]] = [["role": "system", "content": "You're a friendly, helpful assistant"]]) {
+        self.messageLog = messageLog
+        
+        let monitor = NWPathMonitor()
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                self.connectedToInternet = true
+            } else {
+                self.connectedToInternet = false
+            }
+
+            print(path.isExpensive)
+        }
+        let queue = DispatchQueue(label: "ConnectionTester")
+        monitor.start(queue: queue)
     }
     
     /// This is what stores your messages.
@@ -26,60 +46,62 @@ class OpenAIConnector: ObservableObject {
         messageLog = [
             ["role": "system", "content": "You're a friendly, helpful assistant"]
         ]
+        
+        
     }
 
     func sendToAssistant() {
-        /// DON'T TOUCH THIS
-        var request = URLRequest(url: self.openAIURL!)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(self.openAIKey)", forHTTPHeaderField: "Authorization")
-        
-        let httpBody: [String: Any] = [
-            /// In the future, you can use a different chat model here.
-            "model" : "gpt-3.5-turbo",
-            "messages" : messageLog
-        ]
-        
-        /// DON'T TOUCH THIS
-        var httpBodyJson: Data? = nil
-
-        do {
-            httpBodyJson = try JSONSerialization.data(withJSONObject: httpBody, options: .prettyPrinted)
-        } catch {
-            print("Unable to convert to JSON \(error)")
-            logMessage("error", messageUserType: .assistant)
+            
+            if connectedToInternet {
+                if self.openAIKey != "" {
+                    Defaults[.messagesSuccessfullySent] += 1
+                    
+                    var request = URLRequest(url: self.openAIURL!)
+                    request.httpMethod = "POST"
+                    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                    request.addValue("Bearer \(self.openAIKey)", forHTTPHeaderField: "Authorization")
+                    
+                    let httpBody: [String: Any] = [
+                        /// In the future, you can use a different chat model here.
+                        "model" : "gpt-3.5-turbo",
+                        "messages" : self.messageLog
+                    ]
+                    
+                    /// DON'T TOUCH THIS
+                    var httpBodyJson: Data? = nil
+                    
+                    do {
+                        httpBodyJson = try JSONSerialization.data(withJSONObject: httpBody, options: .prettyPrinted)
+                    } catch {
+                        print("Unable to convert to JSON \(error)")
+                        self.logMessage("error: \(error)", messageUserType: .assistant)
+                        Defaults[.messagesSuccessfullySent] -= 1
+                    }
+                    
+                    request.httpBody = httpBodyJson
+                    
+                    if let requestData = self.executeRequest(request: request, withSessionConfig: nil) {
+                        let jsonStr = String(data: requestData, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
+                        print(jsonStr)
+                        let responseHandler = OpenAIResponseHandler()
+                        
+                        let response = responseHandler.decodeJson(jsonString: jsonStr)?.choices[0].message["content"] ?? responseHandler.decodeError(jsonString: jsonStr)?.error.message ?? "Error decoding error: take a screenshot and email aditya.saravana@icloud.com"
+                        
+                        self.logMessage(response, messageUserType: .assistant)                        
+                        
+                        Defaults[.messagesSuccessfullySent] -= 1
+                    }
+                    
+                    
+                } else {
+                    self.logMessage("You haven't entered an OpenAI API key. To do so, please click on the 'Show Settings' button and paste your key into the designated field.", messageUserType: .assistant)
+                }
+            } else {
+                self.logMessage("You're not connected to the Internet. Connect and try again.", messageUserType: .assistant)
+            }
         }
         
-        request.httpBody = httpBodyJson
-        
-        if let requestData = executeRequest(request: request, withSessionConfig: nil) {
-            let jsonStr = String(data: requestData, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
-            print(jsonStr)
-            let responseHandler = OpenAIResponseHandler()
-            logMessage((responseHandler.decodeJson(jsonString: jsonStr)?.choices[0].message["content"]) ??
-                       """
-                       
-                       Something's Wrong:
-                       
-                       Common Issues:
-                       - You didn't enter an OpenAI API Key
-                       (Type your key into the message box, then click Settings>Set As OpenAI API Key. Make sure not to press send.)
-                       
-                       - Invalid OpenAI API Key
-                       (Make sure that you're using a valid one or create a new one here: https://platform.openai.com/account/api-keys)
-                       
-                       - Check your Internet connection.
-                       
-                       If none of those fix the issue, email aditya.saravana@icloud.com.
-                       
-                       """
-            , messageUserType: .assistant)
-
-        }
-
-        
-    }
+    
 }
 
 
@@ -117,6 +139,7 @@ extension OpenAIConnector {
         let retVal = semaphore.wait(timeout: timeout)
         if retVal == .timedOut {
             logMessage("Your request took too long to process. Try again with a different prompt.", messageUserType: .assistant)
+            Defaults[.messagesSuccessfullySent] -= 1
         }
         print("Done waiting, obtained - \(retVal)")
         return requestData

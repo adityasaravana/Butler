@@ -21,6 +21,9 @@
 		40CDDB0129E26BAF00070A77 /* CopyStringToClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */; };
 		40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */; };
 		40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAE629E259B800070A77 /* ContentView.swift */; };
+		59325CEF29F4419D00343704 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 59325CEE29F4419D00343704 /* Defaults */; };
+		59325CF129F4422500343704 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325CF029F4422500343704 /* Settings.swift */; };
+		59325CF229F4422500343704 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325CF029F4422500343704 /* Settings.swift */; };
 		59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 59361E6829E242FD007D3BC9 /* KeychainSwift */; };
 		59EC8CC529E288FD00F4BC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B529CA484300694F73 /* Assets.xcassets */; };
 		59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA40F29EC7C2D00B75937 /* MarkdownUI */; };
@@ -42,6 +45,7 @@
 		40CDDAFB29E2620000070A77 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		40CDDAFD29E26B4300070A77 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyStringToClipboard.swift; sourceTree = "<group>"; };
+		59325CF029F4422500343704 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		59361E6E29E24DDD007D3BC9 /* ButlerBooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ButlerBooter.app; path = /Users/adityasaravana/Documents/Butler/Butler/build/Debug/ButlerBooter.app; sourceTree = "<absolute>"; };
 		59361E8229E251B9007D3BC9 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		6B61C4AE29CA484100694F73 /* Butler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Butler.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59325CEF29F4419D00343704 /* Defaults in Frameworks */,
 				59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */,
 				59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */,
 			);
@@ -120,6 +125,7 @@
 				40CDDB0329E26BE300070A77 /* Views */,
 				40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */,
 				6B61C4C429CA4E1400694F73 /* DataManager.swift */,
+				59325CF029F4422500343704 /* Settings.swift */,
 				6B61C4C229CA4D5100694F73 /* OpenAIConnector.swift */,
 				6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */,
 			);
@@ -138,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				5962EEB729E27208002BB028 /* Shared */,
-				6B61C4B029CA484100694F73 /* Butler */,
 				40CDDAE329E259B800070A77 /* Butler For iOS */,
+				6B61C4B029CA484100694F73 /* Butler */,
 				6B61C4AF29CA484100694F73 /* Products */,
 				59361E8129E251B9007D3BC9 /* Frameworks */,
 				59EC8CC429E285A000F4BC86 /* Recovered References */,
@@ -214,6 +220,7 @@
 			packageProductDependencies = (
 				59361E6829E242FD007D3BC9 /* KeychainSwift */,
 				59EEA40F29EC7C2D00B75937 /* MarkdownUI */,
+				59325CEE29F4419D00343704 /* Defaults */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Butler.app */;
@@ -250,6 +257,7 @@
 				59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				40CDDAF529E25E6C00070A77 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				59325CED29F4419D00343704 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -293,6 +301,7 @@
 				40CDDB0129E26BAF00070A77 /* CopyStringToClipboard.swift in Sources */,
 				40CDDAF129E259DA00070A77 /* OpenAIConnector.swift in Sources */,
 				40CDDAFC29E2620000070A77 /* BannerAd.swift in Sources */,
+				59325CF229F4422500343704 /* Settings.swift in Sources */,
 				40CDDAF229E259DC00070A77 /* OpenAIResponseHandler.swift in Sources */,
 				40CDDAFE29E26B4300070A77 /* ChatBubble.swift in Sources */,
 			);
@@ -307,6 +316,7 @@
 				6B61C4C529CA4E1400694F73 /* DataManager.swift in Sources */,
 				6B61C4C129CA4D4600694F73 /* OpenAIResponseHandler.swift in Sources */,
 				6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */,
+				59325CF129F4422500343704 /* Settings.swift in Sources */,
 				40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */,
 				6B61C4C329CA4D5100694F73 /* OpenAIConnector.swift in Sources */,
 			);
@@ -616,6 +626,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		59325CED29F4419D00343704 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
@@ -644,6 +662,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 40CDDAF529E25E6C00070A77 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
+		};
+		59325CEE29F4419D00343704 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59325CED29F4419D00343704 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
 		};
 		59361E6829E242FD007D3BC9 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
