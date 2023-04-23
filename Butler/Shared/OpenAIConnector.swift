@@ -85,9 +85,9 @@ class OpenAIConnector: ObservableObject {
                         print(jsonStr)
                         let responseHandler = OpenAIResponseHandler()
                         
-                        let response = responseHandler.decodeJson(jsonString: jsonStr)?.choices[0].message["content"] ?? responseHandler.decodeError(jsonString: jsonStr)?.error.message ?? "Error decoding error: take a screenshot and email aditya.saravana@icloud.com"
+                        let response = responseHandler.decodeJson(jsonString: jsonStr)?.choices[0].message["content"] ?? responseHandler.decodeError(jsonString: jsonStr)?.error.message ?? "Error decoding error: take a screenshot and email aditya.saravana@icloud.com" 
                         
-                        self.logMessage(response, messageUserType: .assistant)                        
+                        self.logMessage(response, messageUserType: .assistant)
                         
                         Defaults[.messagesSuccessfullySent] -= 1
                     }

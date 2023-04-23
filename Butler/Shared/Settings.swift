@@ -12,7 +12,7 @@ import Defaults
 extension Defaults.Keys {
     /// User Settings
     static let fontSize = Key<Int>("fontSize", default: 12)
-    static let windowSize = Key<String>("windowSize", default: "small")
+    static let windowSize = Key<String>("windowSize", default: "medium")
     
     /// Tracking
     static let messagesSuccessfullySent = Key<Int>("messagesSuccessfullySent", default: 0)

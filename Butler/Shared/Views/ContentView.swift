@@ -14,16 +14,24 @@ import StoreKit
 import GoogleMobileAds
 #endif
 
+fileprivate enum WindowSizeUserPreferenceLocal {
+    case small
+    case medium
+    case large
+}
+
 struct ContentView: View {
     @State var textField = ""
     @State var openAIKeyLocal = ""
     @State var isLoading = false
     @State var showingSettings = false
+    @State fileprivate var selectedWindowSizeLocal: WindowSizeUserPreferenceLocal = .medium
     
     @EnvironmentObject var connector: OpenAIConnector
     @Environment(\.requestReview) var requestReview
     
     @State var fontSize = CGFloat(Defaults[.fontSize])
+    @Binding var windowSize: String
     
     let dataManager = DataManager()
     
@@ -58,10 +66,10 @@ struct ContentView: View {
 #endif
             }
             
-//            Divider()
+            //            Divider()
             
             if connector.messageLog != [["role": "system", "content": "You're a friendly, helpful assistant"]] {
-//                Divider()
+                //                Divider()
                 
                 ScrollView {
                     ForEach(connector.messageLog) { message in
@@ -94,7 +102,7 @@ struct ContentView: View {
                     isLoading = true
                     
                     DispatchQueue.global().async {
-                       
+                        
                         DispatchQueue.main.async {
                             connector.sendToAssistant()
                             isLoading = false
@@ -107,6 +115,10 @@ struct ContentView: View {
                     
                     textField = ""
                 }.keyboardShortcut(.defaultAction)
+            }
+            
+            if !showingSettings {
+                EmailForHelpText()
             }
             
             if showingSettings {
@@ -122,7 +134,27 @@ struct ContentView: View {
                         .onChange(of: Int(fontSize)) { newValue in
                             Defaults[.fontSize] = newValue
                         }
-//                    Text("\(fontSize)")
+                    //                    Text("\(fontSize)")
+//                    Picker("Select Window Size", selection: $selectedWindowSizeLocal) {
+//                        Text("Small").tag(WindowSizeUserPreferenceLocal.small)
+//                        Text("Medium").tag(WindowSizeUserPreferenceLocal.medium)
+//                        Text("Large (Might be too big for small screens)").tag(WindowSizeUserPreferenceLocal.large)
+//                    }.onChange(of: selectedWindowSizeLocal) { newValue in
+//                        var newValueString: String {
+//                            switch newValue {
+//                            case .small:
+//                                return "small"
+//                            case .medium:
+//                                return "medium"
+//                            case .large:
+//                                return "large"
+//                            }
+//                        }
+//
+//
+//                        Defaults[.windowSize] = newValueString
+//                        windowSize = newValueString
+//                    }
                     
                     HStack {
                         TextField("Paste OpenAI API Key Here", text: $openAIKeyLocal)
@@ -134,6 +166,8 @@ struct ContentView: View {
                     }.padding(.vertical)
                 }.padding().background(.thinMaterial).cornerRadius(20)
                 
+                
+                EmailForHelpText()
             }
             
 #if os(iOS)
@@ -146,31 +180,31 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(showingSettings: true)
-            .previewDisplayName("Medium Menu Bar Preview - Showing Settings")
-            .environmentObject(OpenAIConnector(messageLog: [
-            ["role": "user", "content": "Hey, how's it going?"],
-            ["role": "assistant", "content": "Good, how bout you?"],
-            
-        
-        ])).frame(width: 600, height: 750)
-        
-        ContentView()
-            .previewDisplayName("Medium Menu Bar Preview")
-            .environmentObject(OpenAIConnector(messageLog: [
-            ["role": "user", "content": "Hey, how's it going?"],
-            ["role": "assistant", "content": "Good, how bout you?"],
-            
-        
-        ])).frame(width: 600, height: 750)
-        
-        ContentView()
-            .previewDisplayName("Medium Menu Bar Preview - No Messages")
-            .environmentObject(OpenAIConnector()).frame(width: 600, height: 750)
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(showingSettings: true, windowSize: "medium")
+//            .previewDisplayName("Medium Menu Bar Preview - Showing Settings")
+//            .environmentObject(OpenAIConnector(messageLog: [
+//                ["role": "user", "content": "Hey, how's it going?"],
+//                ["role": "assistant", "content": "Good, how bout you?"],
+//                
+//                
+//            ])).frame(width: 600, height: 750)
+//        
+//        ContentView()
+//            .previewDisplayName("Medium Menu Bar Preview")
+//            .environmentObject(OpenAIConnector(messageLog: [
+//                ["role": "user", "content": "Hey, how's it going?"],
+//                ["role": "assistant", "content": "Good, how bout you?"],
+//                
+//                
+//            ])).frame(width: 600, height: 750)
+//        
+//        ContentView()
+//            .previewDisplayName("Medium Menu Bar Preview - No Messages")
+//            .environmentObject(OpenAIConnector()).frame(width: 600, height: 750)
+//    }
+//}
 
 struct SettingsSliderView: View {
     var text: String
@@ -245,3 +279,9 @@ struct MessageView: View {
     }
 }
 
+
+struct EmailForHelpText: View {
+    var body: some View {
+        Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline)
+    }
+}

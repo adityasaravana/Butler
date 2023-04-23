@@ -11,6 +11,7 @@ import AppTrackingTransparency
 
 @main
 struct ButlerApp: App {
+    
     init() {
         if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
             //User has not indicated their choice for app tracking
