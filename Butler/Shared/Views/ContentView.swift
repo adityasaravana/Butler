@@ -25,6 +25,7 @@ struct ContentView: View {
     @State var openAIKeyLocal = ""
     @State var isLoading = false
     @State var showingSettings = false
+    @State var viewUpdater = UUID()
     @State fileprivate var selectedWindowSizeLocal: WindowSizeUserPreferenceLocal = .medium
     
     @EnvironmentObject var connector: OpenAIConnector
@@ -79,7 +80,7 @@ struct ContentView: View {
                     }
                     
                     if isLoading {
-                        ProgressView("Loading...").padding()
+                        ProgressView("Loading...").padding(.top)
                     }
                 }
                 .padding()
@@ -102,14 +103,13 @@ struct ContentView: View {
                     isLoading = true
                     
                     DispatchQueue.global().async {
-                        
+                        connector.sendToAssistant()
                         DispatchQueue.main.async {
-                            connector.sendToAssistant()
                             isLoading = false
                         }
                     }
                     
-                    if Defaults[.messagesSuccessfullySent] >= 1 {
+                    if Defaults[.messagesSuccessfullySent] >= 5 {
                         requestReview()
                     }
                     
@@ -122,7 +122,6 @@ struct ContentView: View {
             }
             
             if showingSettings {
-                
                 VStack {
                     HStack {
                         Text("Settings").bold().foregroundColor(.gray)
@@ -133,8 +132,11 @@ struct ContentView: View {
                     SettingsSliderView(text: "Message Font Size", startValue: 9, endValue: 30, value: $fontSize)
                         .onChange(of: Int(fontSize)) { newValue in
                             Defaults[.fontSize] = newValue
+                            print("Updated font size in UserDefaults")
                         }
-                    //                    Text("\(fontSize)")
+                    
+                    
+//                    Text("\(fontSize)")
 //                    Picker("Select Window Size", selection: $selectedWindowSizeLocal) {
 //                        Text("Small").tag(WindowSizeUserPreferenceLocal.small)
 //                        Text("Medium").tag(WindowSizeUserPreferenceLocal.medium)
@@ -164,8 +166,15 @@ struct ContentView: View {
                             openAIKeyLocal = ""
                         }
                     }.padding(.vertical)
+                    
+                    Button("Reset Settings") {
+                        fontSize = 12
+                    }
+                    .padding(.bottom)
                 }.padding().background(.thinMaterial).cornerRadius(20)
                 
+                
+               
                 
                 EmailForHelpText()
             }
@@ -215,13 +224,40 @@ struct SettingsSliderView: View {
         VStack {
             HStack {
                 Text(text).foregroundColor(.gray)
+                
                 Spacer()
             }
             
-            Slider(value: $value, in: startValue...endValue)
+            SteppingSliderView(min: startValue, max: endValue, value: $value, step: 3)
         }
     }
 }
+
+struct SteppingSliderView: View {
+    var min: CGFloat
+    var max: CGFloat
+    @Binding var value: CGFloat
+    
+    var step: CGFloat
+    
+    var body: some View {
+        VStack {
+            Slider(
+                value: $value,
+                in: min...max,
+                step: step,
+                minimumValueLabel: Text(formated(value: min)),
+                maximumValueLabel: Text(formated(value: max)),
+                label: { })
+        }
+    }
+    
+    func formated(value: CGFloat) -> String {
+        return String(format: "%.0f", value)
+    }
+    
+}
+
 
 struct MessageView: View {
     @Binding var fontSize: CGFloat

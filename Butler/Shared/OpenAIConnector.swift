@@ -134,7 +134,7 @@ extension OpenAIConnector {
         task.resume()
         
         // Handle async with semaphores. Max wait of 10 seconds
-        let timeout = DispatchTime.now() + .seconds(30)
+        let timeout = DispatchTime.now() + .seconds(60)
         print("Waiting for semaphore signal")
         let retVal = semaphore.wait(timeout: timeout)
         if retVal == .timedOut {
