@@ -32,8 +32,12 @@ class OpenAIConnector: ObservableObject {
 
             print(path.isExpensive)
         }
+        
         let queue = DispatchQueue(label: "ConnectionTester")
         monitor.start(queue: queue)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+            monitor.cancel()
+        })
     }
     
     /// This is what stores your messages.
@@ -133,7 +137,7 @@ extension OpenAIConnector {
         })
         task.resume()
         
-        // Handle async with semaphores. Max wait of 10 seconds
+        // Handle async with semaphores. Max wait of 60 seconds
         let timeout = DispatchTime.now() + .seconds(60)
         print("Waiting for semaphore signal")
         let retVal = semaphore.wait(timeout: timeout)
@@ -157,7 +161,9 @@ extension OpenAIConnector {
             messageUserTypeString = "assistant"
         }
         
-        messageLog.append(["role": messageUserTypeString, "content": message])
+        DispatchQueue.main.async {
+            self.messageLog.append(["role": messageUserTypeString, "content": message])
+        }
     }
     
     enum MessageUserType {

@@ -21,6 +21,10 @@
 		40CDDB0129E26BAF00070A77 /* CopyStringToClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */; };
 		40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */; };
 		40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAE629E259B800070A77 /* ContentView.swift */; };
+		59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59154F0F29FF1B5200F785B2 /* MessageView.swift */; };
+		59154F1129FF1B5200F785B2 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59154F0F29FF1B5200F785B2 /* MessageView.swift */; };
+		59154F1329FF1BB900F785B2 /* SteppingSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59154F1229FF1BB900F785B2 /* SteppingSliderView.swift */; };
+		59154F1429FF1BB900F785B2 /* SteppingSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59154F1229FF1BB900F785B2 /* SteppingSliderView.swift */; };
 		59325CEF29F4419D00343704 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 59325CEE29F4419D00343704 /* Defaults */; };
 		59325CF129F4422500343704 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325CF029F4422500343704 /* Settings.swift */; };
 		59325CF229F4422500343704 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325CF029F4422500343704 /* Settings.swift */; };
@@ -45,6 +49,8 @@
 		40CDDAFB29E2620000070A77 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		40CDDAFD29E26B4300070A77 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyStringToClipboard.swift; sourceTree = "<group>"; };
+		59154F0F29FF1B5200F785B2 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		59154F1229FF1BB900F785B2 /* SteppingSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteppingSliderView.swift; sourceTree = "<group>"; };
 		59325CF029F4422500343704 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		59361E6E29E24DDD007D3BC9 /* ButlerBooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ButlerBooter.app; path = /Users/adityasaravana/Documents/Butler/Butler/build/Debug/ButlerBooter.app; sourceTree = "<absolute>"; };
 		59361E8229E251B9007D3BC9 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
@@ -106,6 +112,8 @@
 			children = (
 				40CDDAFD29E26B4300070A77 /* ChatBubble.swift */,
 				40CDDAE629E259B800070A77 /* ContentView.swift */,
+				59154F0F29FF1B5200F785B2 /* MessageView.swift */,
+				59154F1229FF1BB900F785B2 /* SteppingSliderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,10 +307,12 @@
 				40CDDAF029E259D700070A77 /* DataManager.swift in Sources */,
 				40CDDAE529E259B800070A77 /* ButlerApp.swift in Sources */,
 				40CDDB0129E26BAF00070A77 /* CopyStringToClipboard.swift in Sources */,
+				59154F1129FF1B5200F785B2 /* MessageView.swift in Sources */,
 				40CDDAF129E259DA00070A77 /* OpenAIConnector.swift in Sources */,
 				40CDDAFC29E2620000070A77 /* BannerAd.swift in Sources */,
 				59325CF229F4422500343704 /* Settings.swift in Sources */,
 				40CDDAF229E259DC00070A77 /* OpenAIResponseHandler.swift in Sources */,
+				59154F1429FF1BB900F785B2 /* SteppingSliderView.swift in Sources */,
 				40CDDAFE29E26B4300070A77 /* ChatBubble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,11 +324,13 @@
 				40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */,
 				40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */,
 				6B61C4C529CA4E1400694F73 /* DataManager.swift in Sources */,
+				59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */,
 				6B61C4C129CA4D4600694F73 /* OpenAIResponseHandler.swift in Sources */,
 				6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */,
 				59325CF129F4422500343704 /* Settings.swift in Sources */,
 				40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */,
 				6B61C4C329CA4D5100694F73 /* OpenAIConnector.swift in Sources */,
+				59154F1329FF1BB900F785B2 /* SteppingSliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,7 +540,7 @@
 				CODE_SIGN_ENTITLEMENTS = Butler/Butler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
@@ -544,7 +556,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -561,7 +573,7 @@
 				CODE_SIGN_ENTITLEMENTS = Butler/Butler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
@@ -577,7 +589,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

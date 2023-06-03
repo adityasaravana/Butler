@@ -51,6 +51,12 @@ struct ButlerApp: App {
             
             Image(nsImage: image)
         }).menuBarExtraStyle(.window)
+        
+        Window("Butler - Standalone Window", id: "standalone_chat_window") {
+            ContentView(windowSize: $windowSize).environmentObject(OpenAIConnector()).frame(width: windowWidth, height: windowHeight)
+        }
     }
+    
+    
 }
 

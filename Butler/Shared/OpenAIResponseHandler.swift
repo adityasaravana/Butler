@@ -60,14 +60,6 @@ struct Usage: Codable {
     var total_tokens: Int?
 }
 
-// {
-// "error": {
-//        "message": "Incorrect API key provided: o. You can find your API key at https://platform.openai.com/account/api-keys.",
-//        "type": "invalid_request_error",
-//        "param": null,
-//        "code": "invalid_api_key"
-//    }
-//}
 struct OpenAIErrorResponse: Codable {
     var error: OpenAIError
 }

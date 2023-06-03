@@ -67,11 +67,7 @@ struct ContentView: View {
 #endif
             }
             
-            //            Divider()
-            
             if connector.messageLog != [["role": "system", "content": "You're a friendly, helpful assistant"]] {
-                //                Divider()
-                
                 ScrollView {
                     ForEach(connector.messageLog) { message in
                         if message["role"] != "system" {
@@ -129,35 +125,11 @@ struct ContentView: View {
                         
                     }
                     Divider()
-                    SettingsSliderView(text: "Message Font Size", startValue: 9, endValue: 30, value: $fontSize)
+                    FontSizeSliderView(text: "Message Font Size", startValue: 9, endValue: 30, value: $fontSize)
                         .onChange(of: Int(fontSize)) { newValue in
                             Defaults[.fontSize] = newValue
                             print("Updated font size in UserDefaults")
                         }
-                    
-                    
-//                    Text("\(fontSize)")
-//                    Picker("Select Window Size", selection: $selectedWindowSizeLocal) {
-//                        Text("Small").tag(WindowSizeUserPreferenceLocal.small)
-//                        Text("Medium").tag(WindowSizeUserPreferenceLocal.medium)
-//                        Text("Large (Might be too big for small screens)").tag(WindowSizeUserPreferenceLocal.large)
-//                    }.onChange(of: selectedWindowSizeLocal) { newValue in
-//                        var newValueString: String {
-//                            switch newValue {
-//                            case .small:
-//                                return "small"
-//                            case .medium:
-//                                return "medium"
-//                            case .large:
-//                                return "large"
-//                            }
-//                        }
-//
-//
-//                        Defaults[.windowSize] = newValueString
-//                        windowSize = newValueString
-//                    }
-                    
                     HStack {
                         TextField("Paste OpenAI API Key Here", text: $openAIKeyLocal)
                         
@@ -189,33 +161,7 @@ struct ContentView: View {
     }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView(showingSettings: true, windowSize: "medium")
-//            .previewDisplayName("Medium Menu Bar Preview - Showing Settings")
-//            .environmentObject(OpenAIConnector(messageLog: [
-//                ["role": "user", "content": "Hey, how's it going?"],
-//                ["role": "assistant", "content": "Good, how bout you?"],
-//                
-//                
-//            ])).frame(width: 600, height: 750)
-//        
-//        ContentView()
-//            .previewDisplayName("Medium Menu Bar Preview")
-//            .environmentObject(OpenAIConnector(messageLog: [
-//                ["role": "user", "content": "Hey, how's it going?"],
-//                ["role": "assistant", "content": "Good, how bout you?"],
-//                
-//                
-//            ])).frame(width: 600, height: 750)
-//        
-//        ContentView()
-//            .previewDisplayName("Medium Menu Bar Preview - No Messages")
-//            .environmentObject(OpenAIConnector()).frame(width: 600, height: 750)
-//    }
-//}
-
-struct SettingsSliderView: View {
+struct FontSizeSliderView: View {
     var text: String
     var startValue: CGFloat
     var endValue: CGFloat
@@ -233,87 +179,9 @@ struct SettingsSliderView: View {
     }
 }
 
-struct SteppingSliderView: View {
-    var min: CGFloat
-    var max: CGFloat
-    @Binding var value: CGFloat
-    
-    var step: CGFloat
-    
-    var body: some View {
-        VStack {
-            Slider(
-                value: $value,
-                in: min...max,
-                step: step,
-                minimumValueLabel: Text(formated(value: min)),
-                maximumValueLabel: Text(formated(value: max)),
-                label: { })
-        }
-    }
-    
-    func formated(value: CGFloat) -> String {
-        return String(format: "%.0f", value)
-    }
-    
-}
 
 
-struct MessageView: View {
-    @Binding var fontSize: CGFloat
-    var message: [String: String]
-    
-    var messageColor: Color {
-        if message["role"] == "user" {
-            return .gray
-        } else if message["role"] == "assistant" {
-            return .accentColor
-        } else {
-            return .red
-        }
-    }
-    
-    var bubbleDirection: ChatBubbleShape.Direction {
-        if message["role"] == "user" {
-            return .right
-        } else if message["role"] == "assistant" {
-            return .left
-        } else {
-            return .right
-        }
-    }
-    
-    var body: some View {
-        HStack {
-            if message["role"] == "user" {
-                Spacer()
-            }
-            
-            ChatBubble(direction: bubbleDirection) {
-                Markdown(message["content"] ?? "error")
-                    .padding(.all, 15)
-                    .markdownTextStyle(\.text) {
-                        ForegroundColor(.white)
-                        FontSize(fontSize)
-                    }
-                    .background(messageColor)
-                    .textSelection(.enabled)
-                
-                //                Text(message["content"] ?? "error")
-                //                    .padding(.all, 15)
-                //                    .foregroundColor(Color.white)
-                //                    .background(messageColor)
-            }
-            
-            if message["role"] == "assistant" {
-                Button("Copy") {
-                    copyStringToClipboard(message["content"] ?? "error")
-                }.font(.system(size: fontSize))
-                Spacer()
-            }
-        }
-    }
-}
+
 
 
 struct EmailForHelpText: View {
