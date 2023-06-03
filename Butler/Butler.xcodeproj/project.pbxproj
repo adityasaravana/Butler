@@ -7,31 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40CDDAE529E259B800070A77 /* ButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAE429E259B800070A77 /* ButlerApp.swift */; };
-		40CDDAE729E259B800070A77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAE629E259B800070A77 /* ContentView.swift */; };
-		40CDDAEC29E259B900070A77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CDDAEB29E259B900070A77 /* Preview Assets.xcassets */; };
-		40CDDAF029E259D700070A77 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C429CA4E1400694F73 /* DataManager.swift */; };
-		40CDDAF129E259DA00070A77 /* OpenAIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C229CA4D5100694F73 /* OpenAIConnector.swift */; };
-		40CDDAF229E259DC00070A77 /* OpenAIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */; };
-		40CDDAF429E25AB300070A77 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 40CDDAF329E25AB300070A77 /* KeychainSwift */; };
-		40CDDAFA29E25E8A00070A77 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 40CDDAF929E25E8A00070A77 /* GoogleMobileAds */; };
-		40CDDAFC29E2620000070A77 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAFB29E2620000070A77 /* BannerAd.swift */; };
-		40CDDAFE29E26B4300070A77 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAFD29E26B4300070A77 /* ChatBubble.swift */; };
 		40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAFD29E26B4300070A77 /* ChatBubble.swift */; };
-		40CDDB0129E26BAF00070A77 /* CopyStringToClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */; };
 		40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */; };
 		40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAE629E259B800070A77 /* ContentView.swift */; };
 		59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59154F0F29FF1B5200F785B2 /* MessageView.swift */; };
-		59154F1129FF1B5200F785B2 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59154F0F29FF1B5200F785B2 /* MessageView.swift */; };
 		59154F1329FF1BB900F785B2 /* SteppingSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59154F1229FF1BB900F785B2 /* SteppingSliderView.swift */; };
-		59154F1429FF1BB900F785B2 /* SteppingSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59154F1229FF1BB900F785B2 /* SteppingSliderView.swift */; };
 		59325CEF29F4419D00343704 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 59325CEE29F4419D00343704 /* Defaults */; };
 		59325CF129F4422500343704 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325CF029F4422500343704 /* Settings.swift */; };
-		59325CF229F4422500343704 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325CF029F4422500343704 /* Settings.swift */; };
 		59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 59361E6829E242FD007D3BC9 /* KeychainSwift */; };
-		59EC8CC529E288FD00F4BC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B529CA484300694F73 /* Assets.xcassets */; };
 		59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA40F29EC7C2D00B75937 /* MarkdownUI */; };
-		59EEA41229EC80E900B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA41129EC80E900B75937 /* MarkdownUI */; };
 		6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B129CA484100694F73 /* ButlerApp.swift */; };
 		6B61C4B629CA484300694F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B529CA484300694F73 /* Assets.xcassets */; };
 		6B61C4B929CA484300694F73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B829CA484300694F73 /* Preview Assets.xcassets */; };
@@ -41,12 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		40CDDAE229E259B800070A77 /* Butler For iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Butler For iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		40CDDAE429E259B800070A77 /* ButlerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButlerApp.swift; sourceTree = "<group>"; };
 		40CDDAE629E259B800070A77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		40CDDAEB29E259B900070A77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		40CDDAF829E25E8300070A77 /* Butler-For-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Butler-For-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
-		40CDDAFB29E2620000070A77 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		40CDDAFD29E26B4300070A77 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyStringToClipboard.swift; sourceTree = "<group>"; };
 		59154F0F29FF1B5200F785B2 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
@@ -65,16 +44,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		40CDDADF29E259B800070A77 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59EEA41229EC80E900B75937 /* MarkdownUI in Frameworks */,
-				40CDDAFA29E25E8A00070A77 /* GoogleMobileAds in Frameworks */,
-				40CDDAF429E25AB300070A77 /* KeychainSwift in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6B61C4AB29CA484100694F73 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,25 +57,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		40CDDAE329E259B800070A77 /* Butler For iOS */ = {
-			isa = PBXGroup;
-			children = (
-				40CDDAF829E25E8300070A77 /* Butler-For-iOS-Info.plist */,
-				40CDDAE429E259B800070A77 /* ButlerApp.swift */,
-				40CDDAFB29E2620000070A77 /* BannerAd.swift */,
-				40CDDAEA29E259B900070A77 /* Preview Content */,
-			);
-			path = "Butler For iOS";
-			sourceTree = "<group>";
-		};
-		40CDDAEA29E259B900070A77 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				40CDDAEB29E259B900070A77 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		40CDDB0329E26BE300070A77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				5962EEB729E27208002BB028 /* Shared */,
-				40CDDAE329E259B800070A77 /* Butler For iOS */,
 				6B61C4B029CA484100694F73 /* Butler */,
 				6B61C4AF29CA484100694F73 /* Products */,
 				59361E8129E251B9007D3BC9 /* Frameworks */,
@@ -164,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				6B61C4AE29CA484100694F73 /* Butler.app */,
-				40CDDAE229E259B800070A77 /* Butler For iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,28 +138,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		40CDDAE129E259B800070A77 /* Butler For iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 40CDDAEF29E259B900070A77 /* Build configuration list for PBXNativeTarget "Butler For iOS" */;
-			buildPhases = (
-				40CDDADE29E259B800070A77 /* Sources */,
-				40CDDADF29E259B800070A77 /* Frameworks */,
-				40CDDAE029E259B800070A77 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Butler For iOS";
-			packageProductDependencies = (
-				40CDDAF329E25AB300070A77 /* KeychainSwift */,
-				40CDDAF929E25E8A00070A77 /* GoogleMobileAds */,
-				59EEA41129EC80E900B75937 /* MarkdownUI */,
-			);
-			productName = "Butler For iOS";
-			productReference = 40CDDAE229E259B800070A77 /* Butler For iOS.app */;
-			productType = "com.apple.product-type.application";
-		};
 		6B61C4AD29CA484100694F73 /* Butler */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B61C4BD29CA484300694F73 /* Build configuration list for PBXNativeTarget "Butler" */;
@@ -244,9 +170,6 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					40CDDAE129E259B800070A77 = {
-						CreatedOnToolsVersion = 14.2;
-					};
 					6B61C4AD29CA484100694F73 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -263,7 +186,6 @@
 			mainGroup = 6B61C4A529CA484100694F73;
 			packageReferences = (
 				59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
-				40CDDAF529E25E6C00070A77 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 				59325CED29F4419D00343704 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
@@ -272,21 +194,11 @@
 			projectRoot = "";
 			targets = (
 				6B61C4AD29CA484100694F73 /* Butler */,
-				40CDDAE129E259B800070A77 /* Butler For iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		40CDDAE029E259B800070A77 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				40CDDAEC29E259B900070A77 /* Preview Assets.xcassets in Resources */,
-				59EC8CC529E288FD00F4BC86 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6B61C4AC29CA484100694F73 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,24 +211,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		40CDDADE29E259B800070A77 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				40CDDAE729E259B800070A77 /* ContentView.swift in Sources */,
-				40CDDAF029E259D700070A77 /* DataManager.swift in Sources */,
-				40CDDAE529E259B800070A77 /* ButlerApp.swift in Sources */,
-				40CDDB0129E26BAF00070A77 /* CopyStringToClipboard.swift in Sources */,
-				59154F1129FF1B5200F785B2 /* MessageView.swift in Sources */,
-				40CDDAF129E259DA00070A77 /* OpenAIConnector.swift in Sources */,
-				40CDDAFC29E2620000070A77 /* BannerAd.swift in Sources */,
-				59325CF229F4422500343704 /* Settings.swift in Sources */,
-				40CDDAF229E259DC00070A77 /* OpenAIResponseHandler.swift in Sources */,
-				59154F1429FF1BB900F785B2 /* SteppingSliderView.swift in Sources */,
-				40CDDAFE29E26B4300070A77 /* ChatBubble.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6B61C4AA29CA484100694F73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,85 +231,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		40CDDAED29E259B900070A77 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0.0;
-				DEVELOPMENT_ASSET_PATHS = "\"Butler For iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = E2RJE8M8Y3;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Butler-For-iOS-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Butler;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 2.0.0;
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.devdude.Butler-For-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		40CDDAEE29E259B900070A77 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0.0;
-				DEVELOPMENT_ASSET_PATHS = "\"Butler For iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = E2RJE8M8Y3;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Butler-For-iOS-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Butler;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 2.0.0;
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.devdude.Butler-For-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		6B61C4BB29CA484300694F73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -600,15 +415,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		40CDDAEF29E259B900070A77 /* Build configuration list for PBXNativeTarget "Butler For iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				40CDDAED29E259B900070A77 /* Debug */,
-				40CDDAEE29E259B900070A77 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		6B61C4A929CA484100694F73 /* Build configuration list for PBXProject "Butler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -630,14 +436,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		40CDDAF529E25E6C00070A77 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
 		59325CED29F4419D00343704 /* XCRemoteSwiftPackageReference "Defaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Defaults";
@@ -665,16 +463,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		40CDDAF329E25AB300070A77 /* KeychainSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */;
-			productName = KeychainSwift;
-		};
-		40CDDAF929E25E8A00070A77 /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 40CDDAF529E25E6C00070A77 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
-			productName = GoogleMobileAds;
-		};
 		59325CEE29F4419D00343704 /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 59325CED29F4419D00343704 /* XCRemoteSwiftPackageReference "Defaults" */;
@@ -686,11 +474,6 @@
 			productName = KeychainSwift;
 		};
 		59EEA40F29EC7C2D00B75937 /* MarkdownUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
-		};
-		59EEA41129EC80E900B75937 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;

@@ -28,6 +28,8 @@ struct ContentView: View {
     @State var viewUpdater = UUID()
     @State fileprivate var selectedWindowSizeLocal: WindowSizeUserPreferenceLocal = .medium
     
+    @State var showingHelpPopover = false
+    
     @EnvironmentObject var connector: OpenAIConnector
     @Environment(\.requestReview) var requestReview
     
@@ -49,7 +51,16 @@ struct ContentView: View {
             HStack {
                 Text("Butler").bold().padding([.top, .bottom, .trailing])
                 
+                
                 Spacer()
+                
+                Button("Help") {
+                    showingHelpPopover = true
+                }
+                .popover(isPresented: $showingHelpPopover) {
+                    EmailForHelpText().padding()
+                }
+                
                 Button("Clear Chat") { connector.clearMessageLog() }
                 Button(showHideSettingString) {
                     withAnimation {
@@ -93,7 +104,8 @@ struct ContentView: View {
             }
             
             HStack {
-                TextField("Type here", text: $textField)
+                TextField("Type here", text: $textField, axis: .vertical).lineLimit(7)
+
                 Button("Send") {
                     connector.logMessage(textField, messageUserType: .user)
                     isLoading = true
@@ -111,10 +123,6 @@ struct ContentView: View {
                     
                     textField = ""
                 }.keyboardShortcut(.defaultAction)
-            }
-            
-            if !showingSettings {
-                EmailForHelpText()
             }
             
             if showingSettings {
@@ -145,10 +153,6 @@ struct ContentView: View {
                     .padding(.bottom)
                 }.padding().background(.thinMaterial).cornerRadius(20)
                 
-                
-               
-                
-                EmailForHelpText()
             }
             
 #if os(iOS)
