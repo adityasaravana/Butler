@@ -9,10 +9,7 @@ import SwiftUI
 import MarkdownUI
 import Defaults
 import StoreKit
-
-#if os(iOS)
-import GoogleMobileAds
-#endif
+import OpenAISwift
 
 fileprivate enum WindowSizeUserPreferenceLocal {
     case small
@@ -73,12 +70,12 @@ struct ContentView: View {
                     
                 }
                 
-#if os(macOS)
+
                 Button("Quit") { exit(0) }
-#endif
+
             }
             
-            if connector.messageLog != [["role": "system", "content": "You're a friendly, helpful assistant"]] {
+            if connector.messageLog != [ChatMessage(role: .system, content: "You are a helpful assistant.")] {
                 ScrollView {
                     ForEach(connector.messageLog) { message in
                         if message["role"] != "system" {
@@ -154,10 +151,6 @@ struct ContentView: View {
                 }.padding().background(.thinMaterial).cornerRadius(20)
                 
             }
-            
-#if os(iOS)
-            SwiftUIBannerAd(adPosition: .bottom, adUnitId: "ca-app-pub-5488373209303539/4357719195")
-#endif
         }
         .padding()
         
