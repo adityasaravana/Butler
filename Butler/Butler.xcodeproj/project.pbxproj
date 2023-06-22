@@ -79,12 +79,12 @@
 			isa = PBXGroup;
 			children = (
 				59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */,
-				6B61C4B529CA484300694F73 /* Assets.xcassets */,
 				40CDDB0329E26BE300070A77 /* Views */,
 				40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */,
 				6B61C4C429CA4E1400694F73 /* DataManager.swift */,
 				59325CF029F4422500343704 /* Settings.swift */,
 				6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */,
+				6B61C4B529CA484300694F73 /* Assets.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
