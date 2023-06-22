@@ -15,14 +15,12 @@
 		59325CEF29F4419D00343704 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 59325CEE29F4419D00343704 /* Defaults */; };
 		59325CF129F4422500343704 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325CF029F4422500343704 /* Settings.swift */; };
 		59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 59361E6829E242FD007D3BC9 /* KeychainSwift */; };
-		5992EEE22A45011A0019D2A9 /* OpenAIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992EEE12A45011A0019D2A9 /* OpenAIConnector.swift */; };
-		5992EF0A2A4505080019D2A9 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5992EF092A4505080019D2A9 /* OpenAISwift */; };
 		59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA40F29EC7C2D00B75937 /* MarkdownUI */; };
+		59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */; };
 		6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B129CA484100694F73 /* ButlerApp.swift */; };
 		6B61C4B629CA484300694F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B529CA484300694F73 /* Assets.xcassets */; };
 		6B61C4B929CA484300694F73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B829CA484300694F73 /* Preview Assets.xcassets */; };
 		6B61C4C129CA4D4600694F73 /* OpenAIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */; };
-		6B61C4C329CA4D5100694F73 /* OpenAIConnector_Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C229CA4D5100694F73 /* OpenAIConnector_Old.swift */; };
 		6B61C4C529CA4E1400694F73 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C429CA4E1400694F73 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,14 +32,13 @@
 		59154F1229FF1BB900F785B2 /* SteppingSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteppingSliderView.swift; sourceTree = "<group>"; };
 		59325CF029F4422500343704 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		59361E8229E251B9007D3BC9 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
-		5992EEE12A45011A0019D2A9 /* OpenAIConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIConnector.swift; sourceTree = "<group>"; };
+		59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIConnector.swift; sourceTree = "<group>"; };
 		6B61C4AE29CA484100694F73 /* Butler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Butler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B61C4B129CA484100694F73 /* ButlerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButlerApp.swift; sourceTree = "<group>"; };
 		6B61C4B529CA484300694F73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B61C4B829CA484300694F73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B61C4BA29CA484300694F73 /* Butler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Butler.entitlements; sourceTree = "<group>"; };
 		6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIResponseHandler.swift; sourceTree = "<group>"; };
-		6B61C4C229CA4D5100694F73 /* OpenAIConnector_Old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIConnector_Old.swift; sourceTree = "<group>"; };
 		6B61C4C429CA4E1400694F73 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5992EF0A2A4505080019D2A9 /* OpenAISwift in Frameworks */,
 				59325CEF29F4419D00343704 /* Defaults in Frameworks */,
 				59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */,
 				59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */,
@@ -82,12 +78,12 @@
 		5962EEB729E27208002BB028 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */,
 				6B61C4B529CA484300694F73 /* Assets.xcassets */,
 				40CDDB0329E26BE300070A77 /* Views */,
 				40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */,
 				6B61C4C429CA4E1400694F73 /* DataManager.swift */,
 				59325CF029F4422500343704 /* Settings.swift */,
-				6B61C4C229CA4D5100694F73 /* OpenAIConnector_Old.swift */,
 				6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */,
 			);
 			path = Shared;
@@ -96,7 +92,6 @@
 		6B61C4A529CA484100694F73 = {
 			isa = PBXGroup;
 			children = (
-				5992EEE12A45011A0019D2A9 /* OpenAIConnector.swift */,
 				5962EEB729E27208002BB028 /* Shared */,
 				6B61C4B029CA484100694F73 /* Butler */,
 				6B61C4AF29CA484100694F73 /* Products */,
@@ -150,7 +145,6 @@
 				59361E6829E242FD007D3BC9 /* KeychainSwift */,
 				59EEA40F29EC7C2D00B75937 /* MarkdownUI */,
 				59325CEE29F4419D00343704 /* Defaults */,
-				5992EF092A4505080019D2A9 /* OpenAISwift */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Butler.app */;
@@ -184,7 +178,6 @@
 				59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 				59325CED29F4419D00343704 /* XCRemoteSwiftPackageReference "Defaults" */,
-				5992EEE32A4501480019D2A9 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -213,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */,
+				59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */,
 				40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */,
 				6B61C4C529CA4E1400694F73 /* DataManager.swift in Sources */,
 				59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */,
@@ -220,8 +214,6 @@
 				6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */,
 				59325CF129F4422500343704 /* Settings.swift in Sources */,
 				40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */,
-				6B61C4C329CA4D5100694F73 /* OpenAIConnector_Old.swift in Sources */,
-				5992EEE22A45011A0019D2A9 /* OpenAIConnector.swift in Sources */,
 				59154F1329FF1BB900F785B2 /* SteppingSliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,14 +442,6 @@
 				minimumVersion = 20.0.0;
 			};
 		};
-		5992EEE32A4501480019D2A9 /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
@@ -478,11 +462,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
-		};
-		5992EF092A4505080019D2A9 /* OpenAISwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5992EEE32A4501480019D2A9 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
-			productName = OpenAISwift;
 		};
 		59EEA40F29EC7C2D00B75937 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -9,7 +9,6 @@ import SwiftUI
 import MarkdownUI
 import Defaults
 import StoreKit
-import OpenAISwift
 
 fileprivate enum WindowSizeUserPreferenceLocal {
     case small
@@ -75,7 +74,7 @@ struct ContentView: View {
 
             }
             
-            if connector.messageLog != [ChatMessage(role: .system, content: "You are a helpful assistant.")] {
+            if connector.messageLog != [["role": "system", "content": "You're a friendly, helpful assistant"]] {
                 ScrollView {
                     ForEach(connector.messageLog) { message in
                         if message["role"] != "system" {
