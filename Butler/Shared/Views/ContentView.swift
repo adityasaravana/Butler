@@ -45,7 +45,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Butler").bold().padding([.top, .bottom, .trailing])
+                Text("Butler").bold()
                 
                 
                 Spacer()
@@ -69,9 +69,9 @@ struct ContentView: View {
                     
                 }
                 
-
+                
                 Button("Quit") { exit(0) }
-
+                
             }
             
             if connector.messageLog != [["role": "system", "content": "You're a friendly, helpful assistant"]] {
@@ -91,7 +91,6 @@ struct ContentView: View {
                 .cornerRadius(20)
             } else {
                 ZStack {
-                    Image("MenuBarIcon").resizable().scaledToFit().opacity(0)
                     Text("Send a message")
                 }
                 .padding()
@@ -101,7 +100,7 @@ struct ContentView: View {
             
             HStack {
                 TextField("Type here", text: $textField, axis: .vertical).lineLimit(7)
-
+                
                 Button("Send") {
                     connector.logMessage(textField, messageUserType: .user)
                     isLoading = true
