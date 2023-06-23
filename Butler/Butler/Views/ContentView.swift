@@ -87,14 +87,14 @@ struct ContentView: View {
                     }
                 }
                 .padding()
-                .background(.thinMaterial)
+                .background(.thickMaterial)
                 .cornerRadius(20)
             } else {
                 ZStack {
                     Text("Send a message")
                 }
                 .padding()
-                .background(.thinMaterial)
+                .background(.thickMaterial)
                 .cornerRadius(20)
             }
             
@@ -146,7 +146,7 @@ struct ContentView: View {
                         fontSize = 12
                     }
                     .padding(.bottom)
-                }.padding().background(.thinMaterial).cornerRadius(20)
+                }.padding().background(.thickMaterial).cornerRadius(20)
                 
             }
         }
