@@ -18,7 +18,7 @@ fileprivate enum WindowSizeUserPreferenceLocal {
 
 struct ContentView: View {
     @State var textField = ""
-    @State var openAIKeyLocal = ""
+    
     @State var isLoading = false
     @State var showingSettings = false
     @State var viewUpdater = UUID()
@@ -32,7 +32,7 @@ struct ContentView: View {
     @State var fontSize = CGFloat(Defaults[.fontSize])
     @Binding var windowSize: String
     
-    let dataManager = DataManager()
+    
     
     var showHideSettingString: String {
         if showingSettings {
@@ -54,7 +54,7 @@ struct ContentView: View {
                     showingHelpPopover = true
                 }
                 .popover(isPresented: $showingHelpPopover) {
-                    EmailForHelpText().padding()
+                    Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
                 }
                 
                 Button("Clear Chat") { connector.clearMessageLog() }
@@ -112,7 +112,7 @@ struct ContentView: View {
                         }
                     }
                     
-                    if Defaults[.messagesSuccessfullySent] >= 5 {
+                    if Defaults[.messagesSuccessfullySent] >= 15 {
                         requestReview()
                     }
                     
@@ -121,66 +121,10 @@ struct ContentView: View {
             }
             
             if showingSettings {
-                VStack {
-                    HStack {
-                        Text("Settings").bold().foregroundColor(.gray)
-                        Spacer()
-                        
-                    }
-                    Divider()
-                    FontSizeSliderView(text: "Message Font Size", startValue: 9, endValue: 30, value: $fontSize)
-                        .onChange(of: Int(fontSize)) { newValue in
-                            Defaults[.fontSize] = newValue
-                            print("Updated font size in UserDefaults")
-                        }
-                    HStack {
-                        TextField("Paste OpenAI API Key Here", text: $openAIKeyLocal)
-                        
-                        Button("Save") {
-                            dataManager.push(key: .Butler_UserOpenAIKey, content: openAIKeyLocal.filter { !" \n\t\r".contains($0) })
-                            openAIKeyLocal = ""
-                        }
-                    }.padding(.vertical)
-                    
-                    Button("Reset Settings") {
-                        fontSize = 12
-                    }
-                    .padding(.bottom)
-                }.padding().background(.thickMaterial).cornerRadius(20)
+                SettingsView(fontSize: $fontSize)
                 
             }
         }
         .padding()
-        
-        
-    }
-}
-
-struct FontSizeSliderView: View {
-    var text: String
-    var startValue: CGFloat
-    var endValue: CGFloat
-    @Binding var value: CGFloat
-    var body: some View {
-        VStack {
-            HStack {
-                Text(text).foregroundColor(.gray)
-                
-                Spacer()
-            }
-            
-            SteppingSliderView(min: startValue, max: endValue, value: $value, step: 3)
-        }
-    }
-}
-
-
-
-
-
-
-struct EmailForHelpText: View {
-    var body: some View {
-        Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline)
     }
 }
