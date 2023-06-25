@@ -10,13 +10,13 @@ import Combine
 import Network
 
 extension UserDefaults {
-   static func setMessagesSent(with value: Int) {
-     UserDefaults.standard.set(value, forKey: "messagesSent")
-   }
-
-  static func getMessagesSent() -> Int {
-    return UserDefaults.standard.integer(forKey: "messagesSent")
-  }
+    static func setMessagesSent(with value: Int) {
+        UserDefaults.standard.set(value, forKey: AppStorageNames.messagesSent.name)
+    }
+    
+    static func getMessagesSent() -> Int {
+        return UserDefaults.standard.integer(forKey: AppStorageNames.messagesSent.name)
+    }
 }
 
 

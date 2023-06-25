@@ -45,7 +45,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.popover = popover
         
         // Create the status item
-        self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
+//        self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
+        
         
         if let button = self.statusBarItem.button {
             //                let url = URL(fileURLWithPath: Bundle.main.path(forResource: "icondark", ofType: "png")!)

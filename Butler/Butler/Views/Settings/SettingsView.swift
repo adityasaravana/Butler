@@ -16,17 +16,16 @@ struct SettingsView: View {
                     Image(systemName: "gearshape").imageScale(.large)
                     Text("General")
                 }
-            Text("Hotkeys")
-                .frame(width: 400, height: 150)
+            HotkeySettingsView()
                 .tabItem {
-                    Image(systemName: "stop.circle").imageScale(.large)
-                    Text("Filters")
+                    Image(systemName: "command").imageScale(.large)
+                    Text("Hotkeys")
                 }
             
             ChatGPTSettingsView()
                 .tabItem {
-                    Image(systemName: "magnifyingglass").imageScale(.large)
-                    Text("Search")
+                    Image(systemName: "globe").imageScale(.large)
+                    Text("ChatGPT")
                 }
         }
     }

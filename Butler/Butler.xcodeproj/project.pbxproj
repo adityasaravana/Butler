@@ -29,6 +29,8 @@
 		59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */; };
 		59B619442A47DEEB00F614C0 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 59B619432A47DEEB00F614C0 /* SwiftUIX */; };
 		59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */; };
+		59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */; };
+		59B6194B2A48094C00F614C0 /* AppStorageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6194A2A48094C00F614C0 /* AppStorageNames.swift */; };
 		59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA40F29EC7C2D00B75937 /* MarkdownUI */; };
 		59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */; };
 		6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B129CA484100694F73 /* ButlerApp.swift */; };
@@ -56,6 +58,8 @@
 		59465C2E2A456AAE00C6EF4A /* icondark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icondark.png; path = "../Butler App Icon/icondark.png"; sourceTree = "<group>"; };
 		59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTSettingsView.swift; sourceTree = "<group>"; };
+		59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeySettingsView.swift; sourceTree = "<group>"; };
+		59B6194A2A48094C00F614C0 /* AppStorageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageNames.swift; sourceTree = "<group>"; };
 		59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIConnector.swift; sourceTree = "<group>"; };
 		6B61C4AE29CA484100694F73 /* Butler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Butler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B61C4B129CA484100694F73 /* ButlerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButlerApp.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			children = (
 				59465C272A454DF000C6EF4A /* SettingsView.swift */,
 				59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */,
+				59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */,
 				59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */,
 			);
 			path = Settings;
@@ -129,6 +134,7 @@
 		6B61C4A529CA484100694F73 = {
 			isa = PBXGroup;
 			children = (
+				59B6194A2A48094C00F614C0 /* AppStorageNames.swift */,
 				59465C2C2A456AA600C6EF4A /* iconlight.png */,
 				59465C2E2A456AAE00C6EF4A /* icondark.png */,
 				6B61C4B029CA484100694F73 /* Butler */,
@@ -271,11 +277,13 @@
 				6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */,
 				59465C2A2A454E9700C6EF4A /* FontSizeSliderView.swift in Sources */,
 				59465C282A454DF000C6EF4A /* SettingsView.swift in Sources */,
+				59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */,
 				59465C1C2A454A7000C6EF4A /* TextOutputFormat.swift in Sources */,
 				59465C262A454D2A00C6EF4A /* KeyboardShortcuts.swift in Sources */,
 				59465C1A2A454A5300C6EF4A /* CodeSyntaxHighlighter.swift in Sources */,
 				40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */,
 				59154F1329FF1BB900F785B2 /* SteppingSliderView.swift in Sources */,
+				59B6194B2A48094C00F614C0 /* AppStorageNames.swift in Sources */,
 				59465C1E2A454AF500C6EF4A /* SplashCodeSyntaxHighlighter.swift in Sources */,
 				59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */,
 			);

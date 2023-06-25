@@ -30,7 +30,7 @@ struct ContentView: View {
     @Environment(\.requestReview) var requestReview
     
     
-    @AppStorage("messagesSent") var messagesSent: Int = 0
+    @AppStorage(AppStorageNames.messagesSent.name) var messagesSent: Int = 0
     
     var body: some View {
         VStack {
@@ -49,6 +49,7 @@ struct ContentView: View {
                 
                 Button("Clear Chat") { connector.clearMessageLog() }
                 Button("Settings") {
+                    NSApp.activate(ignoringOtherApps: true)
                     if #available(macOS 13, *) {
                         NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
                     } else {
@@ -77,7 +78,16 @@ struct ContentView: View {
                 .cornerRadius(20)
             } else {
                 ZStack {
-                    Text("Send a message")
+                    
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Spacer()
+                            Text("Send a message")
+                            Spacer()
+                        }
+                        Spacer()
+                    }
                 }
                 .padding()
                 .background(.thickMaterial)

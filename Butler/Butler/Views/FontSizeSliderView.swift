@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FontSizeSliderView: View {
+    var step: CGFloat
     var text: String
     var startValue: CGFloat
     var endValue: CGFloat
@@ -20,7 +21,7 @@ struct FontSizeSliderView: View {
                 Spacer()
             }
             
-            SteppingSliderView(min: startValue, max: endValue, value: $value, step: 3)
+            SteppingSliderView(min: startValue, max: endValue, value: $value, step: step)
         }
     }
 }
