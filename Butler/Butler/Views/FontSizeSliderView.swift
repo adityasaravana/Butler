@@ -11,7 +11,7 @@ struct FontSizeSliderView: View {
     var text: String
     var startValue: CGFloat
     var endValue: CGFloat
-    @Binding var value: CGFloat
+    @Binding var value: Double
     var body: some View {
         VStack {
             HStack {

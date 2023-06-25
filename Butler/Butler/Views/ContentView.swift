@@ -48,23 +48,17 @@ struct ContentView: View {
                 }
                 
                 Button("Clear Chat") { connector.clearMessageLog() }
-                Button("Open Settings") {
-                                let settingsWindow = NSWindow(
-                                    contentRect: NSRect(x: 0, y: 0, width: 400, height: 300),
-                                    styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-                                    backing: .buffered,
-                                    defer: false
-                                )
-                                settingsWindow.center()
-                                settingsWindow.contentView = NSHostingView(rootView: SettingsView())
-                                settingsWindow.makeKeyAndOrderFront(nil)
-                                NSApp.activate(ignoringOtherApps: true)
-                            }
-                
-                
+                Button("Settings") {
+                    if #available(macOS 13, *) {
+                        NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                    } else {
+                        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+                    }
+                }
                 Button("Quit") { exit(0) }
-                
             }
+            
+            
             
             if connector.messageLog != [["role": "system", "content": "You're a friendly, helpful assistant"]] {
                 ScrollView {
@@ -113,7 +107,7 @@ struct ContentView: View {
             }
             
             if showingSettings {
-//                SettingsView(fontSize: $fontSize)
+                //                SettingsView(fontSize: $fontSize)
                 SettingsView()
             }
         }

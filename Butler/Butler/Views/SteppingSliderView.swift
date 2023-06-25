@@ -10,7 +10,7 @@ import SwiftUI
 struct SteppingSliderView: View {
     var min: CGFloat
     var max: CGFloat
-    @Binding var value: CGFloat
+    @Binding var value: Double
     
     var step: CGFloat
     

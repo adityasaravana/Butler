@@ -26,6 +26,9 @@
 		59465C2D2A456AA600C6EF4A /* iconlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 59465C2C2A456AA600C6EF4A /* iconlight.png */; };
 		59465C2F2A456AAE00C6EF4A /* icondark.png in Resources */ = {isa = PBXBuildFile; fileRef = 59465C2E2A456AAE00C6EF4A /* icondark.png */; };
 		594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 594F51322A4572CD003018AD /* LaunchAtLogin */; };
+		59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */; };
+		59B619442A47DEEB00F614C0 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 59B619432A47DEEB00F614C0 /* SwiftUIX */; };
+		59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */; };
 		59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA40F29EC7C2D00B75937 /* MarkdownUI */; };
 		59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */; };
 		6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B129CA484100694F73 /* ButlerApp.swift */; };
@@ -51,6 +54,8 @@
 		59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeSliderView.swift; sourceTree = "<group>"; };
 		59465C2C2A456AA600C6EF4A /* iconlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconlight.png; path = "../Butler App Icon/iconlight.png"; sourceTree = "<group>"; };
 		59465C2E2A456AAE00C6EF4A /* icondark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icondark.png; path = "../Butler App Icon/icondark.png"; sourceTree = "<group>"; };
+		59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTSettingsView.swift; sourceTree = "<group>"; };
 		59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIConnector.swift; sourceTree = "<group>"; };
 		6B61C4AE29CA484100694F73 /* Butler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Butler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B61C4B129CA484100694F73 /* ButlerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButlerApp.swift; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B619442A47DEEB00F614C0 /* SwiftUIX in Frameworks */,
 				59465C182A45499100C6EF4A /* SplashMarkdown in Frameworks */,
 				594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */,
 				59465C162A45499100C6EF4A /* Splash in Frameworks */,
@@ -81,11 +87,11 @@
 		40CDDB0329E26BE300070A77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				59B619472A47E2C100F614C0 /* Settings */,
 				40CDDAFD29E26B4300070A77 /* ChatBubble.swift */,
 				40CDDAE629E259B800070A77 /* ContentView.swift */,
 				59154F0F29FF1B5200F785B2 /* MessageView.swift */,
 				59154F1229FF1BB900F785B2 /* SteppingSliderView.swift */,
-				59465C272A454DF000C6EF4A /* SettingsView.swift */,
 				59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */,
 			);
 			path = Views;
@@ -108,6 +114,16 @@
 				59465C202A454B6300C6EF4A /* Environment+CodeSyntaxHighlighter.swift */,
 			);
 			path = "Syntax Highlighting";
+			sourceTree = "<group>";
+		};
+		59B619472A47E2C100F614C0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				59465C272A454DF000C6EF4A /* SettingsView.swift */,
+				59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */,
+				59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		6B61C4A529CA484100694F73 = {
@@ -178,6 +194,7 @@
 				59465C172A45499100C6EF4A /* SplashMarkdown */,
 				59465C232A454CF600C6EF4A /* KeyboardShortcuts */,
 				594F51322A4572CD003018AD /* LaunchAtLogin */,
+				59B619432A47DEEB00F614C0 /* SwiftUIX */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Butler.app */;
@@ -213,6 +230,7 @@
 				59465C142A45499100C6EF4A /* XCRemoteSwiftPackageReference "Splash" */,
 				59465C222A454CF600C6EF4A /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 				594F51312A4572CD003018AD /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
+				59B619422A47DEEB00F614C0 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -242,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */,
 				40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */,
 				59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */,
 				40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */,
@@ -258,6 +277,7 @@
 				40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */,
 				59154F1329FF1BB900F785B2 /* SteppingSliderView.swift in Sources */,
 				59465C1E2A454AF500C6EF4A /* SplashCodeSyntaxHighlighter.swift in Sources */,
+				59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +521,14 @@
 				kind = branch;
 			};
 		};
+		59B619422A47DEEB00F614C0 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.5;
+			};
+		};
 		59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
@@ -536,6 +564,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 594F51312A4572CD003018AD /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
+		};
+		59B619432A47DEEB00F614C0 /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59B619422A47DEEB00F614C0 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
 		};
 		59EEA40F29EC7C2D00B75937 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;

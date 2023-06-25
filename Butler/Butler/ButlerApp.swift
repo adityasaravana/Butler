@@ -18,9 +18,10 @@ struct ButlerApp: App {
     
     var body: some Scene {
         WindowGroup {}
-        Window("Settings", id: "butler.settings") {
+        Settings {
             SettingsView()
         }
+        
     }
 }
 
@@ -48,7 +49,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if let button = self.statusBarItem.button {
             //                let url = URL(fileURLWithPath: Bundle.main.path(forResource: "icondark", ofType: "png")!)
-            button.image = NSImage(named: "MenuBrIcon")
+//            button.image = NSImage(named: "MenuBrIcon")
+            
+            button.image = NSImage(systemSymbolName: "hammer.fill", accessibilityDescription: nil)
             button.action = #selector(togglePopover(_:))
         }
     }
