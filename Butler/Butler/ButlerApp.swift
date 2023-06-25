@@ -8,7 +8,6 @@
 import Cocoa
 import SwiftUI
 import AppKit
-import Defaults
 import KeyboardShortcuts
 
 @main
@@ -19,6 +18,9 @@ struct ButlerApp: App {
     
     var body: some Scene {
         WindowGroup {}
+        Window("Settings", id: "butler.settings") {
+            SettingsView()
+        }
     }
 }
 

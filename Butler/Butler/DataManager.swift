@@ -5,10 +5,9 @@
 //  Created by NMS15065-7-adisara on 3/21/23.
 //
 
-import Foundation
 import KeychainSwift
 
-public struct DataManager {
+public struct KeychainManager {
     private let keychain = KeychainSwift()
     
     func push(key: Keys, content: String) {

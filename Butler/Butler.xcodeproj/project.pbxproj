@@ -12,8 +12,6 @@
 		40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAE629E259B800070A77 /* ContentView.swift */; };
 		59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59154F0F29FF1B5200F785B2 /* MessageView.swift */; };
 		59154F1329FF1BB900F785B2 /* SteppingSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59154F1229FF1BB900F785B2 /* SteppingSliderView.swift */; };
-		59325CEF29F4419D00343704 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 59325CEE29F4419D00343704 /* Defaults */; };
-		59325CF129F4422500343704 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325CF029F4422500343704 /* Defaults.swift */; };
 		59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 59361E6829E242FD007D3BC9 /* KeychainSwift */; };
 		59465C162A45499100C6EF4A /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = 59465C152A45499100C6EF4A /* Splash */; };
 		59465C182A45499100C6EF4A /* SplashMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = 59465C172A45499100C6EF4A /* SplashMarkdown */; };
@@ -25,6 +23,9 @@
 		59465C262A454D2A00C6EF4A /* KeyboardShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */; };
 		59465C282A454DF000C6EF4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C272A454DF000C6EF4A /* SettingsView.swift */; };
 		59465C2A2A454E9700C6EF4A /* FontSizeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */; };
+		59465C2D2A456AA600C6EF4A /* iconlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 59465C2C2A456AA600C6EF4A /* iconlight.png */; };
+		59465C2F2A456AAE00C6EF4A /* icondark.png in Resources */ = {isa = PBXBuildFile; fileRef = 59465C2E2A456AAE00C6EF4A /* icondark.png */; };
+		594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 594F51322A4572CD003018AD /* LaunchAtLogin */; };
 		59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA40F29EC7C2D00B75937 /* MarkdownUI */; };
 		59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */; };
 		6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B129CA484100694F73 /* ButlerApp.swift */; };
@@ -40,7 +41,6 @@
 		40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyStringToClipboard.swift; sourceTree = "<group>"; };
 		59154F0F29FF1B5200F785B2 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		59154F1229FF1BB900F785B2 /* SteppingSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteppingSliderView.swift; sourceTree = "<group>"; };
-		59325CF029F4422500343704 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		59361E8229E251B9007D3BC9 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		59465C192A454A5300C6EF4A /* CodeSyntaxHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSyntaxHighlighter.swift; sourceTree = "<group>"; };
 		59465C1B2A454A7000C6EF4A /* TextOutputFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOutputFormat.swift; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcuts.swift; sourceTree = "<group>"; };
 		59465C272A454DF000C6EF4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeSliderView.swift; sourceTree = "<group>"; };
+		59465C2C2A456AA600C6EF4A /* iconlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconlight.png; path = "../Butler App Icon/iconlight.png"; sourceTree = "<group>"; };
+		59465C2E2A456AAE00C6EF4A /* icondark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icondark.png; path = "../Butler App Icon/icondark.png"; sourceTree = "<group>"; };
 		59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIConnector.swift; sourceTree = "<group>"; };
 		6B61C4AE29CA484100694F73 /* Butler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Butler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B61C4B129CA484100694F73 /* ButlerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButlerApp.swift; sourceTree = "<group>"; };
@@ -65,7 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59465C182A45499100C6EF4A /* SplashMarkdown in Frameworks */,
-				59325CEF29F4419D00343704 /* Defaults in Frameworks */,
+				594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */,
 				59465C162A45499100C6EF4A /* Splash in Frameworks */,
 				59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */,
 				59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */,
@@ -111,6 +113,8 @@
 		6B61C4A529CA484100694F73 = {
 			isa = PBXGroup;
 			children = (
+				59465C2C2A456AA600C6EF4A /* iconlight.png */,
+				59465C2E2A456AAE00C6EF4A /* icondark.png */,
 				6B61C4B029CA484100694F73 /* Butler */,
 				6B61C4AF29CA484100694F73 /* Products */,
 				59361E8129E251B9007D3BC9 /* Frameworks */,
@@ -134,7 +138,6 @@
 				59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */,
 				40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */,
 				6B61C4C429CA4E1400694F73 /* DataManager.swift */,
-				59325CF029F4422500343704 /* Defaults.swift */,
 				6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */,
 				6B61C4B529CA484300694F73 /* Assets.xcassets */,
 				6B61C4B129CA484100694F73 /* ButlerApp.swift */,
@@ -171,10 +174,10 @@
 			packageProductDependencies = (
 				59361E6829E242FD007D3BC9 /* KeychainSwift */,
 				59EEA40F29EC7C2D00B75937 /* MarkdownUI */,
-				59325CEE29F4419D00343704 /* Defaults */,
 				59465C152A45499100C6EF4A /* Splash */,
 				59465C172A45499100C6EF4A /* SplashMarkdown */,
 				59465C232A454CF600C6EF4A /* KeyboardShortcuts */,
+				594F51322A4572CD003018AD /* LaunchAtLogin */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Butler.app */;
@@ -207,9 +210,9 @@
 			packageReferences = (
 				59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
-				59325CED29F4419D00343704 /* XCRemoteSwiftPackageReference "Defaults" */,
 				59465C142A45499100C6EF4A /* XCRemoteSwiftPackageReference "Splash" */,
 				59465C222A454CF600C6EF4A /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+				594F51312A4572CD003018AD /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -226,7 +229,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B61C4B929CA484300694F73 /* Preview Assets.xcassets in Resources */,
+				59465C2F2A456AAE00C6EF4A /* icondark.png in Resources */,
 				6B61C4B629CA484300694F73 /* Assets.xcassets in Resources */,
+				59465C2D2A456AA600C6EF4A /* iconlight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +250,6 @@
 				59465C212A454B6300C6EF4A /* Environment+CodeSyntaxHighlighter.swift in Sources */,
 				6B61C4C129CA4D4600694F73 /* OpenAIResponseHandler.swift in Sources */,
 				6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */,
-				59325CF129F4422500343704 /* Defaults.swift in Sources */,
 				59465C2A2A454E9700C6EF4A /* FontSizeSliderView.swift in Sources */,
 				59465C282A454DF000C6EF4A /* SettingsView.swift in Sources */,
 				59465C1C2A454A7000C6EF4A /* TextOutputFormat.swift in Sources */,
@@ -465,14 +469,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		59325CED29F4419D00343704 /* XCRemoteSwiftPackageReference "Defaults" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/Defaults";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
@@ -497,6 +493,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		594F51312A4572CD003018AD /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
@@ -508,11 +512,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		59325CEE29F4419D00343704 /* Defaults */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 59325CED29F4419D00343704 /* XCRemoteSwiftPackageReference "Defaults" */;
-			productName = Defaults;
-		};
 		59361E6829E242FD007D3BC9 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */;
@@ -532,6 +531,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59465C222A454CF600C6EF4A /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
+		};
+		594F51322A4572CD003018AD /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 594F51312A4572CD003018AD /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
 		};
 		59EEA40F29EC7C2D00B75937 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;

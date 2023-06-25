@@ -1,3 +1,4 @@
+// ORIGINAL CODE HAS BEEN COPIED TO CLIPBOARD
 //
 //  ContentView.swift
 //  Butler For iOS
@@ -7,7 +8,6 @@
 
 import SwiftUI
 import MarkdownUI
-import Defaults
 import StoreKit
 
 fileprivate enum WindowSizeUserPreferenceLocal {
@@ -18,7 +18,7 @@ fileprivate enum WindowSizeUserPreferenceLocal {
 
 struct ContentView: View {
     @State var textField = ""
-    
+    @Environment(\.openWindow) var openWindow
     @State var isLoading = false
     @State var showingSettings = false
     @State var viewUpdater = UUID()
@@ -29,18 +29,8 @@ struct ContentView: View {
     @EnvironmentObject var connector: OpenAIConnector
     @Environment(\.requestReview) var requestReview
     
-    @State var fontSize = CGFloat(Defaults[.fontSize])
-    @Binding var windowSize: String
     
-    
-    
-    var showHideSettingString: String {
-        if showingSettings {
-            return "Hide Settings"
-        } else {
-            return "Show Settings"
-        }
-    }
+    @AppStorage("messagesSent") var messagesSent: Int = 0
     
     var body: some View {
         VStack {
@@ -58,16 +48,18 @@ struct ContentView: View {
                 }
                 
                 Button("Clear Chat") { connector.clearMessageLog() }
-                Button(showHideSettingString) {
-                    withAnimation {
-                        if showingSettings {
-                            showingSettings = false
-                        } else {
-                            showingSettings = true
-                        }
-                    }
-                    
-                }
+                Button("Open Settings") {
+                                let settingsWindow = NSWindow(
+                                    contentRect: NSRect(x: 0, y: 0, width: 400, height: 300),
+                                    styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+                                    backing: .buffered,
+                                    defer: false
+                                )
+                                settingsWindow.center()
+                                settingsWindow.contentView = NSHostingView(rootView: SettingsView())
+                                settingsWindow.makeKeyAndOrderFront(nil)
+                                NSApp.activate(ignoringOtherApps: true)
+                            }
                 
                 
                 Button("Quit") { exit(0) }
@@ -78,7 +70,7 @@ struct ContentView: View {
                 ScrollView {
                     ForEach(connector.messageLog) { message in
                         if message["role"] != "system" {
-                            MessageView(fontSize: $fontSize, message: message)
+                            MessageView(message: message)
                         }
                     }
                     
@@ -112,7 +104,7 @@ struct ContentView: View {
                         }
                     }
                     
-                    if Defaults[.messagesSuccessfullySent] >= 15 {
+                    if messagesSent >= 15 {
                         requestReview()
                     }
                     
@@ -121,10 +113,16 @@ struct ContentView: View {
             }
             
             if showingSettings {
-                SettingsView(fontSize: $fontSize)
-                
+//                SettingsView(fontSize: $fontSize)
+                SettingsView()
             }
         }
         .padding()
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView().environmentObject(OpenAIConnector())
     }
 }

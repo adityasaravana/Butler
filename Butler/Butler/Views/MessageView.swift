@@ -10,7 +10,8 @@ import MarkdownUI
 import Splash
 
 struct MessageView: View {
-    @Binding var fontSize: CGFloat
+    @AppStorage("fontSize") var fontSize: Double = 12.0
+    
     @Environment(\.colorScheme) private var colorScheme
     
     private var theme: Splash.Theme {
