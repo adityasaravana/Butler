@@ -23,8 +23,6 @@
 		59465C262A454D2A00C6EF4A /* KeyboardShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */; };
 		59465C282A454DF000C6EF4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C272A454DF000C6EF4A /* SettingsView.swift */; };
 		59465C2A2A454E9700C6EF4A /* FontSizeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */; };
-		59465C2D2A456AA600C6EF4A /* iconlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 59465C2C2A456AA600C6EF4A /* iconlight.png */; };
-		59465C2F2A456AAE00C6EF4A /* icondark.png in Resources */ = {isa = PBXBuildFile; fileRef = 59465C2E2A456AAE00C6EF4A /* icondark.png */; };
 		594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 594F51322A4572CD003018AD /* LaunchAtLogin */; };
 		59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */; };
 		59B619442A47DEEB00F614C0 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 59B619432A47DEEB00F614C0 /* SwiftUIX */; };
@@ -54,8 +52,6 @@
 		59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcuts.swift; sourceTree = "<group>"; };
 		59465C272A454DF000C6EF4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeSliderView.swift; sourceTree = "<group>"; };
-		59465C2C2A456AA600C6EF4A /* iconlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconlight.png; path = "../Butler App Icon/iconlight.png"; sourceTree = "<group>"; };
-		59465C2E2A456AAE00C6EF4A /* icondark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icondark.png; path = "../Butler App Icon/icondark.png"; sourceTree = "<group>"; };
 		59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTSettingsView.swift; sourceTree = "<group>"; };
 		59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeySettingsView.swift; sourceTree = "<group>"; };
@@ -135,8 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				59B6194A2A48094C00F614C0 /* AppStorageNames.swift */,
-				59465C2C2A456AA600C6EF4A /* iconlight.png */,
-				59465C2E2A456AAE00C6EF4A /* icondark.png */,
 				6B61C4B029CA484100694F73 /* Butler */,
 				6B61C4AF29CA484100694F73 /* Products */,
 				59361E8129E251B9007D3BC9 /* Frameworks */,
@@ -253,9 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B61C4B929CA484300694F73 /* Preview Assets.xcassets in Resources */,
-				59465C2F2A456AAE00C6EF4A /* icondark.png in Resources */,
 				6B61C4B629CA484300694F73 /* Assets.xcassets in Resources */,
-				59465C2D2A456AA600C6EF4A /* iconlight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

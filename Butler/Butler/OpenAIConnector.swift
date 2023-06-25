@@ -19,6 +19,12 @@ extension UserDefaults {
     }
 }
 
+extension UserDefaults {
+    static func getChatGPTTemperature() -> Double {
+        return UserDefaults.standard.double(forKey: AppStorageNames.chatGPTTemperature.name)
+    }
+}
+
 
 
 class OpenAIConnector: ObservableObject {
@@ -79,7 +85,8 @@ class OpenAIConnector: ObservableObject {
                 let httpBody: [String: Any] = [
                     /// In the future, you can use a different chat model here.
                     "model" : "gpt-3.5-turbo",
-                    "messages" : self.messageLog
+                    "messages" : self.messageLog,
+                    "temperature" : UserDefaults.getChatGPTTemperature()
                 ]
                 
                 /// DON'T TOUCH THIS
