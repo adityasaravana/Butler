@@ -25,6 +25,10 @@ struct ButlerApp: App {
     }
 }
 
+extension NSImage.Name {
+     static let menuBarIcon = NSImage.Name("MenuBarIcon")
+}
+
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var popover: NSPopover!
@@ -45,14 +49,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.popover = popover
         
         // Create the status item
-//        self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
+        self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
         
         
-        if let button = self.statusBarItem.button {
-            //                let url = URL(fileURLWithPath: Bundle.main.path(forResource: "icondark", ofType: "png")!)
-//            button.image = NSImage(named: "MenuBrIcon")
-            
-            button.image = NSImage(systemSymbolName: "hammer.fill", accessibilityDescription: nil)
+        if let button = self.statusBarItem.button {            
+            button.image = NSImage(systemSymbolName: "mustache.fill", accessibilityDescription: nil)
             button.action = #selector(togglePopover(_:))
         }
     }
