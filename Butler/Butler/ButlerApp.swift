@@ -12,7 +12,8 @@ import KeyboardShortcuts
 @main
 struct ButlerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @StateObject private var appState = AppState()
+    @StateObject private var openCloseButlerAppState = OpenCloseButlerAppState()
+    @StateObject private var clearChatAppState = ClearChatAppState()
     
     var body: some Scene {
         Settings {
@@ -37,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             window.close()
         }
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView().environmentObject(OpenAIConnector())
+        let contentView = ContentView(connector: OpenAIConnector.shared)
         
         // Create the popover
         let popover = NSPopover()
@@ -72,24 +73,31 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         if let button = self.statusBarItem.button {
             self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             self.popover.contentViewController?.view.window?.becomeKey()
-            
         }
     }
 }
 
 @MainActor
-final class AppState: ObservableObject {
-    static let shared = AppState()
-    
+final class OpenCloseButlerAppState: ObservableObject {
     init() {
-        KeyboardShortcuts.onKeyUp(for: .openButler) { [self] in
+        KeyboardShortcuts.onKeyUp(for: .openButler) { 
             print("KEYPRESS")
             if let appDelegate = AppDelegate.instance {
                 NSApp.activate(ignoringOtherApps: true)
-                appDelegate.showPopover()
+                appDelegate.togglePopover(nil)
             } else {
                 print("AppDelegate was nil")
             }
         }
     }
 }
+
+@MainActor
+final class ClearChatAppState: ObservableObject {
+    init() {
+        KeyboardShortcuts.onKeyUp(for: .clearChat) {
+            OpenAIConnector.shared.clearMessageLog()
+        }
+    }
+}
+

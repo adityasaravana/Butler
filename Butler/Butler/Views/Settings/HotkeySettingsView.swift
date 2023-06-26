@@ -11,7 +11,8 @@ import KeyboardShortcuts
 struct HotkeySettingsView: View {
     var body: some View {
         VStack {
-            KeyboardShortcuts.Recorder("Open Butler", name: .openButler)
+            KeyboardShortcuts.Recorder("Open/Close Butler", name: .openButler)
+            KeyboardShortcuts.Recorder("Clear Chat", name: .clearChat)
         }.frame(width: 400, height: 150)
     }
 }

@@ -12,6 +12,7 @@ public enum AppStorageNames {
     case messagesSent
     case chatGPTTemperature
     
+    
     var name: String {
         switch self {
         case .fontSize:

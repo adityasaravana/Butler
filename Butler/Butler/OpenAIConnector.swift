@@ -28,7 +28,7 @@ extension UserDefaults {
 
 
 class OpenAIConnector: ObservableObject {
-    /// This URL might change in the future, so if you get an error, make sure to check the OpenAI API Reference.
+    static let shared = OpenAIConnector()
     let openAIURL = URL(string: "https://api.openai.com/v1/chat/completions")
     let dataManager = KeychainManager()
     var connectedToInternet = true

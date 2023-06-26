@@ -10,11 +10,6 @@ import SwiftUI
 import MarkdownUI
 import StoreKit
 
-fileprivate enum WindowSizeUserPreferenceLocal {
-    case small
-    case medium
-    case large
-}
 
 struct ContentView: View {
     @State var textField = ""
@@ -22,11 +17,9 @@ struct ContentView: View {
     @State var isLoading = false
     @State var showingSettings = false
     @State var viewUpdater = UUID()
-    @State fileprivate var selectedWindowSizeLocal: WindowSizeUserPreferenceLocal = .medium
-    
     @State var showingHelpPopover = false
     
-    @EnvironmentObject var connector: OpenAIConnector
+    @ObservedObject var connector: OpenAIConnector
     @Environment(\.requestReview) var requestReview
     
     
@@ -78,7 +71,6 @@ struct ContentView: View {
                 .cornerRadius(20)
             } else {
                 ZStack {
-                    
                     HStack {
                         Spacer()
                         VStack {
@@ -117,7 +109,6 @@ struct ContentView: View {
             }
             
             if showingSettings {
-                //                SettingsView(fontSize: $fontSize)
                 SettingsView()
             }
         }
@@ -127,6 +118,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(OpenAIConnector())
+        ContentView(connector: OpenAIConnector.shared)
     }
 }
