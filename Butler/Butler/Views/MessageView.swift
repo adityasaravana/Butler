@@ -39,6 +39,9 @@ struct MessageView: View {
         HStack {
             if message["role"] == "user" {
                 Spacer()
+                Button("Copy") {
+                    copyStringToClipboard(message["content"] ?? "error")
+                }.font(.system(size: fontSize))
             }
             
             ChatBubble(direction: bubbleDirection) {

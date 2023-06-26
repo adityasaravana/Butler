@@ -12,6 +12,7 @@ import KeyboardShortcuts
 @main
 struct ButlerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject private var copyLatestMessageAppState = CopyLatestMessageAppState()
     @StateObject private var openCloseButlerAppState = OpenCloseButlerAppState()
     @StateObject private var clearChatAppState = ClearChatAppState()
     
@@ -100,4 +101,14 @@ final class ClearChatAppState: ObservableObject {
         }
     }
 }
+
+@MainActor
+final class CopyLatestMessageAppState: ObservableObject {
+    init() {
+        KeyboardShortcuts.onKeyUp(for: .copyLatestMessage) {
+            copyStringToClipboard(OpenAIConnector.shared.messageLog.last?["content"] ?? "error")
+        }
+    }
+}
+
 

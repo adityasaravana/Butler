@@ -13,6 +13,7 @@ struct HotkeySettingsView: View {
         VStack {
             KeyboardShortcuts.Recorder("Open/Close Butler", name: .openButler)
             KeyboardShortcuts.Recorder("Clear Chat", name: .clearChat)
+            KeyboardShortcuts.Recorder("Copy Latest Message", name: .copyLatestMessage)
         }.frame(width: 400, height: 150)
     }
 }
