@@ -67,8 +67,6 @@ class OpenAIConnector: ObservableObject {
         messageLog = [
             ["role": "system", "content": "You're a friendly, helpful assistant"]
         ]
-        
-        
     }
     
     func sendToAssistant() {

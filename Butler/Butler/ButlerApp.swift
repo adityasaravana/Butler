@@ -5,7 +5,6 @@
 //  Created by NMS15065-7-adisara on 3/21/23.
 //
 
-import Cocoa
 import SwiftUI
 import AppKit
 import KeyboardShortcuts
@@ -15,13 +14,10 @@ struct ButlerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var appState = AppState()
     
-    
     var body: some Scene {
-        WindowGroup {}
         Settings {
             SettingsView()
         }
-        
     }
 }
 
@@ -29,12 +25,14 @@ extension NSImage.Name {
      static let menuBarIcon = NSImage.Name("MenuBarIcon")
 }
 
-class AppDelegate: NSObject, NSApplicationDelegate {
-    
+class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     var popover: NSPopover!
     var statusBarItem: NSStatusItem!
+    static private(set) var instance: AppDelegate! = nil
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        AppDelegate.instance = self
+        // Close any extra windows that pop up
         if let window = NSApplication.shared.windows.first {
             window.close()
         }
@@ -63,19 +61,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if self.popover.isShown {
                 self.popover.performClose(sender)
             } else {
+                
                 self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
                 self.popover.contentViewController?.view.window?.becomeKey()
             }
+        }
+    }
+    
+    @objc public func showPopover() {
+        if let button = self.statusBarItem.button {
+            self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            self.popover.contentViewController?.view.window?.becomeKey()
+            
         }
     }
 }
 
 @MainActor
 final class AppState: ObservableObject {
+    static let shared = AppState()
+    
     init() {
         KeyboardShortcuts.onKeyUp(for: .openButler) { [self] in
-            NSApp.activate(ignoringOtherApps: true)
+            print("KEYPRESS")
+            if let appDelegate = AppDelegate.instance {
+                NSApp.activate(ignoringOtherApps: true)
+                appDelegate.showPopover()
+            } else {
+                print("AppDelegate was nil")
+            }
         }
     }
 }
-
