@@ -25,7 +25,11 @@ extension UserDefaults {
     }
 }
 
-
+extension UserDefaults {
+    static func getChatGPTModel() -> String {
+        return UserDefaults.standard.string(forKey: AppStorageNames.chatGPTModel.name) ?? ChatGPTModels.gpt3.name
+    }
+}
 
 class OpenAIConnector: ObservableObject {
     static let shared = OpenAIConnector()
@@ -82,7 +86,7 @@ class OpenAIConnector: ObservableObject {
                 
                 let httpBody: [String: Any] = [
                     /// In the future, you can use a different chat model here.
-                    "model" : "gpt-3.5-turbo",
+                    "model" : UserDefaults.getChatGPTModel(),
                     "messages" : self.messageLog,
                     "temperature" : UserDefaults.getChatGPTTemperature()
                 ]

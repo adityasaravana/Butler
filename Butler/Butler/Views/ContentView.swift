@@ -87,7 +87,9 @@ struct ContentView: View {
             }
             
             HStack {
-                TextField("Type here", text: $textField, axis: .vertical).lineLimit(7)
+                
+                TextField("Type here", text: $textField, axis: .vertical)
+                    .lineLimit(7)
                 
                 Button("Send") {
                     connector.logMessage(textField, messageUserType: .user)

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MarkdownUI
+import Splash
 
 struct MessageView: View {
     @AppStorage(AppStorageNames.fontSize.name) var fontSize: Double = 12.0
@@ -35,6 +36,16 @@ struct MessageView: View {
         }
     }
     
+    private var theme: Splash.Theme {
+        // NOTE: We are ignoring the Splash theme font
+        switch self.colorScheme {
+        case .dark:
+            return .wwdc17(withFont: .init(size: 16))
+        default:
+            return .sunset(withFont: .init(size: 16))
+        }
+    }
+    
     var body: some View {
         HStack {
             if message["role"] == "user" {
@@ -46,6 +57,7 @@ struct MessageView: View {
             
             ChatBubble(direction: bubbleDirection) {
                 Markdown(message["content"] ?? "error")
+                    .markdownCodeSyntaxHighlighter(.splash(theme: self.theme))
                     .padding(.all, 15)
                     .markdownTextStyle(\.text) {
                         ForegroundColor(.white)

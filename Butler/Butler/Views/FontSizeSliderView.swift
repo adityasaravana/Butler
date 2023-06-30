@@ -16,7 +16,7 @@ struct FontSizeSliderView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(text).foregroundColor(.gray)
+                Text(text)
                 
                 Spacer()
             }
