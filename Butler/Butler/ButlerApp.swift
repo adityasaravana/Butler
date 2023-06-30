@@ -76,6 +76,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             self.popover.contentViewController?.view.window?.becomeKey()
         }
     }
+    
+    @objc public func setIcon(name systemName: String) {
+        self.statusBarItem.button?.image = NSImage(systemSymbolName: systemName, accessibilityDescription: nil)
+    }
+    
+    @objc public func resetIcon() {
+        self.statusBarItem.button?.image = NSImage(systemSymbolName: "mustache.fill", accessibilityDescription: nil)
+    }
 }
 
 @MainActor

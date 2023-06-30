@@ -87,18 +87,25 @@ struct ContentView: View {
             }
             
             HStack {
-                
                 TextField("Type here", text: $textField, axis: .vertical)
                     .lineLimit(7)
                 
                 Button("Send") {
                     connector.logMessage(textField, messageUserType: .user)
                     isLoading = true
+                    Task {
+                        if let appDelegate = AppDelegate.instance {
+                            appDelegate.setIcon(name: "slowmo")
+                        }
+                    }
                     
                     DispatchQueue.global().async {
                         connector.sendToAssistant()
                         DispatchQueue.main.async {
                             isLoading = false
+                            if let appDelegate = AppDelegate.instance {
+                                appDelegate.resetIcon()
+                            }
                         }
                     }
                     
