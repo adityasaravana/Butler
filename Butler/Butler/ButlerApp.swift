@@ -39,7 +39,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             window.close()
         }
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView(connector: OpenAIConnector.shared)
+        let contentView = ContentView(connector: .shared)
         
         // Create the popover
         let popover = NSPopover()
@@ -63,7 +63,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             if self.popover.isShown {
                 self.popover.performClose(sender)
             } else {
-                
                 self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
                 self.popover.contentViewController?.view.window?.becomeKey()
             }
@@ -78,7 +77,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     }
     
     @objc public func setIcon(name systemName: String) {
-        self.statusBarItem.button?.image = NSImage(systemSymbolName: systemName, accessibilityDescription: nil)
+        let config = NSImage.SymbolConfiguration(pointSize: 10, weight: .bold)
+        self.statusBarItem.button?.image = NSImage(systemSymbolName: systemName, accessibilityDescription: nil)?.withSymbolConfiguration(config)
     }
     
     @objc public func resetIcon() {

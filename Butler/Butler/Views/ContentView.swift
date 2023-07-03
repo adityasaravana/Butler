@@ -91,13 +91,18 @@ struct ContentView: View {
                     .lineLimit(7)
                 
                 Button("Send") {
-                    connector.logMessage(textField, messageUserType: .user)
                     isLoading = true
                     Task {
                         if let appDelegate = AppDelegate.instance {
                             appDelegate.setIcon(name: "slowmo")
                         }
                     }
+                    
+                    
+                    connector.logMessage(textField, messageUserType: .user)
+                    
+                    
+                    
                     
                     DispatchQueue.global().async {
                         connector.sendToAssistant()
@@ -106,6 +111,7 @@ struct ContentView: View {
                             if let appDelegate = AppDelegate.instance {
                                 appDelegate.resetIcon()
                             }
+                            textField = ""
                         }
                     }
                     
@@ -113,8 +119,10 @@ struct ContentView: View {
                         requestReview()
                     }
                     
-                    textField = ""
-                }.keyboardShortcut(.defaultAction)
+                    
+                }
+                .keyboardShortcut(.defaultAction)
+                .disabled(isLoading)
             }
             
             if showingSettings {
@@ -127,6 +135,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(connector: OpenAIConnector.shared)
+        ContentView(connector: .shared)
     }
 }
