@@ -12,17 +12,19 @@ public enum AppStorageNames {
     case messagesSent
     case chatGPTTemperature
     case chatGPTModel
-    
+    case useIconsInTopBar
     var name: String {
         switch self {
         case .fontSize:
-            return "butler.fontSize"
+            return "fontsize"
         case .messagesSent:
-            return "butler.messagesSent"
+            return "messagessent"
         case .chatGPTTemperature:
-            return "butler.chatGPT.temperature"
+            return "chatGPTtemperature"
         case .chatGPTModel:
-            return "butler.chatGPT.model"
+            return "chatGPTmodel"
+        case .useIconsInTopBar:
+            return "useIconsInTopBarK"
         }
     }
 }
