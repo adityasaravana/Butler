@@ -27,6 +27,7 @@ struct OpenAIResponseHandler {
         let json = jsonString.data(using: .utf8)!
         
         let decoder = JSONDecoder()
+        
         do {
             let product = try decoder.decode(OpenAIErrorResponse.self, from: json)
             return product
@@ -65,8 +66,8 @@ struct OpenAIErrorResponse: Codable {
 }
 
 struct OpenAIError: Codable {
-    var message: String
-    var type: String
+    var message: String?
+    var type: String?
     var param: String?
-    var code: String
+    var code: String?
 }
