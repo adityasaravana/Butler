@@ -8,6 +8,7 @@
 import Foundation
 
 public enum AppStorageNames {
+    case showLimitedAccessWarning
     case fontSize
     case messagesSent
     case chatGPTTemperature
@@ -15,6 +16,8 @@ public enum AppStorageNames {
     case useIconsInTopBar
     var name: String {
         switch self {
+        case .showLimitedAccessWarning:
+            return "showlimitedaccesswarning"
         case .fontSize:
             return "fontsize"
         case .messagesSent:

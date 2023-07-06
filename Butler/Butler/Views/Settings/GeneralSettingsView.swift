@@ -18,10 +18,10 @@ struct GeneralSettingsView: View {
             }
             
             Toggle("Use icons in top bar", isOn: $useIconsInTopBar)
-            FontSizeSliderView(step: 3, text: "Message Font Size", startValue: 9, endValue: 30, value: $fontSize)
+            FontSizeSliderView(padding: true, step: 3, text: "Message Font Size", startValue: 9, endValue: 30, value: $fontSize)
         }
         .frame(width: 400, height: 150)
-        .padding()
+        
     }
 }
 
