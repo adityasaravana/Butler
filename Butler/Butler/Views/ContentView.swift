@@ -12,8 +12,6 @@ import StoreKit
 import Foundation
 
 struct ContentView: View {
-    @State var epoch = 0
-    
     @State var showErrorView = false
     @State var errorViewDescription = "Error"
     
@@ -30,7 +28,6 @@ struct ContentView: View {
     @AppStorage(AppStorageNames.messagesSent.name) var messagesSent: Int = 0
     
     func clearChat() {
-        epoch += 1
         connector.clearMessageLog()
         isLoading = false
     }
@@ -124,14 +121,14 @@ struct ContentView: View {
                     
                     
                     
-                    connector.logMessage(textField, user: .user, epoch: epoch)
+                    connector.logMessage(textField, user: .user)
                     
                     
                     
                     
                     DispatchQueue.global().async {
                         
-                            connector.sendToAssistant(epoch: epoch)
+                            connector.sendToAssistant()
                         
                         
                         DispatchQueue.main.async {

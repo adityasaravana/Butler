@@ -73,7 +73,7 @@ class OpenAIConnector: ObservableObject {
         ]
     }
     
-    func sendToAssistant(epoch: Int) {
+    func sendToAssistant() {
         if connectedToInternet {
             if self.openAIKey != "" {
                 UserDefaults.setMessagesSent(with: UserDefaults.getMessagesSent() + 1)
@@ -97,28 +97,28 @@ class OpenAIConnector: ObservableObject {
                     httpBodyJson = try JSONSerialization.data(withJSONObject: httpBody, options: .prettyPrinted)
                 } catch {
                     print("Unable to convert to JSON \(error)")
-                    self.logMessage("Error: \(error.localizedDescription), email aditya.saravana@icloud.com with a screenshot.", user: .assistant, epoch: epoch)
+                    self.logMessage("Error: \(error.localizedDescription), email aditya.saravana@icloud.com with a screenshot.", user: .assistant)
                     UserDefaults.setMessagesSent(with: UserDefaults.getMessagesSent() - 1)
                 }
                 
                 request.httpBody = httpBodyJson
                 
-                if let requestData = self.executeRequest(request: request, withSessionConfig: nil, epoch: epoch) {
+                if let requestData = self.executeRequest(request: request, withSessionConfig: nil) {
                     let jsonStr = String(data: requestData, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
                     print(jsonStr)
                     let responseHandler = OpenAIResponseHandler()
                     
                     let response = responseHandler.decodeJson(jsonString: jsonStr)?.choices[0].message["content"] ?? responseHandler.decodeError(jsonString: jsonStr)?.error.message ?? "Error decoding error: take a screenshot and email aditya.saravana@icloud.com"
                     
-                    self.logMessage(response, user: .assistant, epoch: epoch)
+                    self.logMessage(response, user: .assistant)
                     
                     UserDefaults.setMessagesSent(with: UserDefaults.getMessagesSent() - 1)
                 }
             } else {
-                self.logMessage("You haven't entered an OpenAI API key. To add one, open Settings, and add it in the ChatGPT settings menu.", user: .assistant, epoch: epoch)
+                self.logMessage("You haven't entered an OpenAI API key. To add one, open Settings, and add it in the ChatGPT settings menu.", user: .assistant)
             }
         } else {
-            self.logMessage("You're not connected to the Internet. Connect and try again.", user: .assistant, epoch: epoch)
+            self.logMessage("You're not connected to the Internet. Connect and try again.", user: .assistant)
         }
     }
 }
@@ -131,7 +131,7 @@ extension String: Identifiable { public var id: UUID { UUID() } }
 
 /// DO NOT TOUCH THIS. LEAVE IT ALONE.
 extension OpenAIConnector {
-    private func executeRequest(request: URLRequest, withSessionConfig sessionConfig: URLSessionConfiguration?, epoch: Int) -> Data? {
+    private func executeRequest(request: URLRequest, withSessionConfig sessionConfig: URLSessionConfiguration?) -> Data? {
         let semaphore = DispatchSemaphore(value: 0)
         let session: URLSession
         if (sessionConfig != nil) {
@@ -157,7 +157,7 @@ extension OpenAIConnector {
         print("Waiting for semaphore signal")
         let retVal = semaphore.wait(timeout: timeout)
         if retVal == .timedOut {
-            logMessage("Your request took too long to process. Try again with a different prompt.", user: .assistant, epoch: epoch)
+            logMessage("Your request took too long to process. Try again with a different prompt.", user: .assistant)
             UserDefaults.setMessagesSent(with: UserDefaults.getMessagesSent() - 1)
         }
         print("Done waiting, obtained - \(retVal)")
@@ -167,10 +167,8 @@ extension OpenAIConnector {
 
 extension OpenAIConnector {
     /// This function makes it simpler to append items to messageLog.
-    func logMessage(_ message: String, user: MessageUserType, epoch: Int) {
+    func logMessage(_ message: String, user: MessageUserType) {
         Task {
-            let startEpoch = epoch
-            print("ContentView epoch: \(epoch), connector epoch: \(startEpoch)")
             var userString = ""
             switch user {
             case .user:
@@ -180,15 +178,7 @@ extension OpenAIConnector {
             }
             
             
-            if user == .assistant {
-                if epoch == startEpoch {
-                    print("ContentView epoch: \(epoch), connector epoch: \(startEpoch)")
-                    self.messageLog.append(["role": userString, "content": message])
-                }
-                    
-            } else {
-                self.messageLog.append(["role": userString, "content": message])
-            }
+            self.messageLog.append(["role": userString, "content": message])
         }
     }
     

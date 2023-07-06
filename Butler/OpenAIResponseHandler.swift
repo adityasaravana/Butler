@@ -66,8 +66,8 @@ struct OpenAIErrorResponse: Codable {
 }
 
 struct OpenAIError: Codable {
-    var message: String?
-    var type: String?
+    var message: String
+    var type: String
     var param: String?
     var code: String?
 }
