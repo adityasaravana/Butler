@@ -7,10 +7,12 @@
 
 import SwiftUI
 import LaunchAtLogin
+import Defaults
 
 struct GeneralSettingsView: View {
     @AppStorage(AppStorageNames.fontSize.name) var fontSize: Double = 12.0
     @AppStorage(AppStorageNames.useIconsInTopBar.name) var useIconsInTopBar = false
+    @Default(.windowSize) var windowSize
     var body: some View {
         VStack {
             LaunchAtLogin.Toggle {
@@ -18,9 +20,19 @@ struct GeneralSettingsView: View {
             }
             
             Toggle("Use icons in top bar", isOn: $useIconsInTopBar)
+            
+            Picker("Window Size", selection: $windowSize) {
+                ForEach(AppWindowSize.allCases) { size in
+                    Text(size.name)
+                }
+            }.padding(.horizontal)
+            
+            
             FontSizeSliderView(padding: true, step: 3, text: "Message Font Size", startValue: 9, endValue: 30, value: $fontSize)
         }
-        .frame(width: 400, height: 150)
+        .onChange(of: windowSize) { newValue in
+            AppDelegate.instance.updateWindowSize()
+        }
         
     }
 }

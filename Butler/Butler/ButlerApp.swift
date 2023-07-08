@@ -8,6 +8,7 @@
 import SwiftUI
 import AppKit
 import KeyboardShortcuts
+import Defaults
 
 @main
 struct ButlerApp: App {
@@ -42,8 +43,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         let contentView = ContentView(connector: .shared)
         
         // Create the popover
+        let windowSize = Defaults[.windowSize]
         let popover = NSPopover()
-        popover.contentSize = NSSize(width: 400, height: 500)
+        popover.contentSize = NSSize(width: windowSize.size.0, height: windowSize.size.1)
         popover.behavior = .transient
         popover.contentViewController = NSHostingController(rootView: contentView)
         self.popover = popover
@@ -56,6 +58,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             button.image = NSImage(systemSymbolName: "mustache.fill", accessibilityDescription: nil)
             button.action = #selector(togglePopover(_:))
         }
+    }
+    
+    public func updateWindowSize() {
+        let contentView = ContentView(connector: .shared)
+        let windowSize = Defaults[.windowSize]
+        let popover = NSPopover()
+        popover.contentSize = NSSize(width: windowSize.size.0, height: windowSize.size.1)
+        popover.behavior = .transient
+        popover.contentViewController = NSHostingController(rootView: contentView)
+        self.popover = popover
     }
     
     @objc public func togglePopover(_ sender: AnyObject?) {

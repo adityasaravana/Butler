@@ -63,7 +63,6 @@ struct ChatGPTSettingsView: View {
             }
         }
         .padding()
-        .frame(width: 400, height: 150)
         .onChange(of: modelLocal) { newValue in
             model = newValue.name
             if newValue == .gpt4 && showLimitedAccessWarning {
