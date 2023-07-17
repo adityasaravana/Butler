@@ -13,9 +13,6 @@ import Foundation
 import Defaults
 
 struct ContentView: View {
-    @State var showErrorView = false
-    @State var errorViewDescription = "Error"
-    
     @State var textField = ""
     @Environment(\.openWindow) var openWindow
     
@@ -29,7 +26,7 @@ struct ContentView: View {
     @Default(.messagesSent) var messagesSent
     
     func clearChat() {
-        connector.clearMessageLog()
+        connector.deleteAll()
         isLoading = false
     }
     
@@ -42,47 +39,91 @@ struct ContentView: View {
         }
     }
     
+    var topBarView: some View {
+        HStack {
+            Text("Butler").bold()
+            
+            Spacer()
+            
+            if !useIconsInTopBar {
+                Button("Help") { showingHelpPopover = true }
+                    .popover(isPresented: $showingHelpPopover) {
+                        Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
+                    }
+                
+                Button("Clear Chat") { clearChat() }
+                Button("Settings") { showSettings() }
+                Button("Quit") { exit(0) }
+            } else {
+                Button { showingHelpPopover = true } label: { Image(systemName: "questionmark") }
+                    .popover(isPresented: $showingHelpPopover) {
+                        Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
+                    }
+                
+                Button { clearChat() } label: { Image(systemName: "trash") }
+                Button { showSettings() } label: { Image(systemName: "gear") }
+                Button { exit(0) } label: { Image(systemName: "escape") }
+            }
+        }
+    }
+    var textFieldView: some View {
+        HStack {
+            TextField("Type here", text: $textField, axis: .vertical)
+                .lineLimit(7)
+            
+            Button("Send") {
+                isLoading = true
+                Task {
+                    if let appDelegate = AppDelegate.instance {
+                        appDelegate.setIcon(name: "slowmo")
+                    }
+                }
+                
+                
+                
+                connector.logMessage(textField, user: .user)
+                
+                
+                
+                
+                DispatchQueue.global().async {
+                    connector.sendToAssistant()
+                    
+                    DispatchQueue.main.async {
+                        isLoading = false
+                        if let appDelegate = AppDelegate.instance {
+                            appDelegate.resetIcon()
+                        }
+                        textField = ""
+                    }
+                }
+                
+                if messagesSent >= 15 {
+                    requestReview()
+                }
+                
+                
+            }
+            .keyboardShortcut(.defaultAction)
+            .disabled(isLoading)
+        }
+    }
+    
     var body: some View {
         VStack {
-            HStack {
-                Text("Butler").bold()
-                
-                Spacer()
-                
-                if !useIconsInTopBar {
-                    Button("Help") { showingHelpPopover = true }
-                        .popover(isPresented: $showingHelpPopover) {
-                            Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
-                        }
-                    
-                    Button("Clear Chat") { clearChat() }
-                    Button("Settings") { showSettings() }
-                    Button("Quit") { exit(0) }
-                } else {
-                    Button { showingHelpPopover = true } label: { Image(systemName: "questionmark") }
-                        .popover(isPresented: $showingHelpPopover) {
-                            Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
-                        }
-                    
-                    Button { clearChat() } label: { Image(systemName: "trash") }
-                    Button { showSettings() } label: { Image(systemName: "gear") }
-                    Button { exit(0) } label: { Image(systemName: "escape") }
-                }
-            }
-            
+            topBarView
             
             VStack {
-                if connector.messageLog != [["role": "system", "content": "You're a friendly, helpful assistant"]] {
-                    if !showErrorView {
+                if connector.messagesEmpty {
                         ScrollView {
                             ScrollViewReader { proxy in
-                                ForEach(connector.messageLog) { message in
+                                ForEach(connector.messages) { message in
                                     if message["role"] != "system" {
                                         MessageView(message: message)
                                     }
                                 }
-                                .onChange(of: connector.messageLog.count) { _ in
-                                    proxy.scrollTo(connector.messageLog.count - 1 )
+                                .onChange(of: connector.messages.count) { _ in
+                                    proxy.scrollTo(connector.messages.count - 1 )
                                 }
                             }
                             
@@ -92,9 +133,6 @@ struct ContentView: View {
                         }
                         .padding()
                         .background(.thickMaterial)
-                    } else {
-                        ErrorView(debugDescription: errorViewDescription)
-                    }
                 } else {
                     ZStack {
                         HStack {
@@ -113,46 +151,7 @@ struct ContentView: View {
             }
             .cornerRadius(20)
             
-            HStack {
-                TextField("Type here", text: $textField, axis: .vertical)
-                    .lineLimit(7)
-                
-                Button("Send") {
-                    isLoading = true
-                    Task {
-                        if let appDelegate = AppDelegate.instance {
-                            appDelegate.setIcon(name: "slowmo")
-                        }
-                    }
-                    
-                    
-                    
-                    connector.logMessage(textField, user: .user)
-                    
-                    
-                    
-                    
-                    DispatchQueue.global().async {
-                        connector.sendToAssistant()
-                        
-                        DispatchQueue.main.async {
-                            isLoading = false
-                            if let appDelegate = AppDelegate.instance {
-                                appDelegate.resetIcon()
-                            }
-                            textField = ""
-                        }
-                    }
-                    
-                    if messagesSent >= 15 {
-                        requestReview()
-                    }
-                    
-                    
-                }
-                .keyboardShortcut(.defaultAction)
-                .disabled(isLoading)
-            }
+            textFieldView
         }
         .padding()
         

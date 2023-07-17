@@ -117,7 +117,7 @@ final class OpenCloseButlerAppState: ObservableObject {
 final class ClearChatAppState: ObservableObject {
     init() {
         KeyboardShortcuts.onKeyUp(for: .clearChat) {
-            OpenAIConnector.shared.clearMessageLog()
+            OpenAIConnector.shared.deleteAll()
         }
     }
 }
@@ -126,7 +126,7 @@ final class ClearChatAppState: ObservableObject {
 final class CopyLatestMessageAppState: ObservableObject {
     init() {
         KeyboardShortcuts.onKeyUp(for: .copyLatestMessage) {
-            copyStringToClipboard(OpenAIConnector.shared.messageLog.last?["content"] ?? "error")
+            copyStringToClipboard(OpenAIConnector.shared.messages.last?["content"] ?? "error")
         }
     }
 }

@@ -19,8 +19,8 @@ class OpenAIConnector: ObservableObject {
         return dataManager.pull(key: .Butler_UserOpenAIKey) ?? "invalid"
     }
     
-    init(messageLog: [[String: String]] = [["role": "system", "content": "You're a friendly, helpful assistant"]]) {
-        self.messageLog = messageLog
+    init(messages: [[String: String]] = OpenAIConnector.empty) {
+        self.messages = messages
         
         let monitor = NWPathMonitor()
         monitor.pathUpdateHandler = { path in
@@ -40,16 +40,17 @@ class OpenAIConnector: ObservableObject {
         })
     }
     
+    static let empty = [["role": "system", "content": "You're a friendly, helpful assistant"]]
     /// This is what stores your messages.
-    @Published var messageLog: [[String: String]] = [
-        /// Modify this to change the personality of the assistant.
-        ["role": "system", "content": "You're a friendly, helpful assistant"]
-    ]
+    @Published var messages: [[String: String]] = empty
     
-    func clearMessageLog() {
-        messageLog = [
-            ["role": "system", "content": "You're a friendly, helpful assistant"]
-        ]
+    var messagesEmpty: Bool {
+        return messages == OpenAIConnector.empty
+    }
+    
+    
+    func deleteAll() {
+        messages = OpenAIConnector.empty
     }
     
     func sendToAssistant() {
@@ -66,7 +67,7 @@ class OpenAIConnector: ObservableObject {
                 let httpBody: [String: Any] = [
                     /// In the future, you can use a different chat model here.
                     "model" : Defaults[.chatGPTModel].name,
-                    "messages" : self.messageLog,
+                    "messages" : self.messages,
                     "temperature" : Defaults[.chatGPTTemperature]
                 ]
                 
@@ -104,7 +105,7 @@ class OpenAIConnector: ObservableObject {
 }
 
 
-/// Don't worry about this too much. This just gets rid of errors when using messageLog in a SwiftUI List or ForEach.
+/// Don't worry about this too much. This just gets rid of errors when using messages in a SwiftUI List or ForEach.
 extension Dictionary: Identifiable { public var id: UUID { UUID() } }
 extension Array: Identifiable { public var id: UUID { UUID() } }
 extension String: Identifiable { public var id: UUID { UUID() } }
@@ -146,7 +147,7 @@ extension OpenAIConnector {
 }
 
 extension OpenAIConnector {
-    /// This function makes it simpler to append items to messageLog.
+    /// This function makes it simpler to append items to messages.
     func logMessage(_ message: String, user: MessageUserType) {
         Task {
             var userString = ""
@@ -158,7 +159,7 @@ extension OpenAIConnector {
             }
             
             
-            self.messageLog.append(["role": userString, "content": message])
+            self.messages.append(["role": userString, "content": message])
         }
     }
     
