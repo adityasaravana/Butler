@@ -114,7 +114,7 @@ struct ContentView: View {
             topBarView
             
             VStack {
-                if connector.messagesEmpty {
+                if !connector.messagesEmpty {
                         ScrollView {
                             ScrollViewReader { proxy in
                                 ForEach(connector.messages) { message in

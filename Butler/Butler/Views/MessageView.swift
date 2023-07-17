@@ -12,7 +12,7 @@ import Defaults
 
 struct MessageView: View {
     @Default(.fontSize) var fontSize
-    
+    @Default(.highlightSyntax) var highlightSyntax
     @Environment(\.colorScheme) private var colorScheme
     
     var message: [String: String]
@@ -43,7 +43,7 @@ struct MessageView: View {
         case .dark:
             return .wwdc17(withFont: .init(size: 16))
         default:
-            return .sunset(withFont: .init(size: 16))
+            return .wwdc17(withFont: .init(size: 16))
         }
     }
     
@@ -57,15 +57,26 @@ struct MessageView: View {
             }
             
             ChatBubble(direction: bubbleDirection) {
-                Markdown(message["content"] ?? "error")
-                    .markdownCodeSyntaxHighlighter(.splash(theme: self.theme))
-                    .padding(.all, 15)
-                    .markdownTextStyle(\.text) {
-                        ForegroundColor(.white)
-                        FontSize(fontSize)
-                    }
-                    .background(messageColor)
-                    .textSelection(.enabled)
+                if highlightSyntax {
+                    Markdown(message["content"] ?? "error")
+                        .markdownCodeSyntaxHighlighter(.splash(theme: self.theme))
+                        .padding(.all, 15)
+                        .markdownTextStyle(\.text) {
+                            ForegroundColor(.white)
+                            FontSize(fontSize)
+                        }
+                        .background(messageColor)
+                        .textSelection(.enabled)
+                } else {
+                    Markdown(message["content"] ?? "error")
+                        .padding(.all, 15)
+                        .markdownTextStyle(\.text) {
+                            ForegroundColor(.white)
+                            FontSize(fontSize)
+                        }
+                        .background(messageColor)
+                        .textSelection(.enabled)
+                }
             }
             
             if message["role"] == "assistant" {
