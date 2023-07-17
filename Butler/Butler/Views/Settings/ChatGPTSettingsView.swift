@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-
+import Defaults
 struct ChatGPTSettingsView: View {
-    @AppStorage(AppStorageNames.chatGPTModel.name) var model = ChatGPTModels.gpt3.name
-    @AppStorage(AppStorageNames.chatGPTTemperature.name) var creativity: Double = 1
-    @AppStorage(AppStorageNames.showLimitedAccessWarning.name) var showLimitedAccessWarning = true
+    @Default(.chatGPTModel) var model
+    @Default(.chatGPTTemperature) var creativity
+    @Default(.showLimitedAccessWarning) var showLimitedAccessWarning
     
     @State var showLimitedAccessWarningAlert = false
     @State var APIKeyLocal = ""
@@ -64,15 +64,15 @@ struct ChatGPTSettingsView: View {
         }
         .padding()
         .onChange(of: modelLocal) { newValue in
-            model = newValue.name
-            if newValue == .gpt4 && showLimitedAccessWarning {
+            model = newValue
+            if model == .gpt4 && showLimitedAccessWarning {
                 showLimitedAccessWarningAlert = true
             }
         }
         .onAppear {
-            if model == ChatGPTModels.gpt3.name {
+            if model == ChatGPTModels.gpt3 {
                 modelLocal = .gpt3
-            } else if model == ChatGPTModels.gpt4.name {
+            } else if model == ChatGPTModels.gpt4 {
                 modelLocal = .gpt4
             }
         }

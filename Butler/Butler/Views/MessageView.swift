@@ -8,9 +8,10 @@
 import SwiftUI
 import MarkdownUI
 import Splash
+import Defaults
 
 struct MessageView: View {
-    @AppStorage(AppStorageNames.fontSize.name) var fontSize: Double = 12.0
+    @Default(.fontSize) var fontSize
     
     @Environment(\.colorScheme) private var colorScheme
     

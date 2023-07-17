@@ -25,7 +25,6 @@
 		59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */; };
 		59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */; };
 		59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */; };
-		59B6194B2A48094C00F614C0 /* AppStorageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6194A2A48094C00F614C0 /* AppStorageNames.swift */; };
 		59D8C8212A4CFC9A00AB5122 /* ChatGPTModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */; };
 		59D8C8232A4D0CCA00AB5122 /* TextEditorClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8C8222A4D0CCA00AB5122 /* TextEditorClearBackground.swift */; };
 		59D8C82A2A4D125B00AB5122 /* SyntaxHighlighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8C8292A4D125B00AB5122 /* SyntaxHighlighting.swift */; };
@@ -57,7 +56,6 @@
 		59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTSettingsView.swift; sourceTree = "<group>"; };
 		59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeySettingsView.swift; sourceTree = "<group>"; };
-		59B6194A2A48094C00F614C0 /* AppStorageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageNames.swift; sourceTree = "<group>"; };
 		59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTModels.swift; sourceTree = "<group>"; };
 		59D8C8222A4D0CCA00AB5122 /* TextEditorClearBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorClearBackground.swift; sourceTree = "<group>"; };
 		59D8C8292A4D125B00AB5122 /* SyntaxHighlighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxHighlighting.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				597A2BBD2A592B250011B7B6 /* Defaults.swift */,
 				59D8C8222A4D0CCA00AB5122 /* TextEditorClearBackground.swift */,
 				59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */,
-				59B6194A2A48094C00F614C0 /* AppStorageNames.swift */,
 				59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */,
 				6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */,
 				40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */,
@@ -279,7 +276,6 @@
 				5952042C2A52617E0086CB67 /* ErrorView.swift in Sources */,
 				40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */,
 				59154F1329FF1BB900F785B2 /* SteppingSliderView.swift in Sources */,
-				59B6194B2A48094C00F614C0 /* AppStorageNames.swift in Sources */,
 				59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

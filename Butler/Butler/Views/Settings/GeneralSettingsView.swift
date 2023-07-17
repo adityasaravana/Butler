@@ -10,8 +10,8 @@ import LaunchAtLogin
 import Defaults
 
 struct GeneralSettingsView: View {
-    @AppStorage(AppStorageNames.fontSize.name) var fontSize: Double = 12.0
-    @AppStorage(AppStorageNames.useIconsInTopBar.name) var useIconsInTopBar = false
+    @Default(.fontSize) var fontSize
+    @Default(.useIconsInTopBar) var useIconsInTopBar
     @Default(.windowSize) var windowSize
     var body: some View {
         VStack {

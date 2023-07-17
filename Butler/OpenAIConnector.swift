@@ -8,28 +8,7 @@
 import Foundation
 import Combine
 import Network
-
-extension UserDefaults {
-    static func setMessagesSent(with value: Int) {
-        UserDefaults.standard.set(value, forKey: AppStorageNames.messagesSent.name)
-    }
-    
-    static func getMessagesSent() -> Int {
-        return UserDefaults.standard.integer(forKey: AppStorageNames.messagesSent.name)
-    }
-}
-
-extension UserDefaults {
-    static func getChatGPTTemperature() -> Double {
-        return UserDefaults.standard.double(forKey: AppStorageNames.chatGPTTemperature.name)
-    }
-}
-
-extension UserDefaults {
-    static func getChatGPTModel() -> String {
-        return UserDefaults.standard.string(forKey: AppStorageNames.chatGPTModel.name) ?? ChatGPTModels.gpt3.name
-    }
-}
+import Defaults
 
 class OpenAIConnector: ObservableObject {
     static let shared = OpenAIConnector()
@@ -56,7 +35,7 @@ class OpenAIConnector: ObservableObject {
         
         let queue = DispatchQueue(label: "ConnectionTester")
         monitor.start(queue: queue)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(4), execute: {
             monitor.cancel()
         })
     }
@@ -76,7 +55,8 @@ class OpenAIConnector: ObservableObject {
     func sendToAssistant() {
         if connectedToInternet {
             if self.openAIKey != "" {
-                UserDefaults.setMessagesSent(with: UserDefaults.getMessagesSent() + 1)
+                Defaults[.messagesSent] += 1
+                
                 
                 var request = URLRequest(url: self.openAIURL!)
                 request.httpMethod = "POST"
@@ -85,9 +65,9 @@ class OpenAIConnector: ObservableObject {
                 
                 let httpBody: [String: Any] = [
                     /// In the future, you can use a different chat model here.
-                    "model" : UserDefaults.getChatGPTModel(),
+                    "model" : Defaults[.chatGPTModel].name,
                     "messages" : self.messageLog,
-                    "temperature" : UserDefaults.getChatGPTTemperature()
+                    "temperature" : Defaults[.chatGPTTemperature]
                 ]
                 
                 /// DON'T TOUCH THIS
@@ -98,7 +78,7 @@ class OpenAIConnector: ObservableObject {
                 } catch {
                     print("Unable to convert to JSON \(error)")
                     self.logMessage("Error: \(error.localizedDescription), email aditya.saravana@icloud.com with a screenshot.", user: .assistant)
-                    UserDefaults.setMessagesSent(with: UserDefaults.getMessagesSent() - 1)
+                    Defaults[.messagesSent] -= 1
                 }
                 
                 request.httpBody = httpBodyJson
@@ -112,7 +92,7 @@ class OpenAIConnector: ObservableObject {
                     
                     self.logMessage(response, user: .assistant)
                     
-                    UserDefaults.setMessagesSent(with: UserDefaults.getMessagesSent() - 1)
+                    Defaults[.messagesSent] -= 1
                 }
             } else {
                 self.logMessage("You haven't entered an OpenAI API key. To add one, open Settings, and add it in the ChatGPT settings menu.", user: .assistant)
@@ -158,7 +138,7 @@ extension OpenAIConnector {
         let retVal = semaphore.wait(timeout: timeout)
         if retVal == .timedOut {
             logMessage("Your request took too long to process. Try again with a different prompt.", user: .assistant)
-            UserDefaults.setMessagesSent(with: UserDefaults.getMessagesSent() - 1)
+            Defaults[.messagesSent] -= 1
         }
         print("Done waiting, obtained - \(retVal)")
         return requestData

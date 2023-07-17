@@ -6,14 +6,12 @@
 //
 
 import Foundation
+import Defaults
 
-public enum ChatGPTModels {
+public enum ChatGPTModels: Codable, Defaults.Serializable, CaseIterable, Identifiable {
+    public var id: Self { self }
     case gpt4
     case gpt3
-    
-    static var allCases: [Self] {
-        return [.gpt3, .gpt4]
-    }
     
     var name: String {
         switch self {

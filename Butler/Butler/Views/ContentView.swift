@@ -10,6 +10,7 @@ import SwiftUI
 import MarkdownUI
 import StoreKit
 import Foundation
+import Defaults
 
 struct ContentView: View {
     @State var showErrorView = false
@@ -24,8 +25,8 @@ struct ContentView: View {
     @ObservedObject var connector: OpenAIConnector
     @Environment(\.requestReview) var requestReview
     
-    @AppStorage(AppStorageNames.useIconsInTopBar.name) var useIconsInTopBar = false
-    @AppStorage(AppStorageNames.messagesSent.name) var messagesSent: Int = 0
+    @Default(.useIconsInTopBar) var useIconsInTopBar
+    @Default(.messagesSent) var messagesSent
     
     func clearChat() {
         connector.clearMessageLog()
@@ -74,9 +75,14 @@ struct ContentView: View {
                 if connector.messageLog != [["role": "system", "content": "You're a friendly, helpful assistant"]] {
                     if !showErrorView {
                         ScrollView {
-                            ForEach(connector.messageLog) { message in
-                                if message["role"] != "system" {
-                                    MessageView(message: message)
+                            ScrollViewReader { proxy in
+                                ForEach(connector.messageLog) { message in
+                                    if message["role"] != "system" {
+                                        MessageView(message: message)
+                                    }
+                                }
+                                .onChange(of: connector.messageLog.count) { _ in
+                                    proxy.scrollTo(connector.messageLog.count - 1 )
                                 }
                             }
                             
@@ -127,9 +133,7 @@ struct ContentView: View {
                     
                     
                     DispatchQueue.global().async {
-                        
-                            connector.sendToAssistant()
-                        
+                        connector.sendToAssistant()
                         
                         DispatchQueue.main.async {
                             isLoading = false
