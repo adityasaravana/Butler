@@ -13,14 +13,18 @@ import Foundation
 import Defaults
 
 struct ContentView: View {
-    @State var textField = ""
-    @Environment(\.openWindow) var openWindow
+    enum ScrollPosition: Hashable {
+        case image(index: Int)
+    }
     
+    @State var textField = ""
     @State var isLoading = false
     @State var showingHelpPopover = false
     
-    @ObservedObject var connector: OpenAIConnector
+    @Environment(\.openWindow) var openWindow
     @Environment(\.requestReview) var requestReview
+    
+    @ObservedObject var connector: OpenAIConnector
     
     @Default(.useIconsInTopBar) var useIconsInTopBar
     @Default(.messagesSent) var messagesSent
@@ -73,36 +77,27 @@ struct ContentView: View {
             
             Button("Send") {
                 isLoading = true
+                
                 Task {
                     if let appDelegate = AppDelegate.instance {
                         appDelegate.setIcon(name: "slowmo")
                     }
                 }
                 
-                
-                
                 connector.logMessage(textField, user: .user)
                 
-                
-                
-                
-                DispatchQueue.global().async {
+                Task {
                     connector.sendToAssistant()
-                    
-                    DispatchQueue.main.async {
-                        isLoading = false
-                        if let appDelegate = AppDelegate.instance {
-                            appDelegate.resetIcon()
-                        }
-                        textField = ""
+                    isLoading = false
+                    if let appDelegate = AppDelegate.instance {
+                        appDelegate.resetIcon()
                     }
+                    textField = ""
                 }
                 
                 if messagesSent >= 15 {
                     requestReview()
                 }
-                
-                
             }
             .keyboardShortcut(.defaultAction)
             .disabled(isLoading)
@@ -115,24 +110,29 @@ struct ContentView: View {
             
             VStack {
                 if !connector.messagesEmpty {
-                        ScrollView {
-                            ScrollViewReader { proxy in
-                                ForEach(connector.messages) { message in
-                                    if message["role"] != "system" {
-                                        MessageView(message: message)
-                                    }
-                                }
-                                .onChange(of: connector.messages.count) { _ in
-                                    proxy.scrollTo(connector.messages.count - 1 )
+                    ScrollView {
+                        ScrollViewReader { proxy in
+                            ForEach(connector.messages) { message in
+                                if message["role"] != "system" {
+                                    MessageView(message: message)
                                 }
                             }
-                            
-                            if isLoading {
-                                ProgressView("Loading...").padding(.top)
+                            .onChange(of: connector.messages.count) { _ in
+                                withAnimation {
+                                    proxy.scrollTo(
+                                        ScrollPosition.image(index: 0),
+                                        anchor: .bottom
+                                    )
+                                }
                             }
                         }
-                        .padding()
-                        .background(.thickMaterial)
+                        
+                        if isLoading {
+                            ProgressView("Loading...").padding(.top)
+                        }
+                    }
+                    .padding()
+                    .background(.thickMaterial)
                 } else {
                     ZStack {
                         HStack {

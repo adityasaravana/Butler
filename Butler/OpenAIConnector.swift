@@ -149,18 +149,17 @@ extension OpenAIConnector {
 extension OpenAIConnector {
     /// This function makes it simpler to append items to messages.
     func logMessage(_ message: String, user: MessageUserType) {
-        Task {
-            var userString = ""
-            switch user {
-            case .user:
-                userString = "user"
-            case .assistant:
-                userString = "assistant"
-            }
-            
-            
-            self.messages.append(["role": userString, "content": message])
+        var userString = ""
+        switch user {
+        case .user:
+            userString = "user"
+        case .assistant:
+            userString = "assistant"
         }
+        
+        
+        self.messages.append(["role": userString, "content": message])
+        
     }
     
     enum MessageUserType {
