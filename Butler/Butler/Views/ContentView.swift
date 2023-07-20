@@ -28,7 +28,8 @@ struct ContentView: View {
     
     @Default(.useIconsInTopBar) var useIconsInTopBar
     @Default(.messagesSent) var messagesSent
-    
+    @Default(.showNewFeatures) var showNewFeatures
+ 
     func clearChat() {
         connector.deleteAll()
         isLoading = false
@@ -110,26 +111,26 @@ struct ContentView: View {
             
             VStack {
                 if !connector.messagesEmpty {
-                    ScrollView {
-                        ScrollViewReader { proxy in
-                            ForEach(connector.messages) { message in
-                                if message["role"] != "system" {
-                                    MessageView(message: message)
+                    ScrollViewReader { proxy in
+                        ScrollView {
+                            VStack {
+                                ForEach(connector.messages, id: \.id) { message in
+                                    if message["role"] != "system" {
+                                        MessageView(message: message)
+                                    }
+                                }
+                                
+                                if isLoading {
+                                    ProgressView("Loading...").padding(.top)
                                 }
                             }
-                            .onChange(of: connector.messages.count) { _ in
-                                withAnimation {
-                                    proxy.scrollTo(
-                                        ScrollPosition.image(index: 0),
-                                        anchor: .bottom
-                                    )
-                                }
+                        }.onChange(of: connector.messages, perform: { _ in
+                            withAnimation {
+                                proxy.scrollTo(connector.messages.last?.id)
                             }
-                        }
+                        })
                         
-                        if isLoading {
-                            ProgressView("Loading...").padding(.top)
-                        }
+                        
                     }
                     .padding()
                     .background(.thickMaterial)
@@ -154,7 +155,11 @@ struct ContentView: View {
             textFieldView
         }
         .padding()
-        
+        .alert(Changelog.notes, isPresented: $showNewFeatures) {
+            Button("Cool!", role: .cancel) {
+                showNewFeatures = false
+            }
+        }
     }
 }
 

@@ -28,6 +28,12 @@ struct SettingsView: View {
                     Image(systemName: "globe").imageScale(.large)
                     Text("ChatGPT")
                 }
+            
+            ChangelogView()
+                .tabItem {
+                    Image(systemName: "star").imageScale(.large)
+                    Text("What's New")
+                }
         }.frame(width: 400, height: 200)
     }
 }

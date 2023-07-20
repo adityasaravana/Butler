@@ -8,6 +8,8 @@
 import Foundation
 import Defaults
 
+fileprivate let appVersionNumber: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+
 extension Defaults.Keys {
     static let windowSize = Key<AppWindowSize>("windowSize", default: .small)
     static let showLimitedAccessWarning = Key<Bool>("showLimitedAccessWarning", default: true)
@@ -17,6 +19,7 @@ extension Defaults.Keys {
     static let chatGPTModel = Key<ChatGPTModels>("chatGPTModel", default: .gpt3)
     static let useIconsInTopBar = Key<Bool>("useIconsInTopBar", default: false)
     static let highlightSyntax = Key<Bool>("highlightSyntax", default: false)
+    static let showNewFeatures = Key<Bool>("showNewFeatures\(appVersionNumber)", default: true)
     
     //            ^            ^         ^                ^
     //           Key          Type   UserDefaults name   Default value
