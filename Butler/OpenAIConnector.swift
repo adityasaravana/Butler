@@ -162,13 +162,6 @@ extension OpenAIConnector {
             self.messages.append(["role": userString, "content": message])
         
     }
-    
-    func logUserMessage(_ message: String) {
-//        withAnimation {
-            self.messages.append(["role": "user", "content": message])
-//        }
-    }
-    
     enum MessageUserType {
         case user
         case assistant

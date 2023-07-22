@@ -86,7 +86,7 @@ struct ContentView: View {
                     }
                 }
                 
-                connector.logUserMessage(textField)
+                connector.logMessage(textField, user: .user)
                 
                 Task {
                     connector.sendToAssistant()
