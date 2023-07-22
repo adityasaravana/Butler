@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import Network
 import Defaults
+import SwiftUI
 
 class OpenAIConnector: ObservableObject {
     static let shared = OpenAIConnector()
@@ -149,17 +150,23 @@ extension OpenAIConnector {
 extension OpenAIConnector {
     /// This function makes it simpler to append items to messages.
     func logMessage(_ message: String, user: MessageUserType) {
-        var userString = ""
-        switch user {
-        case .user:
-            userString = "user"
-        case .assistant:
-            userString = "assistant"
-        }
+            var userString = ""
+            switch user {
+            case .user:
+                userString = "user"
+            case .assistant:
+                userString = "assistant"
+            }
+            
+            
+            self.messages.append(["role": userString, "content": message])
         
-        
-        self.messages.append(["role": userString, "content": message])
-        
+    }
+    
+    func logUserMessage(_ message: String) {
+//        withAnimation {
+            self.messages.append(["role": "user", "content": message])
+//        }
     }
     
     enum MessageUserType {

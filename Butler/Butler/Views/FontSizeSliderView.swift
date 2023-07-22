@@ -14,27 +14,30 @@ struct FontSizeSliderView: View {
     var startValue: CGFloat
     var endValue: CGFloat
     @Binding var value: Double
+    
+    func formatted(value: CGFloat) -> String {
+        return String(format: "%.0f", value)
+    }
+    
     var body: some View {
         if !padding {
-            VStack {
-                HStack {
-                    Text(text)
-                    
-                    Spacer()
-                }
-                
-                SteppingSliderView(min: startValue, max: endValue, value: $value, step: step)
-            }
+            Slider(
+                value: $value,
+                in: startValue...endValue,
+                step: step,
+                minimumValueLabel: Text(formatted(value: startValue)),
+                maximumValueLabel: Text(formatted(value: endValue)),
+                label: { Text(text) })
+            
         } else {
-            VStack {
-                HStack {
-                    Text(text)
-                    
-                    Spacer()
-                }
-                
-                SteppingSliderView(min: startValue, max: endValue, value: $value, step: step)
-            }.padding()
+            Slider(
+                value: $value,
+                in: startValue...endValue,
+                step: step,
+                minimumValueLabel: Text(formatted(value: startValue)),
+                maximumValueLabel: Text(formatted(value: endValue)),
+                label: { Text(text) })
+            .padding()
         }
     }
 }

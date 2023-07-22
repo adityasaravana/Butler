@@ -20,7 +20,8 @@ extension Defaults.Keys {
     static let useIconsInTopBar = Key<Bool>("useIconsInTopBar", default: false)
     static let highlightSyntax = Key<Bool>("highlightSyntax", default: false)
     static let showNewFeatures = Key<Bool>("showNewFeatures\(appVersionNumber)", default: true)
-    
+    static let textFieldLineLimit = Key<Int>("textFieldLineLimit", default: 7)
     //            ^            ^         ^                ^
     //           Key          Type   UserDefaults name   Default value
 }
+

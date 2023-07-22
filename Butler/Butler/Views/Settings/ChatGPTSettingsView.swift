@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Defaults
+
 struct ChatGPTSettingsView: View {
     @Default(.chatGPTModel) var model
     @Default(.chatGPTTemperature) var creativity
@@ -19,17 +20,8 @@ struct ChatGPTSettingsView: View {
     let keychainManager = KeychainManager()
     
     var body: some View {
-        VStack {
-            Picker("ChatGPT Version", selection: $modelLocal) {
-                ForEach(ChatGPTModels.allCases, id: \.self) {
-                    Text($0.name)
-                }
-            }
-            
-            FontSizeSliderView(step: 0.1, text: "Creativity", startValue: 0, endValue: 2, value: $creativity)
-            
+        List {
             HStack {
-                
                 Button {
                     secureField.toggle()
                 } label: {
@@ -44,16 +36,30 @@ struct ChatGPTSettingsView: View {
                 if secureField {
                     SecureField("Paste OpenAI API Key Here", text: $APIKeyLocal)
                         .autocorrectionDisabled(true)
+                        .textFieldStyle(.roundedBorder)
                 } else {
                     TextField("Paste OpenAI API Key Here", text: $APIKeyLocal)
                         .autocorrectionDisabled(true)
+                        .textFieldStyle(.roundedBorder)
                 }
                 
                 Button("Save") {
                     keychainManager.push(key: .Butler_UserOpenAIKey, content: APIKeyLocal.filter { !" \n\t\r".contains($0) })
                     APIKeyLocal = ""
                 }
-            }.padding(.vertical)
+            }
+            
+            Divider()
+            
+            Picker("ChatGPT Version", selection: $modelLocal) {
+                ForEach(ChatGPTModels.allCases, id: \.self) {
+                    Text($0.name)
+                }
+            }.pickerStyle(.segmented)
+            
+            FontSizeSliderView(step: 0.1, text: "Creativity", startValue: 0, endValue: 2, value: $creativity)
+            
+            
         }
         .alert("\(modelLocal.name) isn't publicly available. You need to apply for access on OpenAI's site to use this model. Are you sure you have access?", isPresented: $showLimitedAccessWarningAlert) {
             
@@ -62,7 +68,6 @@ struct ChatGPTSettingsView: View {
                 showLimitedAccessWarning = false
             }
         }
-        .padding()
         .onChange(of: modelLocal) { newValue in
             model = newValue
             if model == .gpt4 && showLimitedAccessWarning {

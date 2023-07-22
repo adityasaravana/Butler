@@ -29,7 +29,7 @@ struct ContentView: View {
     @Default(.useIconsInTopBar) var useIconsInTopBar
     @Default(.messagesSent) var messagesSent
     @Default(.showNewFeatures) var showNewFeatures
- 
+    
     func clearChat() {
         connector.deleteAll()
         isLoading = false
@@ -74,6 +74,7 @@ struct ContentView: View {
     var textFieldView: some View {
         HStack {
             TextField("Type here", text: $textField, axis: .vertical)
+                .textFieldStyle(.roundedBorder)
                 .lineLimit(7)
             
             Button("Send") {
@@ -85,7 +86,7 @@ struct ContentView: View {
                     }
                 }
                 
-                connector.logMessage(textField, user: .user)
+                connector.logUserMessage(textField)
                 
                 Task {
                     connector.sendToAssistant()

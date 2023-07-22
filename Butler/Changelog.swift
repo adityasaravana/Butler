@@ -40,6 +40,7 @@ public struct Changelog {
     - Ability to change the text on the buttons in the chat view to icons
     - Syntax highlighting (beta)
     - Added a slider to change the temperature (creativity) of ChatGPT
+    - Change the max line limit of the chat view's text field
     
     Changes:
     - New icon! Butler's just a mustache, to make it easier to see on the menu bar.
