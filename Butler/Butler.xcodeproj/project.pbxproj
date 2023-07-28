@@ -21,6 +21,12 @@
 		597A2BBC2A592B070011B7B6 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 597A2BBB2A592B070011B7B6 /* Defaults */; };
 		597A2BBE2A592B250011B7B6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBD2A592B250011B7B6 /* Defaults.swift */; };
 		597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */; };
+		59A487AE2A732D8F0081EF7F /* OnboardingViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487A62A732D8F0081EF7F /* OnboardingViewPage.swift */; };
+		59A487AF2A732D8F0081EF7F /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487A72A732D8F0081EF7F /* Onboarding.swift */; };
+		59A487B02A732D8F0081EF7F /* KeyboardShortcutsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487A92A732D8F0081EF7F /* KeyboardShortcutsPage.swift */; };
+		59A487B12A732D8F0081EF7F /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487AA2A732D8F0081EF7F /* WelcomePage.swift */; };
+		59A487B32A732D8F0081EF7F /* OpenAIKeyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487AC2A732D8F0081EF7F /* OpenAIKeyPage.swift */; };
+		59A487B42A732D8F0081EF7F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487AD2A732D8F0081EF7F /* OnboardingView.swift */; };
 		59A5971F2A6937C1009487A8 /* Changelog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5971E2A6937C1009487A8 /* Changelog.swift */; };
 		59A597232A693C8F009487A8 /* ChangelogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A597222A693C8F009487A8 /* ChangelogView.swift */; };
 		59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */; };
@@ -38,7 +44,7 @@
 		6B61C4B629CA484300694F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B529CA484300694F73 /* Assets.xcassets */; };
 		6B61C4B929CA484300694F73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B829CA484300694F73 /* Preview Assets.xcassets */; };
 		6B61C4C129CA4D4600694F73 /* OpenAIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */; };
-		6B61C4C529CA4E1400694F73 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C429CA4E1400694F73 /* DataManager.swift */; };
+		6B61C4C529CA4E1400694F73 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C429CA4E1400694F73 /* KeychainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +59,12 @@
 		5952042B2A52617E0086CB67 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		597A2BBD2A592B250011B7B6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowSize.swift; sourceTree = "<group>"; };
+		59A487A62A732D8F0081EF7F /* OnboardingViewPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewPage.swift; sourceTree = "<group>"; };
+		59A487A72A732D8F0081EF7F /* Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		59A487A92A732D8F0081EF7F /* KeyboardShortcutsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsPage.swift; sourceTree = "<group>"; };
+		59A487AA2A732D8F0081EF7F /* WelcomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
+		59A487AC2A732D8F0081EF7F /* OpenAIKeyPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIKeyPage.swift; sourceTree = "<group>"; };
+		59A487AD2A732D8F0081EF7F /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		59A5971E2A6937C1009487A8 /* Changelog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Changelog.swift; sourceTree = "<group>"; };
 		59A597222A693C8F009487A8 /* ChangelogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogView.swift; sourceTree = "<group>"; };
 		59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
@@ -68,7 +80,7 @@
 		6B61C4B829CA484300694F73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B61C4BA29CA484300694F73 /* Butler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Butler.entitlements; sourceTree = "<group>"; };
 		6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIResponseHandler.swift; sourceTree = "<group>"; };
-		6B61C4C429CA4E1400694F73 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		6B61C4C429CA4E1400694F73 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +105,6 @@
 		40CDDB0329E26BE300070A77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				59B619472A47E2C100F614C0 /* Settings */,
 				40CDDAFD29E26B4300070A77 /* ChatBubble.swift */,
 				40CDDAE629E259B800070A77 /* ContentView.swift */,
 				59154F0F29FF1B5200F785B2 /* MessageView.swift */,
@@ -112,6 +123,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		59A487A52A732D8F0081EF7F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				59A487A82A732D8F0081EF7F /* Pages */,
+				59A487A62A732D8F0081EF7F /* OnboardingViewPage.swift */,
+				59A487A72A732D8F0081EF7F /* Onboarding.swift */,
+				59A487AD2A732D8F0081EF7F /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = SOURCE_ROOT;
+		};
+		59A487A82A732D8F0081EF7F /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				59A487A92A732D8F0081EF7F /* KeyboardShortcutsPage.swift */,
+				59A487AA2A732D8F0081EF7F /* WelcomePage.swift */,
+				59A487AC2A732D8F0081EF7F /* OpenAIKeyPage.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
 		59B619472A47E2C100F614C0 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,15 +159,19 @@
 		6B61C4A529CA484100694F73 = {
 			isa = PBXGroup;
 			children = (
+				59A487A52A732D8F0081EF7F /* Onboarding */,
+				59B619472A47E2C100F614C0 /* Settings */,
+				40CDDB0329E26BE300070A77 /* Views */,
+				59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */,
+				597A2BBD2A592B250011B7B6 /* Defaults.swift */,
 				59A5971E2A6937C1009487A8 /* Changelog.swift */,
 				597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */,
-				597A2BBD2A592B250011B7B6 /* Defaults.swift */,
 				59D8C8222A4D0CCA00AB5122 /* TextEditorClearBackground.swift */,
 				59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */,
 				59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */,
 				6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */,
 				40CDDB0029E26BAF00070A77 /* CopyStringToClipboard.swift */,
-				6B61C4C429CA4E1400694F73 /* DataManager.swift */,
+				6B61C4C429CA4E1400694F73 /* KeychainManager.swift */,
 				6B61C4B029CA484100694F73 /* Butler */,
 				6B61C4AF29CA484100694F73 /* Products */,
 				59361E8129E251B9007D3BC9 /* Frameworks */,
@@ -153,8 +189,6 @@
 		6B61C4B029CA484100694F73 /* Butler */ = {
 			isa = PBXGroup;
 			children = (
-				59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */,
-				40CDDB0329E26BE300070A77 /* Views */,
 				6B61C4B529CA484300694F73 /* Assets.xcassets */,
 				6B61C4B129CA484100694F73 /* ButlerApp.swift */,
 				6B61C4BA29CA484300694F73 /* Butler.entitlements */,
@@ -259,25 +293,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A487B42A732D8F0081EF7F /* OnboardingView.swift in Sources */,
 				59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */,
 				40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */,
 				597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */,
 				59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */,
 				59A5971F2A6937C1009487A8 /* Changelog.swift in Sources */,
 				59D8C8212A4CFC9A00AB5122 /* ChatGPTModels.swift in Sources */,
+				59A487AF2A732D8F0081EF7F /* Onboarding.swift in Sources */,
 				40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */,
-				6B61C4C529CA4E1400694F73 /* DataManager.swift in Sources */,
+				59A487B32A732D8F0081EF7F /* OpenAIKeyPage.swift in Sources */,
+				6B61C4C529CA4E1400694F73 /* KeychainManager.swift in Sources */,
 				59D8C82A2A4D125B00AB5122 /* SyntaxHighlighting.swift in Sources */,
 				59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */,
 				59D8C8232A4D0CCA00AB5122 /* TextEditorClearBackground.swift in Sources */,
 				6B61C4C129CA4D4600694F73 /* OpenAIResponseHandler.swift in Sources */,
 				6B61C4B229CA484100694F73 /* ButlerApp.swift in Sources */,
 				59465C2A2A454E9700C6EF4A /* FontSizeSliderView.swift in Sources */,
+				59A487AE2A732D8F0081EF7F /* OnboardingViewPage.swift in Sources */,
 				59465C282A454DF000C6EF4A /* SettingsView.swift in Sources */,
 				59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */,
 				59465C262A454D2A00C6EF4A /* KeyboardShortcuts.swift in Sources */,
 				597A2BBE2A592B250011B7B6 /* Defaults.swift in Sources */,
 				5952042C2A52617E0086CB67 /* ErrorView.swift in Sources */,
+				59A487B12A732D8F0081EF7F /* WelcomePage.swift in Sources */,
+				59A487B02A732D8F0081EF7F /* KeyboardShortcutsPage.swift in Sources */,
 				40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */,
 				59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */,
 				59A597232A693C8F009487A8 /* ChangelogView.swift in Sources */,
@@ -411,7 +451,7 @@
 				CODE_SIGN_ENTITLEMENTS = Butler/Butler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
@@ -427,7 +467,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -444,7 +484,7 @@
 				CODE_SIGN_ENTITLEMENTS = Butler/Butler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
@@ -460,7 +500,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

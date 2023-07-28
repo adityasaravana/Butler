@@ -18,6 +18,9 @@ struct ButlerApp: App {
     @StateObject private var clearChatAppState = ClearChatAppState()
     
     var body: some Scene {
+        WindowGroup {
+            OnboardingView(pages: OnboardingPage.allCases).presentedWindowStyle(.hiddenTitleBar)
+        }.windowStyle(.hiddenTitleBar)
         Settings {
             SettingsView()
         }
@@ -36,8 +39,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         AppDelegate.instance = self
         // Close any extra windows that pop up
-        if let window = NSApplication.shared.windows.first {
-            window.close()
+        if !Defaults[.onboard] {
+            if let window = NSApplication.shared.windows.first {
+                window.close()
+            }
         }
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView(connector: .shared)
