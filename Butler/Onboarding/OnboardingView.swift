@@ -74,7 +74,7 @@ struct OnboardingView: View {
                     } label: {
                         var color: Color {
                             if disableNextButton {
-                                return .primary
+                                return .gray
                             } else {
                                 return .accentColor
                             }

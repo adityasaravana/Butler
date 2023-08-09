@@ -21,7 +21,7 @@ extension Defaults.Keys {
     static let highlightSyntax = Key<Bool>("highlightSyntax", default: false)
     static let showNewFeatures = Key<Bool>("showNewFeatures\(appVersionNumber)", default: true)
     static let textFieldLineLimit = Key<Int>("textFieldLineLimit", default: 7)
-    static let onboard = Key<Bool>("onboardhrh", default: true)
+    static let onboard = Key<Bool>("onboard", default: true)
     //            ^            ^         ^                ^
     //           Key          Type   UserDefaults name   Default value
 }

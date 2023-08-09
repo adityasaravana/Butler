@@ -17,6 +17,7 @@ struct ContentView: View {
         case image(index: Int)
     }
     
+    
     @State var textField = ""
     @State var isLoading = false
     @State var showingHelpPopover = false
@@ -29,6 +30,7 @@ struct ContentView: View {
     @Default(.useIconsInTopBar) var useIconsInTopBar
     @Default(.messagesSent) var messagesSent
     @Default(.showNewFeatures) var showNewFeatures
+    @Default(.onboard) var onboard
     
     func clearChat() {
         connector.deleteAll()
@@ -101,8 +103,8 @@ struct ContentView: View {
                     requestReview()
                 }
             }
-            .keyboardShortcut(.defaultAction)
             .disabled(isLoading)
+            .keyboardShortcut(.defaultAction)
         }
     }
     
@@ -111,7 +113,8 @@ struct ContentView: View {
             topBarView
             
             VStack {
-                if !connector.messagesEmpty {
+                
+                if !connector.messagesEmpty && !onboard {
                     ScrollViewReader { proxy in
                         ScrollView {
                             VStack {
@@ -141,7 +144,22 @@ struct ContentView: View {
                             Spacer()
                             VStack {
                                 Spacer()
-                                Text("Send a message")
+                                if !onboard {
+                                    Text("Send a message")
+                                } else {
+                                    Text("Why not finish setting up Butler first?")
+                                    HStack {
+                                        Button("No thanks, I'll figure it out.") {
+                                            withAnimation {
+                                                onboard = false
+                                            }
+                                        }
+                                        Button("Show me the setup window.") {
+                                            NSApp.windows.first?.makeKeyAndOrderFront(self)
+                                            NSApplication.shared.activate(ignoringOtherApps: true)
+                                        }
+                                    }
+                                }
                                 Spacer()
                             }
                             Spacer()
@@ -153,7 +171,9 @@ struct ContentView: View {
             }
             .cornerRadius(20)
             
-            textFieldView
+            if !onboard {
+                textFieldView
+            }
         }
         .padding()
         .alert(Changelog.notes, isPresented: $showNewFeatures) {

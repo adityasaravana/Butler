@@ -16,6 +16,7 @@
 		59465C262A454D2A00C6EF4A /* KeyboardShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */; };
 		59465C282A454DF000C6EF4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C272A454DF000C6EF4A /* SettingsView.swift */; };
 		59465C2A2A454E9700C6EF4A /* FontSizeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */; };
+		5946A3182A7F0BA200BFA74E /* View.if.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946A3172A7F0BA200BFA74E /* View.if.swift */; };
 		594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 594F51322A4572CD003018AD /* LaunchAtLogin */; };
 		5952042C2A52617E0086CB67 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5952042B2A52617E0086CB67 /* ErrorView.swift */; };
 		597A2BBC2A592B070011B7B6 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 597A2BBB2A592B070011B7B6 /* Defaults */; };
@@ -56,6 +57,7 @@
 		59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcuts.swift; sourceTree = "<group>"; };
 		59465C272A454DF000C6EF4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeSliderView.swift; sourceTree = "<group>"; };
+		5946A3172A7F0BA200BFA74E /* View.if.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.if.swift; sourceTree = "<group>"; };
 		5952042B2A52617E0086CB67 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		597A2BBD2A592B250011B7B6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowSize.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		6B61C4A529CA484100694F73 = {
 			isa = PBXGroup;
 			children = (
+				5946A3172A7F0BA200BFA74E /* View.if.swift */,
 				59A487A52A732D8F0081EF7F /* Onboarding */,
 				59B619472A47E2C100F614C0 /* Settings */,
 				40CDDB0329E26BE300070A77 /* Views */,
@@ -320,6 +323,7 @@
 				59A487B02A732D8F0081EF7F /* KeyboardShortcutsPage.swift in Sources */,
 				40CDDB0229E26BC100070A77 /* CopyStringToClipboard.swift in Sources */,
 				59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */,
+				5946A3182A7F0BA200BFA74E /* View.if.swift in Sources */,
 				59A597232A693C8F009487A8 /* ChangelogView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,7 +455,7 @@
 				CODE_SIGN_ENTITLEMENTS = Butler/Butler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
@@ -467,7 +471,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -484,7 +488,7 @@
 				CODE_SIGN_ENTITLEMENTS = Butler/Butler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Butler/Preview Content\"";
 				DEVELOPMENT_TEAM = E2RJE8M8Y3;
@@ -500,7 +504,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
