@@ -80,27 +80,25 @@ struct ContentView: View {
                 .lineLimit(7)
             
             Button("Send") {
-                isLoading = true
-                
-                Task {
+                DispatchQueue.global(qos: .userInitiated).async {
+                    isLoading = true
+                    
                     if let appDelegate = AppDelegate.instance {
                         appDelegate.setIcon(name: "slowmo")
                     }
-                }
-                
-                connector.logMessage(textField, user: .user)
-                
-                Task {
+                    
+                    connector.logMessage(textField, user: .user)
+                    
                     connector.sendToAssistant()
                     isLoading = false
                     if let appDelegate = AppDelegate.instance {
                         appDelegate.resetIcon()
                     }
                     textField = ""
-                }
-                
-                if messagesSent >= 15 {
-                    requestReview()
+                    
+                    if messagesSent >= 15 {
+                        requestReview()
+                    }
                 }
             }
             .disabled(isLoading)

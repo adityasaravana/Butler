@@ -20,6 +20,9 @@ class OpenAIConnector: ObservableObject {
         return dataManager.pull(key: .Butler_UserOpenAIKey) ?? "invalid"
     }
     
+    /// This is what stores your messages.
+    @Published var messages: [[String: String]]
+    
     init(messages: [[String: String]] = OpenAIConnector.empty) {
         self.messages = messages
         
@@ -42,9 +45,7 @@ class OpenAIConnector: ObservableObject {
     }
     
     static let empty = [["role": "system", "content": "You're a friendly, helpful assistant"]]
-    /// This is what stores your messages.
-    @Published var messages: [[String: String]] = empty
-    
+
     var messagesEmpty: Bool {
         return messages == OpenAIConnector.empty
     }
@@ -162,7 +163,9 @@ extension OpenAIConnector {
             }
             
             
+        DispatchQueue.main.async {
             self.messages.append(["role": userString, "content": message])
+        }
         
     }
     enum MessageUserType {

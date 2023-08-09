@@ -95,11 +95,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     
     @objc public func setIcon(name systemName: String) {
         let config = NSImage.SymbolConfiguration(pointSize: 10, weight: .bold)
-        self.statusBarItem.button?.image = NSImage(systemSymbolName: systemName, accessibilityDescription: nil)?.withSymbolConfiguration(config)
+        DispatchQueue.main.async {
+            self.statusBarItem.button?.image = NSImage(systemSymbolName: systemName, accessibilityDescription: nil)?.withSymbolConfiguration(config)
+        }
     }
     
     @objc public func resetIcon() {
-        self.statusBarItem.button?.image = NSImage(systemSymbolName: "mustache.fill", accessibilityDescription: nil)
+        DispatchQueue.main.async {
+            self.statusBarItem.button?.image = NSImage(systemSymbolName: "mustache.fill", accessibilityDescription: nil)
+        }
     }
 }
 
