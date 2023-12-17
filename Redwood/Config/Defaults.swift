@@ -16,7 +16,6 @@ extension Defaults.Keys {
     static let messagesSent = Key<Int>("messagesSent", default: 0)
     static let chatGPTModel = Key<ChatGPTModels>("chatGPTModel", default: .gpt3)
     static let useIconsInTopBar = Key<Bool>("useIconsInTopBar", default: false)
-    static let highlightSyntax = Key<Bool>("highlightSyntax", default: false)
     static let textFieldLineLimit = Key<Int>("textFieldLineLimit", default: 7)
     //            ^            ^         ^                ^
     //           Key          Type   UserDefaults name   Default value

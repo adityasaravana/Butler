@@ -40,22 +40,16 @@ struct ChatGPTSettingsView: View {
                 }
             }
             
-            Divider()
             
             Picker("ChatGPT Version", selection: $model) {
                 ForEach(ChatGPTModels.allCases, id: \.self) {
                     Text($0.name)
                 }
             }.pickerStyle(.segmented)
-            
-            
-            
         }
     }
 }
 
-struct ChatGPTSettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatGPTSettingsView()
-    }
+#Preview {
+    ChatGPTSettingsView()
 }

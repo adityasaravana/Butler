@@ -18,8 +18,6 @@ struct HotkeySettingsView: View {
     }
 }
 
-struct HotkeySettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        HotkeySettingsView()
-    }
+#Preview {
+    HotkeySettingsView()
 }

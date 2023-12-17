@@ -13,7 +13,6 @@ import OpenAIKit
 
 struct MessageView: View {
     @Default(.fontSize) var fontSize
-    @Default(.highlightSyntax) var highlightSyntax
     @Environment(\.colorScheme) private var colorScheme
     
     var message: Chat.Message
@@ -64,10 +63,6 @@ struct MessageView: View {
                 
                 ChatBubble(direction: bubbleDirection) {
                     Markdown(message.content)
-                        .if(highlightSyntax) { view in
-                            view.markdownCodeSyntaxHighlighter(.splash(theme: self.theme))
-                        }
-                    
                         .padding(.horizontal, 15)
                         .padding(.vertical, 10)
                         .markdownTextStyle(\.text) {
