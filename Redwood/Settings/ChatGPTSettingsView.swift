@@ -7,15 +7,12 @@
 
 import SwiftUI
 import Defaults
+import OpenAIKit
 
 struct ChatGPTSettingsView: View {
     @Default(.chatGPTModel) var model
-    @Default(.chatGPTTemperature) var creativity
-    @Default(.showLimitedAccessWarning) var showLimitedAccessWarning
     @Default(.userAPIKey) var apiKey
     
-    @State var showLimitedAccessWarningAlert = false
-    @State var modelLocal = ChatGPTModels.gpt3
     @State var secureField = true
     
     var body: some View {
@@ -45,35 +42,14 @@ struct ChatGPTSettingsView: View {
             
             Divider()
             
-            Picker("ChatGPT Version", selection: $modelLocal) {
+            Picker("ChatGPT Version", selection: $model) {
                 ForEach(ChatGPTModels.allCases, id: \.self) {
                     Text($0.name)
                 }
             }.pickerStyle(.segmented)
             
-            FontSizeSliderView(step: 0.1, text: "Creativity", startValue: 0, endValue: 2, value: $creativity)
             
             
-        }
-        .alert("\(modelLocal.name) isn't publicly available. You need to apply for access on OpenAI's site to use this model. Are you sure you have access?", isPresented: $showLimitedAccessWarningAlert) {
-            
-            Button("Yes, I have access.", role: .cancel) {}
-            Button("Yes, I have access, and stop showing me this message.", role: .destructive) {
-                showLimitedAccessWarning = false
-            }
-        }
-        .onChange(of: modelLocal) { newValue in
-            model = newValue
-            if model == .gpt4 && showLimitedAccessWarning {
-                showLimitedAccessWarningAlert = true
-            }
-        }
-        .onAppear {
-            if model == ChatGPTModels.gpt3 {
-                modelLocal = .gpt3
-            } else if model == ChatGPTModels.gpt4 {
-                modelLocal = .gpt4
-            }
         }
     }
 }

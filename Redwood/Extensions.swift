@@ -8,7 +8,9 @@
 import Foundation
 import SwiftUI
 import OpenAIKit
+import Defaults
 
+// MARK: View.if
 extension View {
     @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
         if condition {
@@ -19,6 +21,7 @@ extension View {
     }
 }
 
+// MARK: Clear Backgrounds for NSTextView
 extension NSTextView {
     open override var frame: CGRect {
         didSet {
@@ -28,6 +31,7 @@ extension NSTextView {
     }
 }
 
+// MARK: copyStringToClipboard
 public func copyStringToClipboard(_ string: String) {
 #if os(macOS)
     let pasteboard = NSPasteboard.general
@@ -38,7 +42,7 @@ public func copyStringToClipboard(_ string: String) {
 #endif
 }
 
-
+// MARK: OpenAIKit Compatibility
 extension Chat.Message: Hashable {
     public func hash(into hasher: inout Hasher) {
         switch self {
@@ -68,6 +72,10 @@ extension Chat.Message: Identifiable {
     public var id: Self { self }
 }
 
+
+// MARK: Dictionary, Array, String + Identifiable
 extension Dictionary: Identifiable { public var id: UUID { UUID() } }
 extension Array: Identifiable { public var id: UUID { UUID() } }
 extension String: Identifiable { public var id: UUID { UUID() } }
+
+

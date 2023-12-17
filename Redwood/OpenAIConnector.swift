@@ -47,7 +47,7 @@ class OpenAIConnector: ObservableObject {
             Defaults[.messagesSent] += 1
             
             do {
-                let completion = try await client.chats.create(model: Model.GPT3.gpt3_5Turbo, messages: messages)
+                let completion = try await client.chats.create(model: Defaults[.chatGPTModel].modelID, messages: messages)
                 
                 messages.append(completion.choices.first?.message ?? Chat.Message.assistant(content: "nil"))
             } catch {
@@ -81,3 +81,4 @@ extension OpenAIConnector {
         case assistant
     }
 }
+
