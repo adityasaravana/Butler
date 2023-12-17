@@ -33,6 +33,7 @@
 		59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */; };
 		59BD43E82B2E977200AD6CB1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD43E72B2E977200AD6CB1 /* Extensions.swift */; };
 		59BD43EB2B2E988700AD6CB1 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BD43EA2B2E988700AD6CB1 /* OpenAIKit */; };
+		59BD43F02B2E9D9400AD6CB1 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */; };
 		59D8C8212A4CFC9A00AB5122 /* ChatGPTModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */; };
 		59D8C82A2A4D125B00AB5122 /* SyntaxHighlighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8C8292A4D125B00AB5122 /* SyntaxHighlighting.swift */; };
 		59D8C82D2A4D128A00AB5122 /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = 59D8C82C2A4D128A00AB5122 /* Splash */; };
@@ -94,6 +95,7 @@
 				59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */,
 				59D8C82F2A4D128A00AB5122 /* SplashMarkdown in Frameworks */,
 				59465C242A454CF600C6EF4A /* KeyboardShortcuts in Frameworks */,
+				59BD43F02B2E9D9400AD6CB1 /* SettingsAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +229,7 @@
 				59D8C8302A4D128A00AB5122 /* SplashTokenizer */,
 				597A2BBB2A592B070011B7B6 /* Defaults */,
 				59BD43EA2B2E988700AD6CB1 /* OpenAIKit */,
+				59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Butler.app */;
@@ -264,6 +267,7 @@
 				59D8C82B2A4D128A00AB5122 /* XCRemoteSwiftPackageReference "Splash" */,
 				597A2BBA2A592B070011B7B6 /* XCRemoteSwiftPackageReference "Defaults" */,
 				59BD43E92B2E988700AD6CB1 /* XCRemoteSwiftPackageReference "openai-kit" */,
+				59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -574,6 +578,14 @@
 				minimumVersion = 1.8.2;
 			};
 		};
+		59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/orchetect/SettingsAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
 		59D8C82B2A4D128A00AB5122 /* XCRemoteSwiftPackageReference "Splash" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JohnSundell/Splash.git";
@@ -617,6 +629,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59BD43E92B2E988700AD6CB1 /* XCRemoteSwiftPackageReference "openai-kit" */;
 			productName = OpenAIKit;
+		};
+		59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */;
+			productName = SettingsAccess;
 		};
 		59D8C82C2A4D128A00AB5122 /* Splash */ = {
 			isa = XCSwiftPackageProductDependency;

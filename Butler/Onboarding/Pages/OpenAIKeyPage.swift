@@ -62,13 +62,13 @@ struct OpenAIKeyPage: View {
                     
                     APIKeyLocal = ""
                     
-                    Task {
-                       
-                        validator.sendToAssistant()
-                        response = validator.messages.last?["content"] ?? "Looks like nothing came back from OpenAI."
-                        disableNextButton = false
-                        loading = false
-                    }
+//                    Task {
+//                       
+//                        await validator.sendToAssistant()
+//                        response = validator.messages.last?["content"] ?? "Looks like nothing came back from OpenAI."
+//                        disableNextButton = false
+//                        loading = false
+//                    }
                 }.disabled(loading)
             }.padding(.horizontal, 40)
             

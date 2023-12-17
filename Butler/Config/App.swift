@@ -9,6 +9,7 @@ import SwiftUI
 import AppKit
 import KeyboardShortcuts
 import Defaults
+import SettingsAccess
 
 @main
 struct app: App {
@@ -45,7 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             }
         }
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView(connector: .shared)
+        let contentView = ContentView(connector: .shared).openSettingsAccess()
         
         // Create the popover
         let windowSize = Defaults[.windowSize]
@@ -131,7 +132,7 @@ final class ClearChatAppState: ObservableObject {
 final class CopyLatestMessageAppState: ObservableObject {
     init() {
         KeyboardShortcuts.onKeyUp(for: .copyLatestMessage) {
-            copyStringToClipboard(OpenAIConnector.shared.messages.last?["content"] ?? "error")
+            copyStringToClipboard(OpenAIConnector.shared.messages.last?.content ?? "Couldn't copy a message")
         }
     }
 }

@@ -11,6 +11,7 @@ import MarkdownUI
 import StoreKit
 import Foundation
 import Defaults
+import SettingsAccess
 
 struct ContentView: View {
     enum ScrollPosition: Hashable {
@@ -40,7 +41,7 @@ struct ContentView: View {
     func showSettings() {
         NSApp.activate(ignoringOtherApps: true)
         if #available(macOS 13, *) {
-            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+            
         } else {
             NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
         }
@@ -59,7 +60,13 @@ struct ContentView: View {
                     }
                 
                 Button("Clear Chat") { clearChat() }
-                Button("Settings") { showSettings() }
+                if #available(macOS 14, *) {
+                    SettingsLink{
+                        Text("Settings")
+                    }.keyboardShortcut(",", modifiers: .command)
+                } else {
+                    Button("Settings") { showSettings() }
+                }
                 Button("Quit") { exit(0) }
             } else {
                 Button { showingHelpPopover = true } label: { Image(systemName: "questionmark") }
@@ -68,7 +75,14 @@ struct ContentView: View {
                     }
                 
                 Button { clearChat() } label: { Image(systemName: "trash") }
-                Button { showSettings() } label: { Image(systemName: "gear") }
+                if #available(macOS 14, *) {
+                    SettingsLink{
+                        Image(systemName: "gear")
+                    }.keyboardShortcut(",", modifiers: .command)
+                } else {
+                    Button { showSettings() } label: { Image(systemName: "gear") }
+                }
+                
                 Button { exit(0) } label: { Image(systemName: "escape") }
             }
         }
@@ -91,7 +105,7 @@ struct ContentView: View {
                 connector.logMessage(textField, user: .user)
                 
                 Task {
-                    connector.sendToAssistant()
+                    await connector.sendToAssistant()
                     isLoading = false
                     if let appDelegate = AppDelegate.instance {
                         appDelegate.resetIcon()
@@ -118,10 +132,8 @@ struct ContentView: View {
                     ScrollViewReader { proxy in
                         ScrollView {
                             VStack {
-                                ForEach(connector.messages, id: \.id) { message in
-                                    if message["role"] != "system" {
-                                        MessageView(message: message)
-                                    }
+                                ForEach(connector.messages) { message in
+                                    MessageView(message: message)
                                 }
                                 
                                 if isLoading {
@@ -130,7 +142,7 @@ struct ContentView: View {
                             }
                         }.onChange(of: connector.messages, perform: { _ in
                             withAnimation {
-                                proxy.scrollTo(connector.messages.last?.id)
+                                proxy.scrollTo(connector.messages.last)
                             }
                         })
                         

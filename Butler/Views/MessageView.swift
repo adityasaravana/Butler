@@ -9,31 +9,35 @@ import SwiftUI
 import MarkdownUI
 import Splash
 import Defaults
+import OpenAIKit
 
 struct MessageView: View {
     @Default(.fontSize) var fontSize
     @Default(.highlightSyntax) var highlightSyntax
     @Environment(\.colorScheme) private var colorScheme
     
-    var message: [String: String]
+    var message: Chat.Message
     
     var messageColor: SwiftUI.Color {
-        if message["role"] == "user" {
-            return .gray
-        } else if message["role"] == "assistant" {
-            return .accentColor
-        } else {
+        
+        switch message {
+        case .system:
             return .red
+        case .user:
+            return .accentColor
+        case .assistant:
+            return .gray
         }
     }
     
     var bubbleDirection: ChatBubbleShape.Direction {
-        if message["role"] == "user" {
+        switch message {
+        case .system:
             return .right
-        } else if message["role"] == "assistant" {
+        case .user:
+            return .right
+        case .assistant:
             return .left
-        } else {
-            return .right
         }
     }
     
@@ -49,16 +53,18 @@ struct MessageView: View {
     
     var body: some View {
         HStack {
-            if message["role"] == "user" {
+            if bubbleDirection == .right {
                 Spacer()
                 Button("Copy") {
-                    copyStringToClipboard(message["content"] ?? "error")
+                    copyStringToClipboard(message.content)
                 }.font(.system(size: fontSize))
+            
+                
             }
             
             ChatBubble(direction: bubbleDirection) {
                 if highlightSyntax {
-                    Markdown(message["content"] ?? "error")
+                    Markdown(message.content)
                         .markdownCodeSyntaxHighlighter(.splash(theme: self.theme))
                         .padding(.all, 15)
                         .markdownTextStyle(\.text) {
@@ -68,7 +74,7 @@ struct MessageView: View {
                         .background(messageColor)
                         .textSelection(.enabled)
                 } else {
-                    Markdown(message["content"] ?? "error")
+                    Markdown(message.content)
                         .padding(.all, 15)
                         .markdownTextStyle(\.text) {
                             ForegroundColor(.white)
@@ -79,9 +85,9 @@ struct MessageView: View {
                 }
             }
             
-            if message["role"] == "assistant" {
+            if bubbleDirection == .left {
                 Button("Copy") {
-                    copyStringToClipboard(message["content"] ?? "error")
+                    copyStringToClipboard(message.content)
                 }.font(.system(size: fontSize))
                 Spacer()
             }
