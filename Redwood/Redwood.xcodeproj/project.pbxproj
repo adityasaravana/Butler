@@ -20,12 +20,6 @@
 		597A2BBC2A592B070011B7B6 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 597A2BBB2A592B070011B7B6 /* Defaults */; };
 		597A2BBE2A592B250011B7B6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBD2A592B250011B7B6 /* Defaults.swift */; };
 		597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */; };
-		59A487AE2A732D8F0081EF7F /* OnboardingViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487A62A732D8F0081EF7F /* OnboardingViewPage.swift */; };
-		59A487AF2A732D8F0081EF7F /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487A72A732D8F0081EF7F /* Onboarding.swift */; };
-		59A487B02A732D8F0081EF7F /* KeyboardShortcutsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487A92A732D8F0081EF7F /* KeyboardShortcutsPage.swift */; };
-		59A487B12A732D8F0081EF7F /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487AA2A732D8F0081EF7F /* WelcomePage.swift */; };
-		59A487B32A732D8F0081EF7F /* OpenAIKeyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487AC2A732D8F0081EF7F /* OpenAIKeyPage.swift */; };
-		59A487B42A732D8F0081EF7F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487AD2A732D8F0081EF7F /* OnboardingView.swift */; };
 		59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */; };
 		59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */; };
 		59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */; };
@@ -56,12 +50,6 @@
 		5952042B2A52617E0086CB67 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		597A2BBD2A592B250011B7B6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowSize.swift; sourceTree = "<group>"; };
-		59A487A62A732D8F0081EF7F /* OnboardingViewPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewPage.swift; sourceTree = "<group>"; };
-		59A487A72A732D8F0081EF7F /* Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
-		59A487A92A732D8F0081EF7F /* KeyboardShortcutsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsPage.swift; sourceTree = "<group>"; };
-		59A487AA2A732D8F0081EF7F /* WelcomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
-		59A487AC2A732D8F0081EF7F /* OpenAIKeyPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIKeyPage.swift; sourceTree = "<group>"; };
-		59A487AD2A732D8F0081EF7F /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTSettingsView.swift; sourceTree = "<group>"; };
 		59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeySettingsView.swift; sourceTree = "<group>"; };
@@ -119,27 +107,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		59A487A52A732D8F0081EF7F /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				59A487A82A732D8F0081EF7F /* Pages */,
-				59A487A62A732D8F0081EF7F /* OnboardingViewPage.swift */,
-				59A487A72A732D8F0081EF7F /* Onboarding.swift */,
-				59A487AD2A732D8F0081EF7F /* OnboardingView.swift */,
-			);
-			path = Onboarding;
-			sourceTree = SOURCE_ROOT;
-		};
-		59A487A82A732D8F0081EF7F /* Pages */ = {
-			isa = PBXGroup;
-			children = (
-				59A487A92A732D8F0081EF7F /* KeyboardShortcutsPage.swift */,
-				59A487AA2A732D8F0081EF7F /* WelcomePage.swift */,
-				59A487AC2A732D8F0081EF7F /* OpenAIKeyPage.swift */,
-			);
-			path = Pages;
-			sourceTree = "<group>";
-		};
 		59B619472A47E2C100F614C0 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +123,6 @@
 			children = (
 				59BD43E72B2E977200AD6CB1 /* Extensions.swift */,
 				59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */,
-				59A487A52A732D8F0081EF7F /* Onboarding */,
 				59B619472A47E2C100F614C0 /* Settings */,
 				40CDDB0329E26BE300070A77 /* Views */,
 				597A2BBD2A592B250011B7B6 /* Defaults.swift */,
@@ -290,27 +256,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59A487B42A732D8F0081EF7F /* OnboardingView.swift in Sources */,
 				59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */,
 				40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */,
 				597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */,
 				59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */,
 				59D8C8212A4CFC9A00AB5122 /* ChatGPTModels.swift in Sources */,
-				59A487AF2A732D8F0081EF7F /* Onboarding.swift in Sources */,
 				40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */,
-				59A487B32A732D8F0081EF7F /* OpenAIKeyPage.swift in Sources */,
 				59D8C82A2A4D125B00AB5122 /* SyntaxHighlighting.swift in Sources */,
 				59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */,
 				6B61C4B229CA484100694F73 /* App.swift in Sources */,
 				59465C2A2A454E9700C6EF4A /* FontSizeSliderView.swift in Sources */,
-				59A487AE2A732D8F0081EF7F /* OnboardingViewPage.swift in Sources */,
 				59465C282A454DF000C6EF4A /* SettingsView.swift in Sources */,
 				59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */,
 				59465C262A454D2A00C6EF4A /* KeyboardShortcuts.swift in Sources */,
 				597A2BBE2A592B250011B7B6 /* Defaults.swift in Sources */,
 				5952042C2A52617E0086CB67 /* ErrorView.swift in Sources */,
-				59A487B12A732D8F0081EF7F /* WelcomePage.swift in Sources */,
-				59A487B02A732D8F0081EF7F /* KeyboardShortcutsPage.swift in Sources */,
 				59BD43E82B2E977200AD6CB1 /* Extensions.swift in Sources */,
 				59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */,
 			);

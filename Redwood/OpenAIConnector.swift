@@ -56,11 +56,9 @@ class OpenAIConnector: ObservableObject {
                 self.logMessage("SendToAssistant caught.", user: .assistant)
             }
         } else {
-            if !Defaults[.onboard] {
+            
                 self.logMessage("You haven't entered an OpenAI API key. To add one, open Settings, and add it in the ChatGPT settings menu.", user: .assistant)
-            } else {
-                self.logMessage("Looks like you haven't entered anything in the text field above. Paste your API key in and try again.", user: .assistant)
-            }
+            
         }
     }
 }

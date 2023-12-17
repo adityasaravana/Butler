@@ -30,7 +30,6 @@ struct ContentView: View {
     
     @Default(.useIconsInTopBar) var useIconsInTopBar
     @Default(.messagesSent) var messagesSent
-    @Default(.onboard) var onboard
     
     func clearChat() {
         connector.deleteAll()
@@ -127,7 +126,7 @@ struct ContentView: View {
             
             VStack {
                 
-                if !connector.messagesEmpty && !onboard {
+                if !connector.messagesEmpty {
                     ScrollViewReader { proxy in
                         ScrollView {
                             VStack {
@@ -155,22 +154,9 @@ struct ContentView: View {
                             Spacer()
                             VStack {
                                 Spacer()
-                                if !onboard {
+                                
                                     Text("Send a message")
-                                } else {
-                                    Text("Why not finish setting up Butler first?")
-                                    HStack {
-                                        Button("No thanks, I'll figure it out.") {
-                                            withAnimation {
-                                                onboard = false
-                                            }
-                                        }
-                                        Button("Show me the setup window.") {
-                                            NSApp.windows.first?.makeKeyAndOrderFront(self)
-                                            NSApplication.shared.activate(ignoringOtherApps: true)
-                                        }
-                                    }
-                                }
+                                
                                 Spacer()
                             }
                             Spacer()
@@ -182,9 +168,9 @@ struct ContentView: View {
             }
             .cornerRadius(20)
             
-            if !onboard {
+            
                 textFieldView
-            }
+            
         }
         .padding()
     }
