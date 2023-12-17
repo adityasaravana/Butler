@@ -9,7 +9,6 @@
 import SwiftUI
 import MarkdownUI
 import StoreKit
-import Foundation
 import Defaults
 import SettingsAccess
 
@@ -17,7 +16,6 @@ struct ContentView: View {
     enum ScrollPosition: Hashable {
         case image(index: Int)
     }
-    
     
     @State var textField = ""
     @State var isLoading = false
@@ -32,101 +30,33 @@ struct ContentView: View {
     @Default(.messagesSent) var messagesSent
     
     func clearChat() {
-        connector.deleteAll()
+        connector.messages.deleteAll()
         isLoading = false
-    }
-    
-    func showSettings() {
-        NSApp.activate(ignoringOtherApps: true)
-        if #available(macOS 13, *) {
-            
-        } else {
-            NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
-        }
-    }
-    
-    var topBarView: some View {
-        HStack {
-            Text("Butler").bold()
-            
-            Spacer()
-            
-            if !useIconsInTopBar {
-                Button("Help") { showingHelpPopover = true }
-                    .popover(isPresented: $showingHelpPopover) {
-                        Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
-                    }
-                
-                Button("Clear Chat") { clearChat() }
-                if #available(macOS 14, *) {
-                    SettingsLink{
-                        Text("Settings")
-                    }.keyboardShortcut(",", modifiers: .command)
-                } else {
-                    Button("Settings") { showSettings() }
-                }
-                Button("Quit") { exit(0) }
-            } else {
-                Button { showingHelpPopover = true } label: { Image(systemName: "questionmark") }
-                    .popover(isPresented: $showingHelpPopover) {
-                        Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
-                    }
-                
-                Button { clearChat() } label: { Image(systemName: "trash") }
-                if #available(macOS 14, *) {
-                    SettingsLink{
-                        Image(systemName: "gear")
-                    }.keyboardShortcut(",", modifiers: .command)
-                } else {
-                    Button { showSettings() } label: { Image(systemName: "gear") }
-                }
-                
-                Button { exit(0) } label: { Image(systemName: "escape") }
-            }
-        }
-    }
-    var textFieldView: some View {
-        HStack {
-            TextField("Type here", text: $textField, axis: .vertical)
-                .textFieldStyle(.roundedBorder)
-                .lineLimit(7)
-            
-            Button("Send") {
-                isLoading = true
-                
-                Task {
-                    if let appDelegate = AppDelegate.instance {
-                        appDelegate.setIcon(name: "slowmo")
-                    }
-                }
-                
-                connector.logMessage(textField, user: .user)
-                
-                Task {
-                    await connector.sendToAssistant()
-                    isLoading = false
-                    if let appDelegate = AppDelegate.instance {
-                        appDelegate.resetIcon()
-                    }
-                    textField = ""
-                }
-                
-                if messagesSent >= 15 {
-                    requestReview()
-                }
-            }
-            .disabled(isLoading)
-            .keyboardShortcut(.defaultAction)
-        }
     }
     
     var body: some View {
         VStack {
-            topBarView
+            HStack {
+                Text("Butler").bold()
+                
+                Spacer()
+                
+                Button { showingHelpPopover = true } label: { TopBarButtonLabel(useIconsInTopBar, text: "Help", icon: "questionmark") }
+                    .popover(isPresented: $showingHelpPopover) {
+                        Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
+                    }
+                
+                Button { clearChat() } label: { TopBarButtonLabel(useIconsInTopBar, text: "Clear Chat", icon: "trash.fill") }
+                
+                SettingsButton(useIconsInTopBar)
+                
+                Button { exit(0) } label: { TopBarButtonLabel(useIconsInTopBar, text: "Quit", icon: "escape") }
+                
+            }
             
             VStack {
                 
-                if !connector.messagesEmpty {
+                if !connector.messages.messagesEmpty {
                     ScrollViewReader { proxy in
                         ScrollView {
                             VStack {
@@ -150,26 +80,47 @@ struct ContentView: View {
                     .background(.thickMaterial)
                 } else {
                     ZStack {
-                        HStack {
-                            Spacer()
-                            VStack {
-                                Spacer()
-                                
-                                    Text("Send a message")
-                                
-                                Spacer()
-                            }
-                            Spacer()
-                        }
+                        Text("Send a message")
                     }
                     .padding()
                     .background(.thickMaterial)
                 }
             }
-            .cornerRadius(20)
+            .cornerRadius(10)
             
             
-                textFieldView
+            HStack {
+                TextField("Type here", text: $textField, axis: .vertical)
+                    .textFieldStyle(.roundedBorder)
+                    .lineLimit(7)
+                
+                Button("Send") {
+                    isLoading = true
+                    
+                    Task {
+                        if let appDelegate = AppDelegate.instance {
+                            appDelegate.setIcon(name: "slowmo")
+                        }
+                    }
+                    
+                    connector.logMessage(textField, user: .user)
+                    
+                    Task {
+                        await connector.sendToAssistant()
+                        isLoading = false
+                        if let appDelegate = AppDelegate.instance {
+                            appDelegate.resetIcon()
+                        }
+                        textField = ""
+                    }
+                    
+                    if messagesSent >= 15 {
+                        requestReview()
+                    }
+                }
+                .disabled(isLoading)
+                .keyboardShortcut(.defaultAction)
+            }
             
         }
         .padding()

@@ -116,7 +116,7 @@ final class OpenCloseButlerAppState: ObservableObject {
 final class ClearChatAppState: ObservableObject {
     init() {
         KeyboardShortcuts.onKeyUp(for: .clearChat) {
-            OpenAIConnector.shared.deleteAll()
+            OpenAIConnector.shared.messages.deleteAll()
         }
     }
 }

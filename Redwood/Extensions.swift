@@ -72,6 +72,21 @@ extension Chat.Message: Identifiable {
     public var id: Self { self }
 }
 
+extension [Chat.Message] {
+    var messagesEmpty: Bool {
+        if self == [.system(content: "You're a friendly, helpful assistant.")] {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    mutating func deleteAll() {
+        self.removeAll()
+        self.append(.system(content: "You're a friendly, helpful assistant."))
+    }
+}
+
 
 // MARK: Dictionary, Array, String + Identifiable
 extension Dictionary: Identifiable { public var id: UUID { UUID() } }

@@ -6,17 +6,12 @@
 //
 
 import Foundation
-import Combine
-import Network
 import Defaults
-import SwiftUI
 import OpenAIKit
 
 class OpenAIConnector: ObservableObject {
     static let shared = OpenAIConnector()
-
     var openAIKey = Defaults[.userAPIKey]
-
     var client: OpenAIKit.Client
     
     init() {
@@ -29,21 +24,10 @@ class OpenAIConnector: ObservableObject {
         .system(content: "You're a friendly, helpful assistant.")
     ]
     
-    var messagesEmpty: Bool {
-        if messages == [.system(content: "You're a friendly, helpful assistant.")] {
-            return true
-        } else {
-            return false
-        }
-    }
     
-    func deleteAll() {
-        messages.removeAll()
-        messages.append(.system(content: "You're a friendly, helpful assistant."))
-    }
     
     func sendToAssistant() async {
-        if self.openAIKey != "" {
+        if !self.openAIKey.isEmpty {
             Defaults[.messagesSent] += 1
             
             do {
@@ -56,14 +40,10 @@ class OpenAIConnector: ObservableObject {
                 self.logMessage("SendToAssistant caught.", user: .assistant)
             }
         } else {
-            
-                self.logMessage("You haven't entered an OpenAI API key. To add one, open Settings, and add it in the ChatGPT settings menu.", user: .assistant)
-            
+            self.logMessage("You haven't entered an OpenAI API key. To add one, open Settings, and add it in the ChatGPT settings menu.", user: .assistant)
         }
     }
 }
-
-
 
 extension OpenAIConnector {
     /// This function makes it simpler to append items to messages.
