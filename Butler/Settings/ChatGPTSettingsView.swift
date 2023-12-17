@@ -12,9 +12,9 @@ struct ChatGPTSettingsView: View {
     @Default(.chatGPTModel) var model
     @Default(.chatGPTTemperature) var creativity
     @Default(.showLimitedAccessWarning) var showLimitedAccessWarning
+    @Default(.userAPIKey) var apiKey
     
     @State var showLimitedAccessWarningAlert = false
-    @State var APIKeyLocal = ""
     @State var modelLocal = ChatGPTModels.gpt3
     @State var secureField = true
     
@@ -33,18 +33,13 @@ struct ChatGPTSettingsView: View {
                 }
                 
                 if secureField {
-                    SecureField("Paste OpenAI API Key Here", text: $APIKeyLocal)
+                    SecureField("Paste OpenAI API Key Here", text: $apiKey)
                         .autocorrectionDisabled(true)
                         .textFieldStyle(.roundedBorder)
                 } else {
-                    TextField("Paste OpenAI API Key Here", text: $APIKeyLocal)
+                    TextField("Paste OpenAI API Key Here", text: $apiKey)
                         .autocorrectionDisabled(true)
                         .textFieldStyle(.roundedBorder)
-                }
-                
-                Button("Save") {
-                    Defaults[.userAPIKey] = APIKeyLocal.filter { !" \n\t\r".contains($0) }
-                    APIKeyLocal = ""
                 }
             }
             

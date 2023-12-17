@@ -33,6 +33,7 @@ struct ChatBubbleShape: Shape {
     enum Direction {
         case left
         case right
+        case system
     }
     
     let direction: Direction

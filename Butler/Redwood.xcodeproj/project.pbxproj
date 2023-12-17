@@ -44,7 +44,6 @@
 		6B61C4B229CA484100694F73 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B129CA484100694F73 /* App.swift */; };
 		6B61C4B629CA484300694F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B529CA484300694F73 /* Assets.xcassets */; };
 		6B61C4B929CA484300694F73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B829CA484300694F73 /* Preview Assets.xcassets */; };
-		6B61C4C129CA4D4600694F73 /* OpenAIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,12 +72,11 @@
 		59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTModels.swift; sourceTree = "<group>"; };
 		59D8C8292A4D125B00AB5122 /* SyntaxHighlighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxHighlighting.swift; sourceTree = "<group>"; };
 		59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIConnector.swift; sourceTree = "<group>"; };
-		6B61C4AE29CA484100694F73 /* Butler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Butler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B61C4AE29CA484100694F73 /* Redwood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Redwood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B61C4B129CA484100694F73 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		6B61C4B529CA484300694F73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B61C4B829CA484300694F73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B61C4BA29CA484300694F73 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
-		6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIResponseHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +167,6 @@
 				597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */,
 				59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */,
 				59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */,
-				6B61C4C029CA4D4600694F73 /* OpenAIResponseHandler.swift */,
 				6B61C4B029CA484100694F73 /* Config */,
 				6B61C4AF29CA484100694F73 /* Products */,
 				59361E8129E251B9007D3BC9 /* Frameworks */,
@@ -179,7 +176,7 @@
 		6B61C4AF29CA484100694F73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6B61C4AE29CA484100694F73 /* Butler.app */,
+				6B61C4AE29CA484100694F73 /* Redwood.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,9 +203,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6B61C4AD29CA484100694F73 /* Butler */ = {
+		6B61C4AD29CA484100694F73 /* Redwood */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B61C4BD29CA484300694F73 /* Build configuration list for PBXNativeTarget "Butler" */;
+			buildConfigurationList = 6B61C4BD29CA484300694F73 /* Build configuration list for PBXNativeTarget "Redwood" */;
 			buildPhases = (
 				6B61C4AA29CA484100694F73 /* Sources */,
 				6B61C4AB29CA484100694F73 /* Frameworks */,
@@ -218,7 +215,7 @@
 			);
 			dependencies = (
 			);
-			name = Butler;
+			name = Redwood;
 			packageProductDependencies = (
 				59361E6829E242FD007D3BC9 /* KeychainSwift */,
 				59EEA40F29EC7C2D00B75937 /* MarkdownUI */,
@@ -232,7 +229,7 @@
 				59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */,
 			);
 			productName = Butler;
-			productReference = 6B61C4AE29CA484100694F73 /* Butler.app */;
+			productReference = 6B61C4AE29CA484100694F73 /* Redwood.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -250,7 +247,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6B61C4A929CA484100694F73 /* Build configuration list for PBXProject "Butler" */;
+			buildConfigurationList = 6B61C4A929CA484100694F73 /* Build configuration list for PBXProject "Redwood" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -273,7 +270,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6B61C4AD29CA484100694F73 /* Butler */,
+				6B61C4AD29CA484100694F73 /* Redwood */,
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +304,6 @@
 				59A487B32A732D8F0081EF7F /* OpenAIKeyPage.swift in Sources */,
 				59D8C82A2A4D125B00AB5122 /* SyntaxHighlighting.swift in Sources */,
 				59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */,
-				6B61C4C129CA4D4600694F73 /* OpenAIResponseHandler.swift in Sources */,
 				6B61C4B229CA484100694F73 /* App.swift in Sources */,
 				59465C2A2A454E9700C6EF4A /* FontSizeSliderView.swift in Sources */,
 				59A487AE2A732D8F0081EF7F /* OnboardingViewPage.swift in Sources */,
@@ -463,7 +459,6 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Butler;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -473,7 +468,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 3.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adityasaravana.redwood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -497,7 +492,6 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Butler;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -507,7 +501,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 3.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devdude.Butler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adityasaravana.redwood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -517,7 +511,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6B61C4A929CA484100694F73 /* Build configuration list for PBXProject "Butler" */ = {
+		6B61C4A929CA484100694F73 /* Build configuration list for PBXProject "Redwood" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B61C4BB29CA484300694F73 /* Debug */,
@@ -526,7 +520,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B61C4BD29CA484300694F73 /* Build configuration list for PBXNativeTarget "Butler" */ = {
+		6B61C4BD29CA484300694F73 /* Build configuration list for PBXNativeTarget "Redwood" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B61C4BE29CA484300694F73 /* Debug */,

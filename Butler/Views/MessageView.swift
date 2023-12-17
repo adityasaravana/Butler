@@ -33,7 +33,7 @@ struct MessageView: View {
     var bubbleDirection: ChatBubbleShape.Direction {
         switch message {
         case .system:
-            return .right
+            return .system
         case .user:
             return .right
         case .assistant:
@@ -52,30 +52,24 @@ struct MessageView: View {
     }
     
     var body: some View {
-        HStack {
-            if bubbleDirection == .right {
-                Spacer()
-                Button("Copy") {
-                    copyStringToClipboard(message.content)
-                }.font(.system(size: fontSize))
-            
+        if bubbleDirection != .system {
+            HStack {
+                if bubbleDirection == .right {
+                    Spacer()
+                    Button("Copy") {
+                        copyStringToClipboard(message.content)
+                    }
+                    .font(.system(size: fontSize))
+                }
                 
-            }
-            
-            ChatBubble(direction: bubbleDirection) {
-                if highlightSyntax {
+                ChatBubble(direction: bubbleDirection) {
                     Markdown(message.content)
-                        .markdownCodeSyntaxHighlighter(.splash(theme: self.theme))
-                        .padding(.all, 15)
-                        .markdownTextStyle(\.text) {
-                            ForegroundColor(.white)
-                            FontSize(fontSize)
+                        .if(highlightSyntax) { view in
+                            view.markdownCodeSyntaxHighlighter(.splash(theme: self.theme))
                         }
-                        .background(messageColor)
-                        .textSelection(.enabled)
-                } else {
-                    Markdown(message.content)
-                        .padding(.all, 15)
+                    
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 10)
                         .markdownTextStyle(\.text) {
                             ForegroundColor(.white)
                             FontSize(fontSize)
@@ -83,13 +77,14 @@ struct MessageView: View {
                         .background(messageColor)
                         .textSelection(.enabled)
                 }
-            }
-            
-            if bubbleDirection == .left {
-                Button("Copy") {
-                    copyStringToClipboard(message.content)
-                }.font(.system(size: fontSize))
-                Spacer()
+                
+                if bubbleDirection == .left {
+                    Button("Copy") {
+                        copyStringToClipboard(message.content)
+                    }
+                    .font(.system(size: fontSize))
+                    Spacer()
+                }
             }
         }
     }

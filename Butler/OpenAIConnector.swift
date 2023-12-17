@@ -15,11 +15,11 @@ import OpenAIKit
 class OpenAIConnector: ObservableObject {
     static let shared = OpenAIConnector()
     let openAIURL = URL(string: "https://api.openai.com/v1/chat/completions")
-    #if DEBUG
-    var openAIKey = "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"
-    #else
+//    #if DEBUG
+//    var openAIKey = "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"
+//    #else
     var openAIKey = Defaults[.userAPIKey]
-    #endif
+//    #endif
     
     var client: OpenAIKit.Client
     
@@ -32,16 +32,22 @@ class OpenAIConnector: ObservableObject {
         
     }
     
-    static let empty = [["role": "system", "content": "You're a friendly, helpful assistant"]]
     /// This is what stores your messages.
-    @Published var messages: [Chat.Message] = []
+    @Published var messages: [Chat.Message] = [
+        .system(content: "You're a friendly, helpful assistant.")
+    ]
     
     var messagesEmpty: Bool {
-        return false
+        if messages == [.system(content: "You're a friendly, helpful assistant.")] {
+            return true
+        } else {
+            return false
+        }
     }
     
     func deleteAll() {
         messages.removeAll()
+        messages.append(.system(content: "You're a friendly, helpful assistant."))
     }
     
     func sendToAssistant() async {
@@ -49,7 +55,6 @@ class OpenAIConnector: ObservableObject {
             Defaults[.messagesSent] += 1
             
             do {
-                
                 let completion = try await client.chats.create(model: Model.GPT3.gpt3_5Turbo, messages: messages)
                 
                 messages.append(completion.choices.first?.message ?? Chat.Message.assistant(content: "nil"))
@@ -78,7 +83,6 @@ extension String: Identifiable { public var id: UUID { UUID() } }
 extension OpenAIConnector {
     /// This function makes it simpler to append items to messages.
     func logMessage(_ message: String, user: MessageUserType) {
-        var userString = ""
         switch user {
         case .user:
             messages.append(Chat.Message.user(content: message))

@@ -20,24 +20,12 @@ struct FontSizeSliderView: View {
     }
     
     var body: some View {
-        if !padding {
-            Slider(
-                value: $value,
-                in: startValue...endValue,
-                step: step,
-                minimumValueLabel: Text(formatted(value: startValue)),
-                maximumValueLabel: Text(formatted(value: endValue)),
-                label: { Text(text) })
-            
-        } else {
-            Slider(
-                value: $value,
-                in: startValue...endValue,
-                step: step,
-                minimumValueLabel: Text(formatted(value: startValue)),
-                maximumValueLabel: Text(formatted(value: endValue)),
-                label: { Text(text) })
-            .padding()
-        }
+        Slider(
+            value: $value,
+            in: startValue...endValue,
+            step: step,
+            minimumValueLabel: Text(formatted(value: startValue)),
+            maximumValueLabel: Text(formatted(value: endValue)),
+            label: { Text(text) }).if(padding) { view in view.padding() }
     }
 }

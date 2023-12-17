@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6B61C4AD29CA484100694F73"
-               BuildableName = "Butler.app"
-               BlueprintName = "Butler"
-               ReferencedContainer = "container:Butler.xcodeproj">
+               BuildableName = "Redwood.app"
+               BlueprintName = "Redwood"
+               ReferencedContainer = "container:Redwood.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B61C4AD29CA484100694F73"
-            BuildableName = "Butler.app"
-            BlueprintName = "Butler"
-            ReferencedContainer = "container:Butler.xcodeproj">
+            BuildableName = "Redwood.app"
+            BlueprintName = "Redwood"
+            ReferencedContainer = "container:Redwood.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,9 +61,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B61C4AD29CA484100694F73"
-            BuildableName = "Butler.app"
-            BlueprintName = "Butler"
-            ReferencedContainer = "container:Butler.xcodeproj">
+            BuildableName = "Redwood.app"
+            BlueprintName = "Redwood"
+            ReferencedContainer = "container:Redwood.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
