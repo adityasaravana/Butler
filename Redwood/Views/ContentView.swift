@@ -30,7 +30,6 @@ struct ContentView: View {
     
     @Default(.useIconsInTopBar) var useIconsInTopBar
     @Default(.messagesSent) var messagesSent
-    @Default(.showNewFeatures) var showNewFeatures
     @Default(.onboard) var onboard
     
     func clearChat() {
@@ -188,11 +187,6 @@ struct ContentView: View {
             }
         }
         .padding()
-        .alert(Changelog.notes, isPresented: $showNewFeatures) {
-            Button("Cool!", role: .cancel) {
-                showNewFeatures = false
-            }
-        }
     }
 }
 

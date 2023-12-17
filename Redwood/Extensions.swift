@@ -67,3 +67,7 @@ extension Chat.Message: Equatable {
 extension Chat.Message: Identifiable {
     public var id: Self { self }
 }
+
+extension Dictionary: Identifiable { public var id: UUID { UUID() } }
+extension Array: Identifiable { public var id: UUID { UUID() } }
+extension String: Identifiable { public var id: UUID { UUID() } }

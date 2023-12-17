@@ -20,7 +20,6 @@ struct OnboardingViewPage: ViewModifier {
                 removal: .move(edge: .leading))
             )
             .animation(.default)
-        
     }
 }
 
@@ -35,7 +34,5 @@ struct VisualEffectView: NSViewRepresentable {
         return view
     }
 
-    func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
-        //
-    }
+    func updateNSView(_ nsView: NSVisualEffectView, context: Context) {}
 }

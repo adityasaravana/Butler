@@ -14,25 +14,17 @@ import OpenAIKit
 
 class OpenAIConnector: ObservableObject {
     static let shared = OpenAIConnector()
-    let openAIURL = URL(string: "https://api.openai.com/v1/chat/completions")
-//    #if DEBUG
-//    var openAIKey = "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"
-//    #else
+
     var openAIKey = Defaults[.userAPIKey]
-//    #endif
-    
+
     var client: OpenAIKit.Client
     
     init() {
-        
-        
         let urlSession = URLSession(configuration: .default)
         let configuration = Configuration(apiKey: openAIKey)
         client = OpenAIKit.Client(session: urlSession, configuration: configuration)
-        
     }
     
-    /// This is what stores your messages.
     @Published var messages: [Chat.Message] = [
         .system(content: "You're a friendly, helpful assistant.")
     ]
@@ -70,15 +62,10 @@ class OpenAIConnector: ObservableObject {
                 self.logMessage("Looks like you haven't entered anything in the text field above. Paste your API key in and try again.", user: .assistant)
             }
         }
-        
     }
 }
 
 
-/// Don't worry about this too much. This just gets rid of errors when using messages in a SwiftUI List or ForEach.
-extension Dictionary: Identifiable { public var id: UUID { UUID() } }
-extension Array: Identifiable { public var id: UUID { UUID() } }
-extension String: Identifiable { public var id: UUID { UUID() } }
 
 extension OpenAIConnector {
     /// This function makes it simpler to append items to messages.

@@ -26,11 +26,10 @@
 		59A487B12A732D8F0081EF7F /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487AA2A732D8F0081EF7F /* WelcomePage.swift */; };
 		59A487B32A732D8F0081EF7F /* OpenAIKeyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487AC2A732D8F0081EF7F /* OpenAIKeyPage.swift */; };
 		59A487B42A732D8F0081EF7F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A487AD2A732D8F0081EF7F /* OnboardingView.swift */; };
-		59A5971F2A6937C1009487A8 /* Changelog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5971E2A6937C1009487A8 /* Changelog.swift */; };
-		59A597232A693C8F009487A8 /* ChangelogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A597222A693C8F009487A8 /* ChangelogView.swift */; };
 		59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */; };
 		59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */; };
 		59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */; };
+		59B68E942B2F760900AFEF88 /* WhatsNewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59B68E932B2F760900AFEF88 /* WhatsNewKit */; };
 		59BD43E82B2E977200AD6CB1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD43E72B2E977200AD6CB1 /* Extensions.swift */; };
 		59BD43EB2B2E988700AD6CB1 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BD43EA2B2E988700AD6CB1 /* OpenAIKit */; };
 		59BD43F02B2E9D9400AD6CB1 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */; };
@@ -63,8 +62,6 @@
 		59A487AA2A732D8F0081EF7F /* WelcomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
 		59A487AC2A732D8F0081EF7F /* OpenAIKeyPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIKeyPage.swift; sourceTree = "<group>"; };
 		59A487AD2A732D8F0081EF7F /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		59A5971E2A6937C1009487A8 /* Changelog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Changelog.swift; sourceTree = "<group>"; };
-		59A597222A693C8F009487A8 /* ChangelogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogView.swift; sourceTree = "<group>"; };
 		59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTSettingsView.swift; sourceTree = "<group>"; };
 		59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeySettingsView.swift; sourceTree = "<group>"; };
@@ -88,6 +85,7 @@
 				59D8C8312A4D128A00AB5122 /* SplashTokenizer in Frameworks */,
 				59D8C82D2A4D128A00AB5122 /* Splash in Frameworks */,
 				594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */,
+				59B68E942B2F760900AFEF88 /* WhatsNewKit in Frameworks */,
 				59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */,
 				59BD43EB2B2E988700AD6CB1 /* OpenAIKit in Frameworks */,
 				59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */,
@@ -149,7 +147,6 @@
 				59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */,
 				59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */,
 				59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */,
-				59A597222A693C8F009487A8 /* ChangelogView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -159,7 +156,6 @@
 			children = (
 				59BD43E72B2E977200AD6CB1 /* Extensions.swift */,
 				59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */,
-				59A5971E2A6937C1009487A8 /* Changelog.swift */,
 				59A487A52A732D8F0081EF7F /* Onboarding */,
 				59B619472A47E2C100F614C0 /* Settings */,
 				40CDDB0329E26BE300070A77 /* Views */,
@@ -227,6 +223,7 @@
 				597A2BBB2A592B070011B7B6 /* Defaults */,
 				59BD43EA2B2E988700AD6CB1 /* OpenAIKit */,
 				59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */,
+				59B68E932B2F760900AFEF88 /* WhatsNewKit */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Redwood.app */;
@@ -265,6 +262,7 @@
 				597A2BBA2A592B070011B7B6 /* XCRemoteSwiftPackageReference "Defaults" */,
 				59BD43E92B2E988700AD6CB1 /* XCRemoteSwiftPackageReference "openai-kit" */,
 				59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
+				59B68E922B2F760900AFEF88 /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -297,7 +295,6 @@
 				40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */,
 				597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */,
 				59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */,
-				59A5971F2A6937C1009487A8 /* Changelog.swift in Sources */,
 				59D8C8212A4CFC9A00AB5122 /* ChatGPTModels.swift in Sources */,
 				59A487AF2A732D8F0081EF7F /* Onboarding.swift in Sources */,
 				40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */,
@@ -316,7 +313,6 @@
 				59A487B02A732D8F0081EF7F /* KeyboardShortcutsPage.swift in Sources */,
 				59BD43E82B2E977200AD6CB1 /* Extensions.swift in Sources */,
 				59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */,
-				59A597232A693C8F009487A8 /* ChangelogView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +560,14 @@
 				kind = branch;
 			};
 		};
+		59B68E922B2F760900AFEF88 /* XCRemoteSwiftPackageReference "WhatsNewKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/WhatsNewKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 		59BD43E92B2E988700AD6CB1 /* XCRemoteSwiftPackageReference "openai-kit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dylanshine/openai-kit.git";
@@ -618,6 +622,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 597A2BBA2A592B070011B7B6 /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
+		};
+		59B68E932B2F760900AFEF88 /* WhatsNewKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59B68E922B2F760900AFEF88 /* XCRemoteSwiftPackageReference "WhatsNewKit" */;
+			productName = WhatsNewKit;
 		};
 		59BD43EA2B2E988700AD6CB1 /* OpenAIKit */ = {
 			isa = XCSwiftPackageProductDependency;
