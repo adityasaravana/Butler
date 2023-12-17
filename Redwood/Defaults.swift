@@ -20,7 +20,7 @@ extension Defaults.Keys {
     static let chatGPTModel = Key<ChatGPTModels>("chatGPTModel", default: .gpt3)
     static let useIconsInTopBar = Key<Bool>("useIconsInTopBar", default: false)
     static let highlightSyntax = Key<Bool>("highlightSyntax", default: false)
-    static let showNewFeatures = Key<Bool>("showNewFeatures\(appVersionNumber)", default: true)
+    static let showNewFeatures = Key<Bool>("showNewFeatures\(appVersionNumber)", default: false)
     static let textFieldLineLimit = Key<Int>("textFieldLineLimit", default: 7)
     static let onboard = Key<Bool>("onboard", default: true)
     //            ^            ^         ^                ^
