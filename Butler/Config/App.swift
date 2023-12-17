@@ -11,7 +11,7 @@ import KeyboardShortcuts
 import Defaults
 
 @main
-struct ButlerApp: App {
+struct app: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var copyLatestMessageAppState = CopyLatestMessageAppState()
     @StateObject private var openCloseButlerAppState = OpenCloseButlerAppState()

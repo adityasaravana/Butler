@@ -17,7 +17,6 @@ struct ChatGPTSettingsView: View {
     @State var APIKeyLocal = ""
     @State var modelLocal = ChatGPTModels.gpt3
     @State var secureField = true
-    let keychainManager = KeychainManager()
     
     var body: some View {
         List {
@@ -44,7 +43,7 @@ struct ChatGPTSettingsView: View {
                 }
                 
                 Button("Save") {
-                    keychainManager.push(key: .Butler_UserOpenAIKey, content: APIKeyLocal.filter { !" \n\t\r".contains($0) })
+                    Defaults[.userAPIKey] = APIKeyLocal.filter { !" \n\t\r".contains($0) }
                     APIKeyLocal = ""
                 }
             }

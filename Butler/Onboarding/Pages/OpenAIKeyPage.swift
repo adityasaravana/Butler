@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct OpenAIKeyPage: View {
     @State var showResponseArea = false
@@ -14,7 +15,6 @@ struct OpenAIKeyPage: View {
     @State var secureField = true
     @State var response = ""
     @Binding var disableNextButton: Bool
-    let keychainManager = KeychainManager()
     
     var body: some View {
         VStack {
@@ -58,7 +58,7 @@ struct OpenAIKeyPage: View {
                     let validator = OpenAIConnector()
                     validator.logMessage("You are validator, a system that lets users check if their OpenAI API key is valid before entering the app. Once you get this message, respond with a dad joke. DO NOT respond with ANYTHING but the dad joke, as it'll mess up the app's UI.", user: .user)
                     
-                    keychainManager.push(key: KeychainManager.Keys.Butler_UserOpenAIKey, content: APIKeyLocal.filter { !" \n\t\r".contains($0) })
+                    Defaults[.userAPIKey] = APIKeyLocal.filter { !" \n\t\r".contains($0) }
                     
                     APIKeyLocal = ""
                     

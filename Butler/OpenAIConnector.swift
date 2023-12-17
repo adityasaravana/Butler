@@ -14,10 +14,9 @@ import SwiftUI
 class OpenAIConnector: ObservableObject {
     static let shared = OpenAIConnector()
     let openAIURL = URL(string: "https://api.openai.com/v1/chat/completions")
-    let dataManager = KeychainManager()
     var connectedToInternet = true
     var openAIKey: String {
-        return dataManager.pull(key: .Butler_UserOpenAIKey) ?? "invalid"
+        return Defaults[.userAPIKey] 
     }
     
     init(messages: [[String: String]] = OpenAIConnector.empty) {

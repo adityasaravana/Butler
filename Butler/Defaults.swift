@@ -11,6 +11,7 @@ import Defaults
 fileprivate let appVersionNumber: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
 
 extension Defaults.Keys {
+    static let userAPIKey = Key<String>("userAPIKey", default: "")
     static let windowSize = Key<AppWindowSize>("windowSize", default: .small)
     static let showLimitedAccessWarning = Key<Bool>("showLimitedAccessWarning", default: true)
     static let fontSize = Key<Double>("fontSize", default: 12.0)
