@@ -37,6 +37,7 @@
 		59D9B55A2B2F9A8B007EA072 /* Scraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9B5592B2F9A8B007EA072 /* Scraper.swift */; };
 		59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA40F29EC7C2D00B75937 /* MarkdownUI */; };
 		59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */; };
+		6B37D8DC2B30C38200BFF556 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 6B37D8DB2B30C38200BFF556 /* Settings */; };
 		6B61C4B229CA484100694F73 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B129CA484100694F73 /* App.swift */; };
 		6B61C4B629CA484300694F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B529CA484300694F73 /* Assets.xcassets */; };
 		6B61C4B929CA484300694F73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B829CA484300694F73 /* Preview Assets.xcassets */; };
@@ -78,6 +79,7 @@
 				59D8C8312A4D128A00AB5122 /* SplashTokenizer in Frameworks */,
 				59D8C82D2A4D128A00AB5122 /* Splash in Frameworks */,
 				594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */,
+				6B37D8DC2B30C38200BFF556 /* Settings in Frameworks */,
 				59B68E942B2F760900AFEF88 /* WhatsNewKit in Frameworks */,
 				59D9B5582B2F9A4F007EA072 /* SwiftSoup in Frameworks */,
 				59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */,
@@ -207,6 +209,7 @@
 				59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */,
 				59B68E932B2F760900AFEF88 /* WhatsNewKit */,
 				59D9B5572B2F9A4F007EA072 /* SwiftSoup */,
+				6B37D8DB2B30C38200BFF556 /* Settings */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Redwood.app */;
@@ -247,6 +250,7 @@
 				59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
 				59B68E922B2F760900AFEF88 /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
 				59D9B5562B2F9A4F007EA072 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				6B37D8DA2B30C38200BFF556 /* XCRemoteSwiftPackageReference "Settings" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -588,6 +592,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		6B37D8DA2B30C38200BFF556 /* XCRemoteSwiftPackageReference "Settings" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Settings.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -650,6 +662,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
+		};
+		6B37D8DB2B30C38200BFF556 /* Settings */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B37D8DA2B30C38200BFF556 /* XCRemoteSwiftPackageReference "Settings" */;
+			productName = Settings;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
