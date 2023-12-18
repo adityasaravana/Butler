@@ -68,13 +68,12 @@ struct ContentView: View {
                                     ProgressView("Loading...").padding(.top)
                                 }
                             }
-                        }.onChange(of: connector.messages, perform: { _ in
+                        }
+                        .onChange(of: connector.messages, perform: { _ in
                             withAnimation {
                                 proxy.scrollTo(connector.messages.last)
                             }
                         })
-                        
-                        
                     }
                     .padding()
                     .background(.thickMaterial)

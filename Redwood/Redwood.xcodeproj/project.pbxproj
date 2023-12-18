@@ -33,6 +33,8 @@
 		59D8C8312A4D128A00AB5122 /* SplashTokenizer in Frameworks */ = {isa = PBXBuildFile; productRef = 59D8C8302A4D128A00AB5122 /* SplashTokenizer */; };
 		59D9B5532B2F7ECB007EA072 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9B5522B2F7ECB007EA072 /* SettingsButton.swift */; };
 		59D9B5552B2F7FB7007EA072 /* TopBarButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9B5542B2F7FB7007EA072 /* TopBarButtonLabel.swift */; };
+		59D9B5582B2F9A4F007EA072 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 59D9B5572B2F9A4F007EA072 /* SwiftSoup */; };
+		59D9B55A2B2F9A8B007EA072 /* Scraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9B5592B2F9A8B007EA072 /* Scraper.swift */; };
 		59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA40F29EC7C2D00B75937 /* MarkdownUI */; };
 		59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */; };
 		6B61C4B229CA484100694F73 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B61C4B129CA484100694F73 /* App.swift */; };
@@ -58,6 +60,7 @@
 		59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTModels.swift; sourceTree = "<group>"; };
 		59D9B5522B2F7ECB007EA072 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		59D9B5542B2F7FB7007EA072 /* TopBarButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarButtonLabel.swift; sourceTree = "<group>"; };
+		59D9B5592B2F9A8B007EA072 /* Scraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scraper.swift; sourceTree = "<group>"; };
 		59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIConnector.swift; sourceTree = "<group>"; };
 		6B61C4AE29CA484100694F73 /* Redwood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Redwood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B61C4B129CA484100694F73 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 				59D8C82D2A4D128A00AB5122 /* Splash in Frameworks */,
 				594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */,
 				59B68E942B2F760900AFEF88 /* WhatsNewKit in Frameworks */,
+				59D9B5582B2F9A4F007EA072 /* SwiftSoup in Frameworks */,
 				59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */,
 				59BD43EB2B2E988700AD6CB1 /* OpenAIKit in Frameworks */,
 				59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */,
@@ -134,6 +138,7 @@
 		6B61C4A529CA484100694F73 = {
 			isa = PBXGroup;
 			children = (
+				59D9B5592B2F9A8B007EA072 /* Scraper.swift */,
 				6B61C4B029CA484100694F73 /* Config */,
 				40CDDB0329E26BE300070A77 /* Views */,
 				59D9B5512B2F7CAD007EA072 /* OpenAI */,
@@ -201,6 +206,7 @@
 				59BD43EA2B2E988700AD6CB1 /* OpenAIKit */,
 				59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */,
 				59B68E932B2F760900AFEF88 /* WhatsNewKit */,
+				59D9B5572B2F9A4F007EA072 /* SwiftSoup */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Redwood.app */;
@@ -240,6 +246,7 @@
 				59BD43E92B2E988700AD6CB1 /* XCRemoteSwiftPackageReference "openai-kit" */,
 				59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
 				59B68E922B2F760900AFEF88 /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
+				59D9B5562B2F9A4F007EA072 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -271,6 +278,7 @@
 				40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */,
 				597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */,
 				59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */,
+				59D9B55A2B2F9A8B007EA072 /* Scraper.swift in Sources */,
 				59D8C8212A4CFC9A00AB5122 /* ChatGPTModels.swift in Sources */,
 				40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */,
 				59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */,
@@ -564,6 +572,14 @@
 				minimumVersion = 0.16.0;
 			};
 		};
+		59D9B5562B2F9A4F007EA072 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.1;
+			};
+		};
 		59EEA40E29EC7C2D00B75937 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
@@ -624,6 +640,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59D8C82B2A4D128A00AB5122 /* XCRemoteSwiftPackageReference "Splash" */;
 			productName = SplashTokenizer;
+		};
+		59D9B5572B2F9A4F007EA072 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59D9B5562B2F9A4F007EA072 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
 		};
 		59EEA40F29EC7C2D00B75937 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
