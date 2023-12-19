@@ -37,7 +37,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Butler").bold()
+                Text(Bundle.main.displayName!).bold()
                 
                 Spacer()
                 
