@@ -17,6 +17,8 @@ struct app: App {
     @StateObject private var copyLatestMessageAppState = CopyLatestMessageAppState()
     @StateObject private var openCloseButlerAppState = OpenCloseButlerAppState()
     @StateObject private var clearChatAppState = ClearChatAppState()
+
+    
     
     var body: some Scene {
         Settings {

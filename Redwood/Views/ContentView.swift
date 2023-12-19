@@ -34,6 +34,8 @@ struct ContentView: View {
         isLoading = false
     }
     
+    
+    
     var body: some View {
         VStack {
             HStack {
@@ -121,9 +123,11 @@ struct ContentView: View {
                 .disabled(isLoading)
                 .keyboardShortcut(.defaultAction)
             }
-            
         }
         .padding()
+        .onAppear {
+            Searcher.shared.fetchBraveSearchResults()
+        }
     }
 }
 

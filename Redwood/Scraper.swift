@@ -32,7 +32,7 @@ class Scraper {
             do {
                 let doc: Document = try SwiftSoup.parse(contents)
                 return try doc.text()
-            } catch Exception.Error(let type, let message) {
+            } catch Exception.Error(_, let message) {
                 print(message)
                 return nil
             } catch {
