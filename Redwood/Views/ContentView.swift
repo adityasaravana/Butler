@@ -75,17 +75,18 @@ struct ContentView: View {
                             }
                         })
                     }
-                    .padding()
-                    .background(.thickMaterial)
+                    
                 } else {
                     ZStack {
                         Text("Send a message")
                     }
-                    .padding()
-                    .background(.thickMaterial)
+                    .scaledToFill()
+                    
                 }
             }
             .cornerRadius(10)
+            .padding()
+            .background(.thickMaterial)
             
             
             HStack {

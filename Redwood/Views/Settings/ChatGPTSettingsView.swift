@@ -12,7 +12,6 @@ import OpenAIKit
 struct ChatGPTSettingsView: View {
     @Default(.chatGPTModel) var model
     @Default(.userAPIKey) var apiKey
-    @Default(.userChatGPTPrompt) var prompt
     
     @State var secureField = true
     
@@ -38,12 +37,6 @@ struct ChatGPTSettingsView: View {
                         .autocorrectionDisabled(true)
                         .textFieldStyle(.roundedBorder)
                 }
-            }
-            
-            HStack {
-                TextField("Custom Instructions", text: $prompt)
-                    .textFieldStyle(.roundedBorder)
-                Button("Apply To New Chats") {}
             }
             
             Picker("ChatGPT Version", selection: $model) {

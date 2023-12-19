@@ -9,5 +9,5 @@ import Foundation
 import Defaults
 
 struct Constants {
-    static let chatGPTPrompt = Defaults[.userChatGPTPrompt] + ""
+    static let chatGPTPrompt = "You're a friendly, helpful assistant."
 }
