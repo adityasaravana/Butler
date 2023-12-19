@@ -11,7 +11,7 @@ import Alamofire
 class Searcher {
     static let shared = Searcher()
 
-    func getURLs(for query: String) -> [URL] {
-        
-    }
+//    func getURLs(for query: String) -> [URL] {
+//        
+//    }
 }
