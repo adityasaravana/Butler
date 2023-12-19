@@ -7,9 +7,10 @@
 
 import SwiftUI
 import SettingsAccess
+import Defaults
 
 struct SettingsButton: View {
-    var useIconsInTopBar: Bool
+    @Default(.useIconsInTopBar) var useIconsInTopBar
     
     
     private func showSettings() {
@@ -21,10 +22,6 @@ struct SettingsButton: View {
         }
     }
 
-    
-    init(_ useIconsInTopBar: Bool) {
-        self.useIconsInTopBar = useIconsInTopBar
-    }
     
     var body: some View {
         if useIconsInTopBar {

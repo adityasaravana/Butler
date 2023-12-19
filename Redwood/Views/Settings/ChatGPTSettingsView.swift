@@ -12,6 +12,7 @@ import OpenAIKit
 struct ChatGPTSettingsView: View {
     @Default(.chatGPTModel) var model
     @Default(.userAPIKey) var apiKey
+    @Default(.userChatGPTPrompt) var prompt
     
     @State var secureField = true
     
@@ -26,7 +27,6 @@ struct ChatGPTSettingsView: View {
                     } else {
                         Image(systemName: "eye")
                     }
-                    
                 }
                 
                 if secureField {
@@ -40,12 +40,18 @@ struct ChatGPTSettingsView: View {
                 }
             }
             
+            HStack {
+                TextField("Custom Instructions", text: $prompt)
+                    .textFieldStyle(.roundedBorder)
+                Button("Apply To New Chats") {}
+            }
             
             Picker("ChatGPT Version", selection: $model) {
                 ForEach(ChatGPTModels.allCases, id: \.self) {
                     Text($0.name)
                 }
-            }.pickerStyle(.segmented)
+            }
+            .pickerStyle(.segmented)
         }
     }
 }

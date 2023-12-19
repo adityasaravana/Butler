@@ -74,7 +74,7 @@ extension Chat.Message: Identifiable {
 
 extension [Chat.Message] {
     var messagesEmpty: Bool {
-        if self == [.system(content: "You're a friendly, helpful assistant.")] {
+        if self == [.system(content: Constants.chatGPTPrompt)] {
             return true
         } else {
             return false
@@ -83,7 +83,7 @@ extension [Chat.Message] {
     
     mutating func deleteAll() {
         self.removeAll()
-        self.append(.system(content: "You're a friendly, helpful assistant."))
+        self.append(.system(content: Constants.chatGPTPrompt))
     }
 }
 

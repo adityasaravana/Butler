@@ -11,19 +11,18 @@
 		40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDAE629E259B800070A77 /* ContentView.swift */; };
 		59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59154F0F29FF1B5200F785B2 /* MessageView.swift */; };
 		59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 59361E6829E242FD007D3BC9 /* KeychainSwift */; };
+		593D86A12B313DE000C957D3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D86A02B313DE000C957D3 /* Constants.swift */; };
 		59465C242A454CF600C6EF4A /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 59465C232A454CF600C6EF4A /* KeyboardShortcuts */; };
 		59465C262A454D2A00C6EF4A /* KeyboardShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */; };
 		59465C282A454DF000C6EF4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C272A454DF000C6EF4A /* SettingsView.swift */; };
 		59465C2A2A454E9700C6EF4A /* FontSizeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */; };
 		594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 594F51322A4572CD003018AD /* LaunchAtLogin */; };
-		5952042C2A52617E0086CB67 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5952042B2A52617E0086CB67 /* ErrorView.swift */; };
 		597A2BBC2A592B070011B7B6 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 597A2BBB2A592B070011B7B6 /* Defaults */; };
 		597A2BBE2A592B250011B7B6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBD2A592B250011B7B6 /* Defaults.swift */; };
 		597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */; };
 		59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */; };
 		59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */; };
 		59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */; };
-		59B68E942B2F760900AFEF88 /* WhatsNewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59B68E932B2F760900AFEF88 /* WhatsNewKit */; };
 		59BD43E82B2E977200AD6CB1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD43E72B2E977200AD6CB1 /* Extensions.swift */; };
 		59BD43EB2B2E988700AD6CB1 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BD43EA2B2E988700AD6CB1 /* OpenAIKit */; };
 		59BD43F02B2E9D9400AD6CB1 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */; };
@@ -48,10 +47,10 @@
 		40CDDAFD29E26B4300070A77 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		59154F0F29FF1B5200F785B2 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		59361E8229E251B9007D3BC9 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		593D86A02B313DE000C957D3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcuts.swift; sourceTree = "<group>"; };
 		59465C272A454DF000C6EF4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeSliderView.swift; sourceTree = "<group>"; };
-		5952042B2A52617E0086CB67 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		597A2BBD2A592B250011B7B6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowSize.swift; sourceTree = "<group>"; };
 		59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
@@ -80,7 +79,6 @@
 				59D8C82D2A4D128A00AB5122 /* Splash in Frameworks */,
 				594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */,
 				6B37D8DC2B30C38200BFF556 /* Settings in Frameworks */,
-				59B68E942B2F760900AFEF88 /* WhatsNewKit in Frameworks */,
 				59D9B5582B2F9A4F007EA072 /* SwiftSoup in Frameworks */,
 				59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */,
 				59BD43EB2B2E988700AD6CB1 /* OpenAIKit in Frameworks */,
@@ -97,14 +95,13 @@
 		40CDDB0329E26BE300070A77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				59B619472A47E2C100F614C0 /* Settings */,
-				40CDDAFD29E26B4300070A77 /* ChatBubble.swift */,
 				40CDDAE629E259B800070A77 /* ContentView.swift */,
+				40CDDAFD29E26B4300070A77 /* ChatBubble.swift */,
 				59154F0F29FF1B5200F785B2 /* MessageView.swift */,
 				59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */,
-				5952042B2A52617E0086CB67 /* ErrorView.swift */,
 				59D9B5522B2F7ECB007EA072 /* SettingsButton.swift */,
 				59D9B5542B2F7FB7007EA072 /* TopBarButtonLabel.swift */,
+				59B619472A47E2C100F614C0 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,12 +137,15 @@
 		6B61C4A529CA484100694F73 = {
 			isa = PBXGroup;
 			children = (
+				59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */,
+				597A2BBD2A592B250011B7B6 /* Defaults.swift */,
+				593D86A02B313DE000C957D3 /* Constants.swift */,
+				597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */,
+				59BD43E72B2E977200AD6CB1 /* Extensions.swift */,
 				59D9B5592B2F9A8B007EA072 /* Scraper.swift */,
-				6B61C4B029CA484100694F73 /* Config */,
 				40CDDB0329E26BE300070A77 /* Views */,
 				59D9B5512B2F7CAD007EA072 /* OpenAI */,
-				59BD43E72B2E977200AD6CB1 /* Extensions.swift */,
-				597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */,
+				6B61C4B029CA484100694F73 /* Config */,
 				6B61C4AF29CA484100694F73 /* Products */,
 				59361E8129E251B9007D3BC9 /* Frameworks */,
 			);
@@ -162,8 +162,6 @@
 		6B61C4B029CA484100694F73 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */,
-				597A2BBD2A592B250011B7B6 /* Defaults.swift */,
 				6B61C4B129CA484100694F73 /* App.swift */,
 				6B61C4B529CA484300694F73 /* Assets.xcassets */,
 				6B61C4BA29CA484300694F73 /* Entitlements.entitlements */,
@@ -207,7 +205,6 @@
 				597A2BBB2A592B070011B7B6 /* Defaults */,
 				59BD43EA2B2E988700AD6CB1 /* OpenAIKit */,
 				59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */,
-				59B68E932B2F760900AFEF88 /* WhatsNewKit */,
 				59D9B5572B2F9A4F007EA072 /* SwiftSoup */,
 				6B37D8DB2B30C38200BFF556 /* Settings */,
 			);
@@ -248,7 +245,6 @@
 				597A2BBA2A592B070011B7B6 /* XCRemoteSwiftPackageReference "Defaults" */,
 				59BD43E92B2E988700AD6CB1 /* XCRemoteSwiftPackageReference "openai-kit" */,
 				59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
-				59B68E922B2F760900AFEF88 /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
 				59D9B5562B2F9A4F007EA072 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				6B37D8DA2B30C38200BFF556 /* XCRemoteSwiftPackageReference "Settings" */,
 			);
@@ -279,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */,
+				593D86A12B313DE000C957D3 /* Constants.swift in Sources */,
 				40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */,
 				597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */,
 				59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */,
@@ -294,7 +291,6 @@
 				59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */,
 				59465C262A454D2A00C6EF4A /* KeyboardShortcuts.swift in Sources */,
 				597A2BBE2A592B250011B7B6 /* Defaults.swift in Sources */,
-				5952042C2A52617E0086CB67 /* ErrorView.swift in Sources */,
 				59BD43E82B2E977200AD6CB1 /* Extensions.swift in Sources */,
 				59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */,
 			);
@@ -544,14 +540,6 @@
 				kind = branch;
 			};
 		};
-		59B68E922B2F760900AFEF88 /* XCRemoteSwiftPackageReference "WhatsNewKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SvenTiigi/WhatsNewKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.0;
-			};
-		};
 		59BD43E92B2E988700AD6CB1 /* XCRemoteSwiftPackageReference "openai-kit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dylanshine/openai-kit.git";
@@ -622,11 +610,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 597A2BBA2A592B070011B7B6 /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
-		};
-		59B68E932B2F760900AFEF88 /* WhatsNewKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 59B68E922B2F760900AFEF88 /* XCRemoteSwiftPackageReference "WhatsNewKit" */;
-			productName = WhatsNewKit;
 		};
 		59BD43EA2B2E988700AD6CB1 /* OpenAIKit */ = {
 			isa = XCSwiftPackageProductDependency;

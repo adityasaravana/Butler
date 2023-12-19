@@ -11,7 +11,7 @@ import SwiftSoup
 class Scraper {
     static let shared = Scraper()
     
-    func scrapeHTML(from urlString: String) -> String? {
+    private func scrapeHTML(from urlString: String) -> String? {
         if let url = URL(string: urlString) {
             do {
                 let contents = try String(contentsOf: url)
@@ -27,16 +27,25 @@ class Scraper {
         }
     }
     
-    func parseTextFromHTML(from contents: String) -> String? {
-        do {
-           let doc: Document = try SwiftSoup.parse(contents)
-           return try doc.text()
-        } catch Exception.Error(let type, let message) {
-            print(message)
-            return nil
-        } catch {
-            print("error")
+    private func parseTextFromString(from html: String?) -> String? {
+        if let contents = html {
+            do {
+                let doc: Document = try SwiftSoup.parse(contents)
+                return try doc.text()
+            } catch Exception.Error(let type, let message) {
+                print(message)
+                return nil
+            } catch {
+                print("error")
+                return nil
+            }
+        } else {
+            print("contents = nil")
             return nil
         }
+    }
+    
+    func parseTextFromURL(from urlString: String) -> String? {
+        return parseTextFromString(from: scrapeHTML(from: urlString))
     }
 }

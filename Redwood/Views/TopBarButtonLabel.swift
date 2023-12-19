@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct TopBarButtonLabel: View {
-    var useIconsInTopBar: Bool
+    @Default(.useIconsInTopBar) var useIconsInTopBar
     var text: String
     var icon: String
     
-    init(_ useIconsInTopBar: Bool, text: String, icon: String) {
-        self.useIconsInTopBar = useIconsInTopBar
+    init(text: String, icon: String) {
+        
         self.text = text
         self.icon = icon
     }

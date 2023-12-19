@@ -26,7 +26,7 @@ struct ContentView: View {
     
     @ObservedObject var connector: OpenAIConnector
     
-    @Default(.useIconsInTopBar) var useIconsInTopBar
+    
     @Default(.messagesSent) var messagesSent
     
     func clearChat() {
@@ -41,21 +41,20 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Button { showingHelpPopover = true } label: { TopBarButtonLabel(useIconsInTopBar, text: "Help", icon: "questionmark") }
+                Button { showingHelpPopover = true } label: { TopBarButtonLabel(text: "Help", icon: "questionmark") }
                     .popover(isPresented: $showingHelpPopover) {
                         Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
                     }
                 
-                Button { clearChat() } label: { TopBarButtonLabel(useIconsInTopBar, text: "Clear Chat", icon: "trash.fill") }
+                Button { clearChat() } label: { TopBarButtonLabel(text: "Clear Chat", icon: "trash.fill") }
                 
-                SettingsButton(useIconsInTopBar)
+                SettingsButton()
                 
-                Button { exit(0) } label: { TopBarButtonLabel(useIconsInTopBar, text: "Quit", icon: "escape") }
+                Button { exit(0) } label: { TopBarButtonLabel(text: "Quit", icon: "escape") }
                 
             }
             
             VStack {
-                
                 if !connector.messages.messagesEmpty {
                     ScrollViewReader { proxy in
                         ScrollView {
@@ -71,6 +70,7 @@ struct ContentView: View {
                         }
                         .onChange(of: connector.messages, perform: { _ in
                             withAnimation {
+
                                 proxy.scrollTo(connector.messages.last)
                             }
                         })

@@ -21,10 +21,8 @@ class OpenAIConnector: ObservableObject {
     }
     
     @Published var messages: [Chat.Message] = [
-        .system(content: "You're a friendly, helpful assistant.")
+        .system(content: Constants.chatGPTPrompt)
     ]
-    
-    
     
     func sendToAssistant() async {
         if !self.openAIKey.isEmpty {
