@@ -11,6 +11,7 @@ import SwiftUI
 struct ChatBubble<Content>: View where Content: View {
     let direction: ChatBubbleShape.Direction
     let content: () -> Content
+    
     init(direction: ChatBubbleShape.Direction, @ViewBuilder content: @escaping () -> Content) {
         self.content = content
         self.direction = direction
@@ -105,6 +106,7 @@ struct ChatBubbleShape: Shape {
                        control2: CGPoint(x: width - 20, y: height))
             
         }
+        
         return path
     }
 }

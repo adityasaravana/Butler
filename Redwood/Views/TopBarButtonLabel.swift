@@ -9,21 +9,25 @@ import SwiftUI
 import Defaults
 
 struct TopBarButtonLabel: View {
-    @Default(.useIconsInTopBar) var useIconsInTopBar
+    @Default(.topBarButtonStyle) var topBarButtonStyle
     var text: String
     var icon: String
+    var emoji: String
     
-    init(text: String, icon: String) {
-        
+    init(text: String, icon: String, emoji: String) {
         self.text = text
         self.icon = icon
+        self.emoji = emoji
     }
     
     var body: some View {
-        if useIconsInTopBar {
-            Image(systemName: icon)
-        } else {
+        switch topBarButtonStyle {
+        case .text:
             Text(text)
+        case .icons:
+            Image(systemName: icon)
+        case .emoji:
+            Text(emoji)
         }
     }
 }

@@ -15,7 +15,6 @@ extension Defaults.Keys {
     static let fontSize = Key<Double>("fontSize", default: 12.0)
     static let messagesSent = Key<Int>("messagesSent", default: 0)
     static let chatGPTModel = Key<ChatGPTModels>("chatGPTModel", default: .gpt3)
-    static let useIconsInTopBar = Key<Bool>("useIconsInTopBar", default: false)
-    static let textFieldLineLimit = Key<Int>("textFieldLineLimit", default: 7)
+    static let topBarButtonStyle = Key<TopBarButtonsStyle>("topBarButtonStyle", default: .text)
 }
 

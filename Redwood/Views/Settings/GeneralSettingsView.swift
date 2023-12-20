@@ -11,9 +11,8 @@ import Defaults
 
 struct GeneralSettingsView: View {
     @Default(.fontSize) var fontSize
-    @Default(.useIconsInTopBar) var useIconsInTopBar
+    @Default(.topBarButtonStyle) var topBarButtonStyle
     @Default(.windowSize) var windowSize
-    @Default(.textFieldLineLimit) var textFieldLineLimit
     
     var body: some View {
         List {
@@ -21,11 +20,13 @@ struct GeneralSettingsView: View {
                 Text("Launch at login")
             }
             
-            Toggle("Use icons for buttons", isOn: $useIconsInTopBar)
-            
-            Stepper("Text Field Line Limit: \(textFieldLineLimit)", value: $textFieldLineLimit)
-            
-            
+            Picker("Top Bar Buttons", selection: $topBarButtonStyle) {
+                ForEach(TopBarButtonsStyle.allCases, id: \.self) {
+                    Text($0.name)
+                }
+            }
+            .pickerStyle(.segmented)
+
             Picker("Window Size", selection: $windowSize) {
                 ForEach(AppWindowSize.allCases) { size in
                     Text(size.name)
@@ -36,7 +37,6 @@ struct GeneralSettingsView: View {
             FontSizeSliderView(padding: false, step: 3, text: "Message Font Size", startValue: 9, endValue: 30, value: $fontSize)
             
         }
-        .listStyle(.plain)
         .onChange(of: windowSize) { newValue in
             AppDelegate.instance.updateWindowSize()
         }

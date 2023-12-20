@@ -37,6 +37,10 @@ struct ChatGPTSettingsView: View {
                         .autocorrectionDisabled(true)
                         .textFieldStyle(.roundedBorder)
                 }
+                
+                Button("Save") {
+                    Defaults[.userAPIKey] = apiKey
+                }
             }
             
             Picker("ChatGPT Version", selection: $model) {

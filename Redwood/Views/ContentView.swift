@@ -34,8 +34,6 @@ struct ContentView: View {
         isLoading = false
     }
     
-    
-    
     var body: some View {
         VStack {
             HStack {
@@ -43,16 +41,16 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Button { showingHelpPopover = true } label: { TopBarButtonLabel(text: "Help", icon: "questionmark") }
+                Button { showingHelpPopover = true } label: { TopBarButtonLabel(text: "Help", icon: "questionmark", emoji: "🤨") }
                     .popover(isPresented: $showingHelpPopover) {
                         Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
                     }
                 
-                Button { clearChat() } label: { TopBarButtonLabel(text: "Clear Chat", icon: "trash.fill") }
+                Button { clearChat() } label: { TopBarButtonLabel(text: "Clear Chat", icon: "trash.fill", emoji: "🗑️") }
                 
                 SettingsButton()
                 
-                Button { exit(0) } label: { TopBarButtonLabel(text: "Quit", icon: "escape") }
+                Button { exit(0) } label: { TopBarButtonLabel(text: "Quit", icon: "escape", emoji: "💨") }
                 
             }
             
@@ -80,21 +78,24 @@ struct ContentView: View {
                     
                 } else {
                     ZStack {
+                        Filler()
                         Text("Send a message")
                     }
-                    .scaledToFill()
-                    
                 }
             }
-            .cornerRadius(10)
             .padding()
-            .background(.thickMaterial)
+            .background(.ultraThickMaterial)
+            .cornerRadius(10)
             
             
             HStack {
-                TextField("Type here", text: $textField, axis: .vertical)
-                    .textFieldStyle(.roundedBorder)
-                    .lineLimit(7)
+                TextField("Type here", text: $textField, onEditingChanged: { _ in
+                    print("changed")
+                }, onCommit: {
+                    print("commit")
+                })
+                .textFieldStyle(.roundedBorder)
+                .lineLimit(7)
                 
                 Button("Send") {
                     isLoading = true

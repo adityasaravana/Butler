@@ -28,7 +28,8 @@ struct SettingsView: View {
                     Image(systemName: "globe").imageScale(.large)
                     Text("ChatGPT")
                 }
-        }.frame(width: 400, height: 200)
+        }
+        .frame(width: 400, height: 200)
     }
 }
 

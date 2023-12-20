@@ -64,6 +64,15 @@
       }
     },
     {
+      "identity" : "osinfo",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MarcoEidinger/OSInfo.git",
+      "state" : {
+        "revision" : "54fd6673923ef5966268918152235b0e15ed057c",
+        "version" : "1.0.1"
+      }
+    },
+    {
       "identity" : "settings",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sindresorhus/Settings.git",
@@ -79,6 +88,15 @@
       "state" : {
         "revision" : "0fd73c8b5892e88acb13adb7f36a4ba9293a0061",
         "version" : "1.4.0"
+      }
+    },
+    {
+      "identity" : "sharedcode",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/adityasaravana/SharedCode.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "89ce6960165a0a2e7843908d11519dd0e10ab07b"
       }
     },
     {
