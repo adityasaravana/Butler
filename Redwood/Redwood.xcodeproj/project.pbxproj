@@ -27,6 +27,7 @@
 		59BD43F02B2E9D9400AD6CB1 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */; };
 		59CFC7122B315936006F5C46 /* Searcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFC7112B315936006F5C46 /* Searcher.swift */; };
 		59CFC7172B327DF1006F5C46 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59CFC7162B327DF1006F5C46 /* OpenAIKit */; };
+		59CFC71A2B328197006F5C46 /* SwiftfulLoadingIndicators in Frameworks */ = {isa = PBXBuildFile; productRef = 59CFC7192B328197006F5C46 /* SwiftfulLoadingIndicators */; };
 		59D8C8212A4CFC9A00AB5122 /* ChatGPTModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */; };
 		59D8C82D2A4D128A00AB5122 /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = 59D8C82C2A4D128A00AB5122 /* Splash */; };
 		59D8C82F2A4D128A00AB5122 /* SplashMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = 59D8C82E2A4D128A00AB5122 /* SplashMarkdown */; };
@@ -89,6 +90,7 @@
 				594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */,
 				6B37D8DC2B30C38200BFF556 /* Settings in Frameworks */,
 				59D9B5582B2F9A4F007EA072 /* SwiftSoup in Frameworks */,
+				59CFC71A2B328197006F5C46 /* SwiftfulLoadingIndicators in Frameworks */,
 				59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */,
 				59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */,
 				59D8C82F2A4D128A00AB5122 /* SplashMarkdown in Frameworks */,
@@ -237,6 +239,7 @@
 				6B37D8DB2B30C38200BFF556 /* Settings */,
 				6B6A5D522B3273B700AA5F94 /* SharedCode */,
 				59CFC7162B327DF1006F5C46 /* OpenAIKit */,
+				59CFC7192B328197006F5C46 /* SwiftfulLoadingIndicators */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Redwood.app */;
@@ -278,6 +281,7 @@
 				6B37D8DA2B30C38200BFF556 /* XCRemoteSwiftPackageReference "Settings" */,
 				6B6A5D512B3273B700AA5F94 /* XCRemoteSwiftPackageReference "SharedCode" */,
 				59CFC7152B327DF1006F5C46 /* XCLocalSwiftPackageReference "../../openai-kit" */,
+				59CFC7182B328197006F5C46 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -593,6 +597,14 @@
 				minimumVersion = 1.4.0;
 			};
 		};
+		59CFC7182B328197006F5C46 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
+			};
+		};
 		59D8C82B2A4D128A00AB5122 /* XCRemoteSwiftPackageReference "Splash" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JohnSundell/Splash.git";
@@ -664,6 +676,11 @@
 		59CFC7162B327DF1006F5C46 /* OpenAIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OpenAIKit;
+		};
+		59CFC7192B328197006F5C46 /* SwiftfulLoadingIndicators */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59CFC7182B328197006F5C46 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */;
+			productName = SwiftfulLoadingIndicators;
 		};
 		59D8C82C2A4D128A00AB5122 /* Splash */ = {
 			isa = XCSwiftPackageProductDependency;

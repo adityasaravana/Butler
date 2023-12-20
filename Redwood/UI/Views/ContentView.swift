@@ -26,7 +26,6 @@ struct ContentView: View {
     
     @ObservedObject var connector: OpenAIConnector
     
-    
     @Default(.messagesSent) var messagesSent
     
     func clearChat() {
@@ -68,12 +67,11 @@ struct ContentView: View {
                                 }
                             }
                         }
-                        .onChange(of: connector.messages, perform: { _ in
+                        .onChange(of: connector.messages) { _ in
                             withAnimation {
-
                                 proxy.scrollTo(connector.messages.last)
                             }
-                        })
+                        }
                     }
                     
                 } else {
