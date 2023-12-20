@@ -101,19 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		40CDDB0329E26BE300070A77 /* Views */ = {
+		40CDDB0329E26BE300070A77 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				40CDDAE629E259B800070A77 /* ContentView.swift */,
-				40CDDAFD29E26B4300070A77 /* ChatBubble.swift */,
-				59154F0F29FF1B5200F785B2 /* MessageView.swift */,
-				59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */,
-				59D9B5522B2F7ECB007EA072 /* SettingsButton.swift */,
-				59D9B5542B2F7FB7007EA072 /* TopBarButtonLabel.swift */,
+				59CFC7142B327AF9006F5C46 /* Views */,
 				59B619472A47E2C100F614C0 /* Settings */,
-				6B6A5D4D2B32704700AA5F94 /* Filler.swift */,
+				6B6A5D4F2B3270C700AA5F94 /* TopBarButtonsStyle.swift */,
+				597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */,
 			);
-			path = Views;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		59361E8129E251B9007D3BC9 /* Frameworks */ = {
@@ -135,6 +131,29 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		59CFC7132B327AE0006F5C46 /* Web Search */ = {
+			isa = PBXGroup;
+			children = (
+				59CFC7112B315936006F5C46 /* Searcher.swift */,
+				59D9B5592B2F9A8B007EA072 /* Scraper.swift */,
+			);
+			path = "Web Search";
+			sourceTree = "<group>";
+		};
+		59CFC7142B327AF9006F5C46 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6B6A5D4D2B32704700AA5F94 /* Filler.swift */,
+				40CDDAE629E259B800070A77 /* ContentView.swift */,
+				40CDDAFD29E26B4300070A77 /* ChatBubble.swift */,
+				59154F0F29FF1B5200F785B2 /* MessageView.swift */,
+				59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */,
+				59D9B5522B2F7ECB007EA072 /* SettingsButton.swift */,
+				59D9B5542B2F7FB7007EA072 /* TopBarButtonLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		59D9B5512B2F7CAD007EA072 /* OpenAI */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,16 +166,13 @@
 		6B61C4A529CA484100694F73 = {
 			isa = PBXGroup;
 			children = (
-				6B6A5D4F2B3270C700AA5F94 /* TopBarButtonsStyle.swift */,
-				59CFC7112B315936006F5C46 /* Searcher.swift */,
+				59BD43E72B2E977200AD6CB1 /* Extensions.swift */,
+				40CDDB0329E26BE300070A77 /* UI */,
+				59D9B5512B2F7CAD007EA072 /* OpenAI */,
+				59CFC7132B327AE0006F5C46 /* Web Search */,
 				59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */,
 				597A2BBD2A592B250011B7B6 /* Defaults.swift */,
 				593D86A02B313DE000C957D3 /* Constants.swift */,
-				597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */,
-				59BD43E72B2E977200AD6CB1 /* Extensions.swift */,
-				59D9B5592B2F9A8B007EA072 /* Scraper.swift */,
-				40CDDB0329E26BE300070A77 /* Views */,
-				59D9B5512B2F7CAD007EA072 /* OpenAI */,
 				6B61C4B029CA484100694F73 /* Config */,
 				6B61C4AF29CA484100694F73 /* Products */,
 				59361E8129E251B9007D3BC9 /* Frameworks */,

@@ -11,7 +11,7 @@ import SwiftSoup
 
 class Searcher {
     static let shared = Searcher()
-    
+    let scraper = Scraper.shared
 
     func fetchBraveSearchResults() {
         // BRAVE API KEY: BSASUZkH6dWPjHvQL44jldVo_9ziReF
