@@ -11,7 +11,7 @@ import KeyboardShortcuts
 struct HotkeySettingsView: View {
     var body: some View {
         List {
-            KeyboardShortcuts.Recorder("Open/Close Butler", name: .openButler)
+            KeyboardShortcuts.Recorder("Open/Close \(Bundle.main.displayName!)", name: .openButler)
             KeyboardShortcuts.Recorder("Clear Chat", name: .clearChat)
             KeyboardShortcuts.Recorder("Copy Latest Message", name: .copyLatestMessage)
         }

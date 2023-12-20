@@ -12,14 +12,12 @@ import Defaults
 import SettingsAccess
 
 @main
-struct app: App {
+struct Redwood: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var copyLatestMessageAppState = CopyLatestMessageAppState()
     @StateObject private var openCloseButlerAppState = OpenCloseButlerAppState()
     @StateObject private var clearChatAppState = ClearChatAppState()
 
-    
-    
     var body: some Scene {
         Settings {
             SettingsView()

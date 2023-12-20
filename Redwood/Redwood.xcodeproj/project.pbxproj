@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,9 +24,9 @@
 		59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619452A47E2BE00F614C0 /* ChatGPTSettingsView.swift */; };
 		59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B619482A47EB7F00F614C0 /* HotkeySettingsView.swift */; };
 		59BD43E82B2E977200AD6CB1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD43E72B2E977200AD6CB1 /* Extensions.swift */; };
-		59BD43EB2B2E988700AD6CB1 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BD43EA2B2E988700AD6CB1 /* OpenAIKit */; };
 		59BD43F02B2E9D9400AD6CB1 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */; };
 		59CFC7122B315936006F5C46 /* Searcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFC7112B315936006F5C46 /* Searcher.swift */; };
+		59CFC7172B327DF1006F5C46 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59CFC7162B327DF1006F5C46 /* OpenAIKit */; };
 		59D8C8212A4CFC9A00AB5122 /* ChatGPTModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */; };
 		59D8C82D2A4D128A00AB5122 /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = 59D8C82C2A4D128A00AB5122 /* Splash */; };
 		59D8C82F2A4D128A00AB5122 /* SplashMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = 59D8C82E2A4D128A00AB5122 /* SplashMarkdown */; };
@@ -85,11 +85,11 @@
 				597A2BBC2A592B070011B7B6 /* Defaults in Frameworks */,
 				59D8C8312A4D128A00AB5122 /* SplashTokenizer in Frameworks */,
 				59D8C82D2A4D128A00AB5122 /* Splash in Frameworks */,
+				59CFC7172B327DF1006F5C46 /* OpenAIKit in Frameworks */,
 				594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */,
 				6B37D8DC2B30C38200BFF556 /* Settings in Frameworks */,
 				59D9B5582B2F9A4F007EA072 /* SwiftSoup in Frameworks */,
 				59361E6929E242FD007D3BC9 /* KeychainSwift in Frameworks */,
-				59BD43EB2B2E988700AD6CB1 /* OpenAIKit in Frameworks */,
 				59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */,
 				59D8C82F2A4D128A00AB5122 /* SplashMarkdown in Frameworks */,
 				59465C242A454CF600C6EF4A /* KeyboardShortcuts in Frameworks */,
@@ -167,12 +167,12 @@
 			isa = PBXGroup;
 			children = (
 				59BD43E72B2E977200AD6CB1 /* Extensions.swift */,
-				40CDDB0329E26BE300070A77 /* UI */,
-				59D9B5512B2F7CAD007EA072 /* OpenAI */,
-				59CFC7132B327AE0006F5C46 /* Web Search */,
 				59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */,
 				597A2BBD2A592B250011B7B6 /* Defaults.swift */,
 				593D86A02B313DE000C957D3 /* Constants.swift */,
+				40CDDB0329E26BE300070A77 /* UI */,
+				59D9B5512B2F7CAD007EA072 /* OpenAI */,
+				59CFC7132B327AE0006F5C46 /* Web Search */,
 				6B61C4B029CA484100694F73 /* Config */,
 				6B61C4AF29CA484100694F73 /* Products */,
 				59361E8129E251B9007D3BC9 /* Frameworks */,
@@ -232,11 +232,11 @@
 				59D8C82E2A4D128A00AB5122 /* SplashMarkdown */,
 				59D8C8302A4D128A00AB5122 /* SplashTokenizer */,
 				597A2BBB2A592B070011B7B6 /* Defaults */,
-				59BD43EA2B2E988700AD6CB1 /* OpenAIKit */,
 				59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */,
 				59D9B5572B2F9A4F007EA072 /* SwiftSoup */,
 				6B37D8DB2B30C38200BFF556 /* Settings */,
 				6B6A5D522B3273B700AA5F94 /* SharedCode */,
+				59CFC7162B327DF1006F5C46 /* OpenAIKit */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Redwood.app */;
@@ -273,11 +273,11 @@
 				594F51312A4572CD003018AD /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 				59D8C82B2A4D128A00AB5122 /* XCRemoteSwiftPackageReference "Splash" */,
 				597A2BBA2A592B070011B7B6 /* XCRemoteSwiftPackageReference "Defaults" */,
-				59BD43E92B2E988700AD6CB1 /* XCRemoteSwiftPackageReference "openai-kit" */,
 				59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
 				59D9B5562B2F9A4F007EA072 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				6B37D8DA2B30C38200BFF556 /* XCRemoteSwiftPackageReference "Settings" */,
 				6B6A5D512B3273B700AA5F94 /* XCRemoteSwiftPackageReference "SharedCode" */,
+				59CFC7152B327DF1006F5C46 /* XCLocalSwiftPackageReference "../../openai-kit" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -545,6 +545,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		59CFC7152B327DF1006F5C46 /* XCLocalSwiftPackageReference "../../openai-kit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../openai-kit";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		59361E6729E242FD007D3BC9 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -576,14 +583,6 @@
 			requirement = {
 				branch = main;
 				kind = branch;
-			};
-		};
-		59BD43E92B2E988700AD6CB1 /* XCRemoteSwiftPackageReference "openai-kit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dylanshine/openai-kit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.8.2;
 			};
 		};
 		59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */ = {
@@ -657,15 +656,14 @@
 			package = 597A2BBA2A592B070011B7B6 /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
 		};
-		59BD43EA2B2E988700AD6CB1 /* OpenAIKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 59BD43E92B2E988700AD6CB1 /* XCRemoteSwiftPackageReference "openai-kit" */;
-			productName = OpenAIKit;
-		};
 		59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */;
 			productName = SettingsAccess;
+		};
+		59CFC7162B327DF1006F5C46 /* OpenAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenAIKit;
 		};
 		59D8C82C2A4D128A00AB5122 /* Splash */ = {
 			isa = XCSwiftPackageProductDependency;
