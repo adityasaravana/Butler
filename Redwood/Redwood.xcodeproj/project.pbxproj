@@ -26,7 +26,6 @@
 		59BD43E82B2E977200AD6CB1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD43E72B2E977200AD6CB1 /* Extensions.swift */; };
 		59BD43EB2B2E988700AD6CB1 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BD43EA2B2E988700AD6CB1 /* OpenAIKit */; };
 		59BD43F02B2E9D9400AD6CB1 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */; };
-		59CFC7102B31592E006F5C46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 59CFC70F2B31592E006F5C46 /* Alamofire */; };
 		59CFC7122B315936006F5C46 /* Searcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFC7112B315936006F5C46 /* Searcher.swift */; };
 		59D8C8212A4CFC9A00AB5122 /* ChatGPTModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */; };
 		59D8C82D2A4D128A00AB5122 /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = 59D8C82C2A4D128A00AB5122 /* Splash */; };
@@ -96,7 +95,6 @@
 				59465C242A454CF600C6EF4A /* KeyboardShortcuts in Frameworks */,
 				59BD43F02B2E9D9400AD6CB1 /* SettingsAccess in Frameworks */,
 				6B6A5D532B3273B700AA5F94 /* SharedCode in Frameworks */,
-				59CFC7102B31592E006F5C46 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +220,6 @@
 				59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */,
 				59D9B5572B2F9A4F007EA072 /* SwiftSoup */,
 				6B37D8DB2B30C38200BFF556 /* Settings */,
-				59CFC70F2B31592E006F5C46 /* Alamofire */,
 				6B6A5D522B3273B700AA5F94 /* SharedCode */,
 			);
 			productName = Butler;
@@ -264,7 +261,6 @@
 				59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
 				59D9B5562B2F9A4F007EA072 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				6B37D8DA2B30C38200BFF556 /* XCRemoteSwiftPackageReference "Settings" */,
-				59CFC70E2B31592E006F5C46 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				6B6A5D512B3273B700AA5F94 /* XCRemoteSwiftPackageReference "SharedCode" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
@@ -582,14 +578,6 @@
 				minimumVersion = 1.4.0;
 			};
 		};
-		59CFC70E2B31592E006F5C46 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.8.1;
-			};
-		};
 		59D8C82B2A4D128A00AB5122 /* XCRemoteSwiftPackageReference "Splash" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JohnSundell/Splash.git";
@@ -662,11 +650,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */;
 			productName = SettingsAccess;
-		};
-		59CFC70F2B31592E006F5C46 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 59CFC70E2B31592E006F5C46 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 		59D8C82C2A4D128A00AB5122 /* Splash */ = {
 			isa = XCSwiftPackageProductDependency;
