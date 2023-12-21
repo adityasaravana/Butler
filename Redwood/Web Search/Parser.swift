@@ -8,8 +8,7 @@
 import Foundation
 import SwiftSoup
 
-class Scraper {
-    static let shared = Scraper()
+struct Parser {
     
     private func scrapeHTML(from urlString: String) -> String? {
         if let url = URL(string: urlString) {

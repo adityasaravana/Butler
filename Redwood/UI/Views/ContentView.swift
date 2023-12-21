@@ -125,7 +125,9 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            Searcher.shared.fetchBraveSearchResults()
+            
+            print("appeared")
+            print(WebSearchManager().search(for: "spaceX"))
         }
     }
 }
