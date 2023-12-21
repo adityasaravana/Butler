@@ -17,9 +17,8 @@
 		59465C282A454DF000C6EF4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C272A454DF000C6EF4A /* SettingsView.swift */; };
 		59465C2A2A454E9700C6EF4A /* FontSizeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */; };
 		594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 594F51322A4572CD003018AD /* LaunchAtLogin */; };
-		5976F2632B33FC9400402BA1 /* WebSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976F2622B33FC9400402BA1 /* WebSearchManager.swift */; };
-		5976F2652B33FE0F00402BA1 /* BraveResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976F2642B33FE0F00402BA1 /* BraveResponseHandler.swift */; };
 		5976F2672B34123F00402BA1 /* ChatHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976F2662B34123F00402BA1 /* ChatHistoryView.swift */; };
+		5976F26D2B341B9E00402BA1 /* BraveWebSearchKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5976F26C2B341B9E00402BA1 /* BraveWebSearchKit */; };
 		597A2BBC2A592B070011B7B6 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 597A2BBB2A592B070011B7B6 /* Defaults */; };
 		597A2BBE2A592B250011B7B6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBD2A592B250011B7B6 /* Defaults.swift */; };
 		597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */; };
@@ -37,7 +36,6 @@
 		59D9B5532B2F7ECB007EA072 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9B5522B2F7ECB007EA072 /* SettingsButton.swift */; };
 		59D9B5552B2F7FB7007EA072 /* TopBarButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9B5542B2F7FB7007EA072 /* TopBarButtonLabel.swift */; };
 		59D9B5582B2F9A4F007EA072 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 59D9B5572B2F9A4F007EA072 /* SwiftSoup */; };
-		59D9B55A2B2F9A8B007EA072 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9B5592B2F9A8B007EA072 /* Parser.swift */; };
 		59EEA41029EC7C2D00B75937 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59EEA40F29EC7C2D00B75937 /* MarkdownUI */; };
 		59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */; };
 		6B37D8DC2B30C38200BFF556 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 6B37D8DB2B30C38200BFF556 /* Settings */; };
@@ -58,8 +56,6 @@
 		59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcuts.swift; sourceTree = "<group>"; };
 		59465C272A454DF000C6EF4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeSliderView.swift; sourceTree = "<group>"; };
-		5976F2622B33FC9400402BA1 /* WebSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSearchManager.swift; sourceTree = "<group>"; };
-		5976F2642B33FE0F00402BA1 /* BraveResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraveResponseHandler.swift; sourceTree = "<group>"; };
 		5976F2662B34123F00402BA1 /* ChatHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryView.swift; sourceTree = "<group>"; };
 		597A2BBD2A592B250011B7B6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowSize.swift; sourceTree = "<group>"; };
@@ -70,7 +66,6 @@
 		59D8C8202A4CFC9A00AB5122 /* ChatGPTModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTModels.swift; sourceTree = "<group>"; };
 		59D9B5522B2F7ECB007EA072 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		59D9B5542B2F7FB7007EA072 /* TopBarButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarButtonLabel.swift; sourceTree = "<group>"; };
-		59D9B5592B2F9A8B007EA072 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		59FEFE152A45062B00313EE0 /* OpenAIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIConnector.swift; sourceTree = "<group>"; };
 		6B61C4AE29CA484100694F73 /* Redwood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Redwood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B61C4B129CA484100694F73 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -101,6 +96,7 @@
 				59465C242A454CF600C6EF4A /* KeyboardShortcuts in Frameworks */,
 				59BD43F02B2E9D9400AD6CB1 /* SettingsAccess in Frameworks */,
 				6B6A5D532B3273B700AA5F94 /* SharedCode in Frameworks */,
+				5976F26D2B341B9E00402BA1 /* BraveWebSearchKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,16 +133,6 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		59CFC7132B327AE0006F5C46 /* Web Search */ = {
-			isa = PBXGroup;
-			children = (
-				5976F2622B33FC9400402BA1 /* WebSearchManager.swift */,
-				5976F2642B33FE0F00402BA1 /* BraveResponseHandler.swift */,
-				59D9B5592B2F9A8B007EA072 /* Parser.swift */,
-			);
-			path = "Web Search";
-			sourceTree = "<group>";
-		};
 		59CFC7142B327AF9006F5C46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +166,6 @@
 				593D86A02B313DE000C957D3 /* Constants.swift */,
 				40CDDB0329E26BE300070A77 /* UI */,
 				59D9B5512B2F7CAD007EA072 /* OpenAI */,
-				59CFC7132B327AE0006F5C46 /* Web Search */,
 				6B61C4B029CA484100694F73 /* Config */,
 				6B61C4AF29CA484100694F73 /* Products */,
 				59361E8129E251B9007D3BC9 /* Frameworks */,
@@ -246,6 +231,7 @@
 				6B6A5D522B3273B700AA5F94 /* SharedCode */,
 				59CFC7162B327DF1006F5C46 /* OpenAIKit */,
 				59CFC7192B328197006F5C46 /* SwiftfulLoadingIndicators */,
+				5976F26C2B341B9E00402BA1 /* BraveWebSearchKit */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Redwood.app */;
@@ -288,6 +274,7 @@
 				6B6A5D512B3273B700AA5F94 /* XCRemoteSwiftPackageReference "SharedCode" */,
 				59CFC7152B327DF1006F5C46 /* XCLocalSwiftPackageReference "../../openai-kit" */,
 				59CFC7182B328197006F5C46 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */,
+				5976F26B2B341B9E00402BA1 /* XCLocalSwiftPackageReference "../../BraveWebSearchKit" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -317,12 +304,9 @@
 			files = (
 				59B619412A47DE2400F614C0 /* GeneralSettingsView.swift in Sources */,
 				593D86A12B313DE000C957D3 /* Constants.swift in Sources */,
-				5976F2632B33FC9400402BA1 /* WebSearchManager.swift in Sources */,
 				40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */,
-				5976F2652B33FE0F00402BA1 /* BraveResponseHandler.swift in Sources */,
 				597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */,
 				59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */,
-				59D9B55A2B2F9A8B007EA072 /* Parser.swift in Sources */,
 				59D8C8212A4CFC9A00AB5122 /* ChatGPTModels.swift in Sources */,
 				40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */,
 				59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */,
@@ -558,6 +542,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		5976F26B2B341B9E00402BA1 /* XCLocalSwiftPackageReference "../../BraveWebSearchKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../BraveWebSearchKit;
+		};
 		59CFC7152B327DF1006F5C46 /* XCLocalSwiftPackageReference "../../openai-kit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../../openai-kit";
@@ -670,6 +658,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 594F51312A4572CD003018AD /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
+		};
+		5976F26C2B341B9E00402BA1 /* BraveWebSearchKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BraveWebSearchKit;
 		};
 		597A2BBB2A592B070011B7B6 /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;
