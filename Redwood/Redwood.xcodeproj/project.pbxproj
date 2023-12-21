@@ -19,6 +19,7 @@
 		594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 594F51322A4572CD003018AD /* LaunchAtLogin */; };
 		5976F2632B33FC9400402BA1 /* WebSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976F2622B33FC9400402BA1 /* WebSearchManager.swift */; };
 		5976F2652B33FE0F00402BA1 /* BraveResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976F2642B33FE0F00402BA1 /* BraveResponseHandler.swift */; };
+		5976F2672B34123F00402BA1 /* ChatHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976F2662B34123F00402BA1 /* ChatHistoryView.swift */; };
 		597A2BBC2A592B070011B7B6 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 597A2BBB2A592B070011B7B6 /* Defaults */; };
 		597A2BBE2A592B250011B7B6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBD2A592B250011B7B6 /* Defaults.swift */; };
 		597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */; };
@@ -59,6 +60,7 @@
 		59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeSliderView.swift; sourceTree = "<group>"; };
 		5976F2622B33FC9400402BA1 /* WebSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSearchManager.swift; sourceTree = "<group>"; };
 		5976F2642B33FE0F00402BA1 /* BraveResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BraveResponseHandler.swift; sourceTree = "<group>"; };
+		5976F2662B34123F00402BA1 /* ChatHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryView.swift; sourceTree = "<group>"; };
 		597A2BBD2A592B250011B7B6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowSize.swift; sourceTree = "<group>"; };
 		59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				6B6A5D4D2B32704700AA5F94 /* Filler.swift */,
 				40CDDAE629E259B800070A77 /* ContentView.swift */,
+				5976F2662B34123F00402BA1 /* ChatHistoryView.swift */,
 				40CDDAFD29E26B4300070A77 /* ChatBubble.swift */,
 				59154F0F29FF1B5200F785B2 /* MessageView.swift */,
 				59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */,
@@ -333,6 +336,7 @@
 				59B619492A47EB7F00F614C0 /* HotkeySettingsView.swift in Sources */,
 				59465C262A454D2A00C6EF4A /* KeyboardShortcuts.swift in Sources */,
 				597A2BBE2A592B250011B7B6 /* Defaults.swift in Sources */,
+				5976F2672B34123F00402BA1 /* ChatHistoryView.swift in Sources */,
 				59BD43E82B2E977200AD6CB1 /* Extensions.swift in Sources */,
 				59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */,
 			);

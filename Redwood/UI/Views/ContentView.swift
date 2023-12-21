@@ -20,6 +20,7 @@ struct ContentView: View {
     @State var textField = ""
     @State var isLoading = false
     @State var showingHelpPopover = false
+    @State var showingChatHistory = false
     
     @Environment(\.openWindow) var openWindow
     @Environment(\.requestReview) var requestReview
@@ -27,6 +28,7 @@ struct ContentView: View {
     @ObservedObject var connector: OpenAIConnector
     
     @Default(.messagesSent) var messagesSent
+    @Default(.chats) var chats
     
     func clearChat() {
         connector.messages.deleteAll()
@@ -44,6 +46,14 @@ struct ContentView: View {
                     .popover(isPresented: $showingHelpPopover) {
                         Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
                     }
+                
+                Button {
+                    showingChatHistory = true
+                } label: {
+                    TopBarButtonLabel(text: "History", icon: "clock.fill", emoji: "🕘")
+                }.popover(isPresented: $showingChatHistory) {
+                    ChatHistoryView(connector: connector)
+                }.disabled(chats == [:])
                 
                 Button { clearChat() } label: { TopBarButtonLabel(text: "Clear Chat", icon: "trash.fill", emoji: "🗑️") }
                 

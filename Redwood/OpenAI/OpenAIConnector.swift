@@ -27,12 +27,7 @@ class OpenAIConnector: ObservableObject {
     
     @Published var messages: [Chat.Message] = [
         .system(content: Constants.chatGPTPrompt)
-    ] {
-        didSet {
-            Defaults[.lastChatID] = chatID
-            Defaults[.chats][chatID] = messages
-        }
-    }
+    ]
     
     func sendToAssistant() async {
         if !self.openAIKey.isEmpty {
@@ -62,6 +57,8 @@ extension OpenAIConnector {
         case .assistant:
             messages.append(Chat.Message.assistant(content: message))
         }
+        Defaults[.lastChatID] = chatID
+        Defaults[.chats][chatID] = messages
     }
     
     enum MessageUserType {
