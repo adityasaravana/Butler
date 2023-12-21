@@ -100,11 +100,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
 @MainActor
 final class OpenCloseButlerAppState: ObservableObject {
     init() {
-        KeyboardShortcuts.onKeyUp(for: .openButler) { 
-            print("KEYPRESS")
+        KeyboardShortcuts.onKeyUp(for: .openButler) {
             if let appDelegate = AppDelegate.instance {
-                NSApp.activate(ignoringOtherApps: true)
-                appDelegate.togglePopover(nil)
+                
+                    NSApp.activate(ignoringOtherApps: true)
+                    appDelegate.togglePopover(nil)
+        
             } else {
                 print("AppDelegate was nil")
             }

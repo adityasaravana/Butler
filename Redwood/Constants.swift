@@ -10,4 +10,5 @@ import Defaults
 
 struct Constants {
     static let chatGPTPrompt = "You're a friendly, helpful assistant."
+    static let messagesRequiredForRequestingReview = 25
 }

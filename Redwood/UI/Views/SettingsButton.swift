@@ -20,6 +20,7 @@ struct SettingsButton: View {
         } else {
             NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
         }
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     var body: some View {
@@ -28,7 +29,11 @@ struct SettingsButton: View {
             if #available(macOS 14, *) {
                 SettingsLink{
                     Image(systemName: "gear")
-                }.keyboardShortcut(",", modifiers: .command)
+                }
+                .keyboardShortcut(",", modifiers: .command)
+                .onTapGesture {
+                    NSApp.activate(ignoringOtherApps: true)
+                }
             } else {
                 Button { showSettings() } label: { Image(systemName: "gear") }
             }
@@ -36,7 +41,11 @@ struct SettingsButton: View {
             if #available(macOS 14, *) {
                 SettingsLink{
                     Text("Settings")
-                }.keyboardShortcut(",", modifiers: .command)
+                }
+                .keyboardShortcut(",", modifiers: .command)
+                .onTapGesture {
+                    NSApp.activate(ignoringOtherApps: true)
+                }
             } else {
                 Button("Settings") { showSettings() }
             }

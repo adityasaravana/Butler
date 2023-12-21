@@ -125,7 +125,7 @@ struct ContentView: View {
                         textField = ""
                     }
                     
-                    if messagesSent >= 15 {
+                    if messagesSent >= Constants.messagesRequiredForRequestingReview {
                         requestReview()
                         messagesSent = 0
                     }
