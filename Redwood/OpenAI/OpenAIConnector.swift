@@ -14,15 +14,25 @@ class OpenAIConnector: ObservableObject {
     var openAIKey = Defaults[.userAPIKey]
     var client: OpenAIKit.Client
     
+    var chatID: String
+    
     init() {
         let urlSession = URLSession(configuration: .default)
         let configuration = Configuration(apiKey: openAIKey)
         client = OpenAIKit.Client(session: urlSession, configuration: configuration)
+        chatID = UUID().uuidString
+//        Defaults[.lastChatID] = chatID
+//        Defaults[.chats][chatID] = messages
     }
     
     @Published var messages: [Chat.Message] = [
         .system(content: Constants.chatGPTPrompt)
-    ]
+    ] {
+        didSet {
+            Defaults[.lastChatID] = chatID
+            Defaults[.chats][chatID] = messages
+        }
+    }
     
     func sendToAssistant() async {
         if !self.openAIKey.isEmpty {

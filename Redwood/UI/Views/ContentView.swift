@@ -87,15 +87,13 @@ struct ContentView: View {
             
             
             HStack {
-                TextField("Type here", text: $textField, onEditingChanged: { _ in
-                    print("changed")
-                }, onCommit: {
-                    print("commit")
-                })
+                TextField("Type here", text: $textField)
+                
                 .textFieldStyle(.roundedBorder)
                 .lineLimit(7)
                 
                 Button("Send") {
+                    connector.logMessage(textField, user: .user)
                     isLoading = true
                     
                     Task {
@@ -104,7 +102,7 @@ struct ContentView: View {
                         }
                     }
                     
-                    connector.logMessage(textField, user: .user)
+                    
                     
                     Task {
                         await connector.sendToAssistant()
@@ -117,6 +115,7 @@ struct ContentView: View {
                     
                     if messagesSent >= 15 {
                         requestReview()
+                        messagesSent = 0
                     }
                 }
                 .disabled(isLoading)
@@ -125,9 +124,9 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            
-            print("appeared")
-            print(WebSearchManager().search(for: "spaceX"))
+            if !Defaults[.chats].isEmpty && !Defaults[.lastChatID].isNil {
+                connector.messages = Defaults[.chats][Defaults[.lastChatID]!]!
+            }
         }
     }
 }

@@ -87,6 +87,7 @@ extension [Chat.Message] {
     }
 }
 
+extension Chat.Message: _DefaultsSerializable {}
 
 // MARK: Dictionary, Array, String + Identifiable
 extension Dictionary: Identifiable { public var id: UUID { UUID() } }
