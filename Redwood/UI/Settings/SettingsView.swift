@@ -8,7 +8,6 @@
 import SwiftUI
 import KeyboardShortcuts
 
-
 struct SettingsView: View {
     var body: some View {
         TabView {

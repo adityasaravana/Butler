@@ -12,6 +12,7 @@ import OpenAIKit
 struct ChatHistoryView: View {
     @ObservedObject var connector: OpenAIConnector
     @Default(.chats) var chats
+    @Default(.enableChatDeletionConfirmation) var confirmChatDeletion
     
     @State var showDeleteConfirmation = false
     @State var showDeleteAllChatsConfirmation = false
@@ -27,7 +28,11 @@ struct ChatHistoryView: View {
                         }
                     }
                     Button("Delete") {
-                        showDeleteConfirmation = true
+                        if confirmChatDeletion {
+                            showDeleteConfirmation = true
+                        } else {
+                            chats.removeValue(forKey: id)
+                        }
                     }.alert("You sure?", isPresented: $showDeleteConfirmation) {
                         Button("Yeah", role: .destructive) {
                             chats.removeValue(forKey: id)

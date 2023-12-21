@@ -18,5 +18,6 @@ extension Defaults.Keys {
     static let topBarButtonStyle = Key<TopBarButtonsStyle>("topBarButtonStyle", default: .text)
     static let chats = Key<[String: [Chat.Message]]>("chats", default: [:])
     static let lastChatID = Key<String?>("lastChatID", default: nil)
+    static let enableChatDeletionConfirmation = Key<Bool>("enableChatDeletionConfirmation", default: true)
 }
 
