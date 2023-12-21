@@ -19,6 +19,11 @@
 		594F51332A4572CD003018AD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 594F51322A4572CD003018AD /* LaunchAtLogin */; };
 		5976F2672B34123F00402BA1 /* ChatHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976F2662B34123F00402BA1 /* ChatHistoryView.swift */; };
 		5976F26D2B341B9E00402BA1 /* BraveWebSearchKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5976F26C2B341B9E00402BA1 /* BraveWebSearchKit */; };
+		5976F26F2B34D41700402BA1 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976F26E2B34D41700402BA1 /* HelpView.swift */; };
+		5976F2722B34D4B900402BA1 /* SharedCode in Frameworks */ = {isa = PBXBuildFile; productRef = 5976F2712B34D4B900402BA1 /* SharedCode */; };
+		5976F2762B34DAC900402BA1 /* GetPremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976F2752B34DAC900402BA1 /* GetPremiumView.swift */; };
+		5976F2792B34DD5D00402BA1 /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976F2782B34DD5D00402BA1 /* PurchaseManager.swift */; };
+		5976F27B2B34E00B00402BA1 /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5976F27A2B34E00B00402BA1 /* EntitlementManager.swift */; };
 		597A2BBC2A592B070011B7B6 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 597A2BBB2A592B070011B7B6 /* Defaults */; };
 		597A2BBE2A592B250011B7B6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBD2A592B250011B7B6 /* Defaults.swift */; };
 		597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */; };
@@ -44,7 +49,6 @@
 		6B61C4B929CA484300694F73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B61C4B829CA484300694F73 /* Preview Assets.xcassets */; };
 		6B6A5D4E2B32704700AA5F94 /* Filler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6A5D4D2B32704700AA5F94 /* Filler.swift */; };
 		6B6A5D502B3270C700AA5F94 /* TopBarButtonsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6A5D4F2B3270C700AA5F94 /* TopBarButtonsStyle.swift */; };
-		6B6A5D532B3273B700AA5F94 /* SharedCode in Frameworks */ = {isa = PBXBuildFile; productRef = 6B6A5D522B3273B700AA5F94 /* SharedCode */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +61,11 @@
 		59465C272A454DF000C6EF4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		59465C292A454E9700C6EF4A /* FontSizeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeSliderView.swift; sourceTree = "<group>"; };
 		5976F2662B34123F00402BA1 /* ChatHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryView.swift; sourceTree = "<group>"; };
+		5976F26E2B34D41700402BA1 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		5976F2732B34DA6300402BA1 /* MainConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MainConfiguration.storekit; sourceTree = "<group>"; };
+		5976F2752B34DAC900402BA1 /* GetPremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPremiumView.swift; sourceTree = "<group>"; };
+		5976F2782B34DD5D00402BA1 /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
+		5976F27A2B34E00B00402BA1 /* EntitlementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
 		597A2BBD2A592B250011B7B6 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		597A2BBF2A592B4F0011B7B6 /* AppWindowSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowSize.swift; sourceTree = "<group>"; };
 		59B619402A47DE2400F614C0 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
@@ -95,8 +104,8 @@
 				59D8C82F2A4D128A00AB5122 /* SplashMarkdown in Frameworks */,
 				59465C242A454CF600C6EF4A /* KeyboardShortcuts in Frameworks */,
 				59BD43F02B2E9D9400AD6CB1 /* SettingsAccess in Frameworks */,
-				6B6A5D532B3273B700AA5F94 /* SharedCode in Frameworks */,
 				5976F26D2B341B9E00402BA1 /* BraveWebSearchKit in Frameworks */,
+				5976F2722B34D4B900402BA1 /* SharedCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +115,7 @@
 		40CDDB0329E26BE300070A77 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5976F2742B34DABF00402BA1 /* Premium */,
 				59CFC7142B327AF9006F5C46 /* Views */,
 				59B619472A47E2C100F614C0 /* Settings */,
 				6B6A5D4F2B3270C700AA5F94 /* TopBarButtonsStyle.swift */,
@@ -122,6 +132,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5976F2742B34DABF00402BA1 /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				5976F2752B34DAC900402BA1 /* GetPremiumView.swift */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
+		5976F2772B34DD5500402BA1 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				5976F2732B34DA6300402BA1 /* MainConfiguration.storekit */,
+				5976F2782B34DD5D00402BA1 /* PurchaseManager.swift */,
+				5976F27A2B34E00B00402BA1 /* EntitlementManager.swift */,
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
 		59B619472A47E2C100F614C0 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +164,7 @@
 		59CFC7142B327AF9006F5C46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5976F26E2B34D41700402BA1 /* HelpView.swift */,
 				6B6A5D4D2B32704700AA5F94 /* Filler.swift */,
 				40CDDAE629E259B800070A77 /* ContentView.swift */,
 				5976F2662B34123F00402BA1 /* ChatHistoryView.swift */,
@@ -160,6 +189,7 @@
 		6B61C4A529CA484100694F73 = {
 			isa = PBXGroup;
 			children = (
+				5976F2772B34DD5500402BA1 /* IAP */,
 				59BD43E72B2E977200AD6CB1 /* Extensions.swift */,
 				59465C252A454D2A00C6EF4A /* KeyboardShortcuts.swift */,
 				597A2BBD2A592B250011B7B6 /* Defaults.swift */,
@@ -228,10 +258,10 @@
 				59BD43EF2B2E9D9400AD6CB1 /* SettingsAccess */,
 				59D9B5572B2F9A4F007EA072 /* SwiftSoup */,
 				6B37D8DB2B30C38200BFF556 /* Settings */,
-				6B6A5D522B3273B700AA5F94 /* SharedCode */,
 				59CFC7162B327DF1006F5C46 /* OpenAIKit */,
 				59CFC7192B328197006F5C46 /* SwiftfulLoadingIndicators */,
 				5976F26C2B341B9E00402BA1 /* BraveWebSearchKit */,
+				5976F2712B34D4B900402BA1 /* SharedCode */,
 			);
 			productName = Butler;
 			productReference = 6B61C4AE29CA484100694F73 /* Redwood.app */;
@@ -271,10 +301,10 @@
 				59BD43EE2B2E9D9400AD6CB1 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
 				59D9B5562B2F9A4F007EA072 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				6B37D8DA2B30C38200BFF556 /* XCRemoteSwiftPackageReference "Settings" */,
-				6B6A5D512B3273B700AA5F94 /* XCRemoteSwiftPackageReference "SharedCode" */,
 				59CFC7152B327DF1006F5C46 /* XCLocalSwiftPackageReference "../../openai-kit" */,
 				59CFC7182B328197006F5C46 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */,
 				5976F26B2B341B9E00402BA1 /* XCLocalSwiftPackageReference "../../BraveWebSearchKit" */,
+				5976F2702B34D4B900402BA1 /* XCLocalSwiftPackageReference "../../SharedCode" */,
 			);
 			productRefGroup = 6B61C4AF29CA484100694F73 /* Products */;
 			projectDirPath = "";
@@ -307,8 +337,10 @@
 				40CDDAFF29E26B4800070A77 /* ChatBubble.swift in Sources */,
 				597A2BC02A592B4F0011B7B6 /* AppWindowSize.swift in Sources */,
 				59FEFE162A45062B00313EE0 /* OpenAIConnector.swift in Sources */,
+				5976F26F2B34D41700402BA1 /* HelpView.swift in Sources */,
 				59D8C8212A4CFC9A00AB5122 /* ChatGPTModels.swift in Sources */,
 				40CDDB0429E26C0000070A77 /* ContentView.swift in Sources */,
+				5976F27B2B34E00B00402BA1 /* EntitlementManager.swift in Sources */,
 				59154F1029FF1B5200F785B2 /* MessageView.swift in Sources */,
 				6B61C4B229CA484100694F73 /* App.swift in Sources */,
 				6B6A5D4E2B32704700AA5F94 /* Filler.swift in Sources */,
@@ -323,6 +355,8 @@
 				5976F2672B34123F00402BA1 /* ChatHistoryView.swift in Sources */,
 				59BD43E82B2E977200AD6CB1 /* Extensions.swift in Sources */,
 				59B619462A47E2BE00F614C0 /* ChatGPTSettingsView.swift in Sources */,
+				5976F2792B34DD5D00402BA1 /* PurchaseManager.swift in Sources */,
+				5976F2762B34DAC900402BA1 /* GetPremiumView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +580,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../BraveWebSearchKit;
 		};
+		5976F2702B34D4B900402BA1 /* XCLocalSwiftPackageReference "../../SharedCode" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../SharedCode;
+		};
 		59CFC7152B327DF1006F5C46 /* XCLocalSwiftPackageReference "../../openai-kit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../../openai-kit";
@@ -633,14 +671,6 @@
 				minimumVersion = 3.1.0;
 			};
 		};
-		6B6A5D512B3273B700AA5F94 /* XCRemoteSwiftPackageReference "SharedCode" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/adityasaravana/SharedCode.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -662,6 +692,10 @@
 		5976F26C2B341B9E00402BA1 /* BraveWebSearchKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BraveWebSearchKit;
+		};
+		5976F2712B34D4B900402BA1 /* SharedCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedCode;
 		};
 		597A2BBB2A592B070011B7B6 /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -711,11 +745,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6B37D8DA2B30C38200BFF556 /* XCRemoteSwiftPackageReference "Settings" */;
 			productName = Settings;
-		};
-		6B6A5D522B3273B700AA5F94 /* SharedCode */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6B6A5D512B3273B700AA5F94 /* XCRemoteSwiftPackageReference "SharedCode" */;
-			productName = SharedCode;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

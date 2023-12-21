@@ -14,19 +14,37 @@ import SettingsAccess
 @main
 struct Redwood: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @StateObject private var copyLatestMessageAppState = CopyLatestMessageAppState()
     @StateObject private var openCloseButlerAppState = OpenCloseButlerAppState()
-    @StateObject private var clearChatAppState = ClearChatAppState()
-
+    @StateObject private var entitlementManager: EntitlementManager
+    @StateObject private var purchaseManager: PurchaseManager
+    
+    init() {
+        let entitlementManager = EntitlementManager()
+        let purchaseManager = PurchaseManager(entitlementManager: entitlementManager)
+        self._entitlementManager = StateObject(wrappedValue: entitlementManager)
+        self._purchaseManager = StateObject(wrappedValue: purchaseManager)
+    }
+    
     var body: some Scene {
         Settings {
             SettingsView()
+        }
+        
+        Window("MenuGPT Premium", id: "getpremium") {
+            GetPremiumView()
+                .padding()
+                .environmentObject(purchaseManager)
+                .task {
+                    await purchaseManager.updatePurchasedProducts()
+                }
         }
     }
 }
 
 extension NSImage.Name {
-     static let menuBarIcon = NSImage.Name("MenuBarIcon")
+    static let menuBarIcon = NSImage.Name("MenuBarIcon")
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
@@ -53,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
         
         
-        if let button = self.statusBarItem.button {            
+        if let button = self.statusBarItem.button {
             button.image = NSImage(systemSymbolName: "mustache.fill", accessibilityDescription: nil)
             button.action = #selector(togglePopover(_:))
         }
@@ -103,9 +121,9 @@ final class OpenCloseButlerAppState: ObservableObject {
         KeyboardShortcuts.onKeyUp(for: .openButler) {
             if let appDelegate = AppDelegate.instance {
                 
-                    NSApp.activate(ignoringOtherApps: true)
-                    appDelegate.togglePopover(nil)
-        
+                NSApp.activate(ignoringOtherApps: true)
+                appDelegate.togglePopover(nil)
+                
             } else {
                 print("AppDelegate was nil")
             }

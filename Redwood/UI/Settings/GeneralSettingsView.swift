@@ -40,6 +40,9 @@ struct GeneralSettingsView: View {
             Toggle("Ask For Confirmation When Deleting Chats", isOn: $enableChatDeletionConfirmation)
             
             Toggle("Hide Help Button", isOn: $hideHelpButton)
+            if hideHelpButton {
+                HelpView()
+            }
             
         }
         .onChange(of: windowSize) { newValue in

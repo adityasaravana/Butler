@@ -12,7 +12,6 @@ import Defaults
 struct SettingsButton: View {
     @Default(.topBarButtonStyle) var topBarButtonStyle
     
-    
     private func showSettings() {
         NSApp.activate(ignoringOtherApps: true)
         if #available(macOS 13, *) {

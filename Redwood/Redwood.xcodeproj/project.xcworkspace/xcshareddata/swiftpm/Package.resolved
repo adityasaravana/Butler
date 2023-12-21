@@ -73,15 +73,6 @@
       }
     },
     {
-      "identity" : "sharedcode",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/adityasaravana/SharedCode.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "89ce6960165a0a2e7843908d11519dd0e10ab07b"
-      }
-    },
-    {
       "identity" : "splash",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JohnSundell/Splash",

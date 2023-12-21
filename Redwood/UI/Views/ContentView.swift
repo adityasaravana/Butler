@@ -45,7 +45,7 @@ struct ContentView: View {
                 if !hideHelpButton {
                     Button { showingHelpPopover = true } label: { TopBarButtonLabel(text: "Help", icon: "questionmark", emoji: "🤨") }
                         .popover(isPresented: $showingHelpPopover) {
-                            Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
+                            HelpView()
                         }
                 }
                 
@@ -95,7 +95,7 @@ struct ContentView: View {
             }
             .padding()
             .background(.ultraThickMaterial)
-            .cornerRadius(10)
+            .cornerRadius(9)
             
             
             HStack {

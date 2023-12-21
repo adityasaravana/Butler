@@ -1,0 +1,104 @@
+{
+  "identifier" : "10953A61",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6474725014",
+    "_developerTeamID" : "E2RJE8M8Y3",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 724884070.73668897,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21425845",
+      "localizations" : [
+
+      ],
+      "name" : "MenuGPT Premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "5.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6474789530",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Access to all of MenuGPT's features.",
+              "displayName" : "MenuGPT Premium",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.adityasaravana.redwood.premium",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "MenuGPT Premium",
+          "subscriptionGroupID" : "21425845",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
