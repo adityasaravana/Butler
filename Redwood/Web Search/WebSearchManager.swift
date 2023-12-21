@@ -14,10 +14,10 @@ struct WebSearchManager {
     let apiKey = "BSASUZkH6dWPjHvQL44jldVo_9ziReF"
     
     func search(for query: String) -> [String] {
-        return parseResults(for: getResults(for: query))
+        return parseResults(for: getResults(for: query)!)
     }
     
-    func getResults(for query: String) -> [URL] {
+    func getResults(for query: String) -> [URL]? {
         let formattedQuery = query.replacingOccurrences(of: " ", with: "+")
         var urls = [URL]()
         
@@ -28,8 +28,8 @@ struct WebSearchManager {
                 for result in response.web.results {
                     urls.append(URL(string: result.url)!)
                 }
-            }
-        }
+            } else { return nil }
+        } else { return nil }
         
         return urls
     }
