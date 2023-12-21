@@ -29,6 +29,7 @@ struct ContentView: View {
     
     @Default(.messagesSent) var messagesSent
     @Default(.chats) var chats
+    @Default(.hideHelpButton) var hideHelpButton
     
     func clearChat() {
         connector.messages.deleteAll()
@@ -41,11 +42,12 @@ struct ContentView: View {
                 Text(Bundle.main.displayName!).bold()
                 
                 Spacer()
-                
-                Button { showingHelpPopover = true } label: { TopBarButtonLabel(text: "Help", icon: "questionmark", emoji: "🤨") }
-                    .popover(isPresented: $showingHelpPopover) {
-                        Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
-                    }
+                if !hideHelpButton {
+                    Button { showingHelpPopover = true } label: { TopBarButtonLabel(text: "Help", icon: "questionmark", emoji: "🤨") }
+                        .popover(isPresented: $showingHelpPopover) {
+                            Text("Email aditya.saravana@icloud.com for help.").bold().font(.subheadline).padding()
+                        }
+                }
                 
                 Button {
                     showingChatHistory = true

@@ -14,6 +14,7 @@ struct GeneralSettingsView: View {
     @Default(.topBarButtonStyle) var topBarButtonStyle
     @Default(.windowSize) var windowSize
     @Default(.enableChatDeletionConfirmation) var enableChatDeletionConfirmation
+    @Default(.hideHelpButton) var hideHelpButton
     var body: some View {
         List {
             LaunchAtLogin.Toggle {
@@ -37,6 +38,8 @@ struct GeneralSettingsView: View {
             FontSizeSliderView(padding: false, step: 3, text: "Message Font Size", startValue: 9, endValue: 30, value: $fontSize)
             
             Toggle("Ask For Confirmation When Deleting Chats", isOn: $enableChatDeletionConfirmation)
+            
+            Toggle("Hide Help Button", isOn: $hideHelpButton)
             
         }
         .onChange(of: windowSize) { newValue in
