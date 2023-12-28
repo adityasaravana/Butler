@@ -9,11 +9,9 @@ import SwiftUI
 import StoreKit
 
 struct GetPremiumView: View {
-    @EnvironmentObject
-    private var entitlementManager: EntitlementManager
+    @EnvironmentObject private var entitlementManager: EntitlementManager
 
-    @EnvironmentObject
-    private var purchaseManager: PurchaseManager
+    @EnvironmentObject private var purchaseManager: PurchaseManager
 
     var body: some View {
         VStack(spacing: 20) {

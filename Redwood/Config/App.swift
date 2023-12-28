@@ -36,6 +36,7 @@ struct Redwood: App {
             GetPremiumView()
                 .padding()
                 .environmentObject(purchaseManager)
+                .environmentObject(entitlementManager)
                 .task {
                     await purchaseManager.updatePurchasedProducts()
                 }
